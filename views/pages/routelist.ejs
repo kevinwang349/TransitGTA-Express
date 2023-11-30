@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <%- include("../partials/head"); %> -->
+        <title><%= title %></title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Route name</td>
+                <td style="border-top: 1px solid black; border-left: 1px solid black;">Link to route schedule + stop list</td>
+                <td style="border-top: 1px solid black; border-left: 1px solid black;">Link to route vehicles + route map</td>
+            </tr>
+            <% routes.forEach(route =>{ %>
+                <tr>
+                    <td style="border-top: 1px solid black; border-left: 1px solid black; background-color: <%= route.color%>"><%= route.name %></td>
+                    <td style="border-bottom: 1px solid black; border-right: 1px solid black; background-color: #dedede">
+                        <a href="./routeschedule?r=<%= route.shortname%>">Route Schedule</a>
+                    </td>
+                    <td style="border-bottom: 1px solid black; border-right: 1px solid black; background-color: #efefef">
+                        <a href="./routevehicles?r=<%= route.shortname%>">Route Vehicles</a>
+                    </td>
+                </tr>
+            <%})%>
+        </table>
+
+        <br>
+    </body>
+</html>

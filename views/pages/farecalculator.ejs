@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <%- include("../partials/head"); %> -->
+        <title>Fare calculator</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="stopsearch" style="width: 300px" placeholder="Please enter stop name / id for start">
+            <button id="searchBtn">Search for stop</button>
+            <br><br>
+            <select id="stopid" style="display: none"></select>
+            <br><br>
+            <input type="text" id="stopsearch2" style="width: 300px" placeholder="Please enter stop name / id for destination">
+            <button id="searchBtn2">Search for stop</button>
+            <br><br>
+            <select id="stopid2" style="display: none"></select>
+            <br><br>
+            <button id="submit">Get fares</button>
+            <br><br>
+        </form>
+
+        <script>
+            const stopsStr = `<%= stops %>`;
+            const stops = strArray(stopsStr);
+            
+            const stopsearch1=document.getElementById('stopsearch');
+            stopsearch1.addEventListener('keyDown',checkEnter);
+            const search1=document.getElementById('searchBtn');
+            search1.addEventListener('click',stopSearch);
+            const choices1=document.getElementById('stopid');
+            const stopsearch2=document.getElementById('stopsearch2');
+            stopsearch2.addEventListener('keyDown',checkEnter2);
+            const search2=document.getElementById('searchBtn2');
+            search2.addEventListener('click',stopSearch2);
+            const choices2=document.getElementById('stopid2');
+            const submit=document.getElementById('submit');
+            submit.addEventListener('click',getFare);
+
+            async function getFare(event){
+                event.preventDefault();
+                if(choices1.value=='' || choices2.value=='') return;
+                window.location.href = `/GO/fare/${choices1.value}/${choices2.value}`;
+                //const fares=await fetch(`/fare/${choices1.value}/${choices2.value}`);
+                //const json=await fares.json();
+            }
+            async function checkEnter(event){
+                if(event.key=='Enter'){
+                    stopSearch(event);
+                }
+            }
+            async function checkEnter2(event){
+                if(event.key=='Enter'){
+                    stopSearch2(event);
+                }
+            }
+            async function stopSearch(event){
+                event.preventDefault();
+                const search=stopsearch1.value;
+                if(search.length==0){
+                    return;
+                }
+                //console.log(search);
+                choices1.style.display='';
+                choices1.innerHTML='';
+                /*let defaultoption=document.createElement('option');
+                defaultoption.setAttribute('value','-');
+                defaultoption.innerHTML='Choose a stop';
+                choices.appendChild(defaultoption);*/
+                // Search for the stop by stop name or stop id
+                for(let i=1;i<stops.length;i++){
+                    const stop=stops[i];
+                    const stopname=stop[stops[0].indexOf('stop_name')].toLowerCase();
+                    if(stopname.includes(search.toLowerCase())||stop[stops[0].indexOf('stop_id')]==search||stop[stops[0].indexOf('stop_code')]==search){
+                        let option=document.createElement('option');
+                        option.setAttribute('value',stop[stops[0].indexOf('stop_id')]);
+                        option.innerHTML='#'+stop[stops[0].indexOf('stop_id')]+' '+stop[stops[0].indexOf('stop_name')];
+                        choices1.appendChild(option);
+                    }
+                }
+                if(choices1.length==0){
+                    let option=document.createElement('option');
+                    option.setAttribute('value','');
+                    option.innerHTML='Invalid stop name / id';
+                    choices1.appendChild(option);
+                }
+            }
+            async function stopSearch2(event){
+                event.preventDefault();
+                const search=stopsearch2.value;
+                if(search.length==0){
+                    return;
+                }
+                choices2.style.display='';
+                choices2.innerHTML='';
+                /*let defaultoption=document.createElement('option');
+                defaultoption.setAttribute('value','-');
+                defaultoption.innerHTML='Choose a second stop';
+                choices.appendChild(defaultoption);*/
+                // Search for the stop by stop name or stop id
+                for(let i=1;i<stops.length;i++){
+                    const stop=stops[i];
+                    const stopname=stop[stops[0].indexOf('stop_name')].toLowerCase();
+                    if(stopname.includes(search.toLowerCase())||stop[stops[0].indexOf('stop_id')]==search||stop[stops[0].indexOf('stop_code')]==search){
+                        let option=document.createElement('option');
+                        option.setAttribute('value',stop[stops[0].indexOf('stop_id')]);
+                        option.innerHTML='#'+stop[stops[0].indexOf('stop_id')]+' '+stop[stops[0].indexOf('stop_name')];
+                        choices2.appendChild(option);
+                    }
+                }
+                if(choices2.length==0){
+                    let option=document.createElement('option');
+                    option.setAttribute('value','');
+                    option.innerHTML='Invalid stop name / id';
+                    choices2.appendChild(option);
+                }
+            }
+            // Splits a CSV string into a 2D array
+            function strArray(string) {
+                const array1 = string.split('\n');
+                let array2 = [];
+                for (const el of array1) {
+                    array2.push(el.split(','));
+                }
+                return array2;
+            }
+        </script>
+
+        <br>
+    </body>
+</html>

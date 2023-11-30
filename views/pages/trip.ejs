@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head"); %>
+        <title>Trip Schedule</title>
+    </head>
+    <body>
+        <div style="width: 500px">
+            <div style="height: 500px" id="map"></div>
+        </div>
+        <p><%= title%></p>
+
+        <script>
+            // Creates a leaflet map binded to an html <div> with id "map"
+            var map = L.map('map');
+    
+            // Adds the basemap tiles to the map
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1Ijoia2V2aW53MjQwMSIsImEiOiJja3I1ODZqdWszMmdqMnBwYW9qbWVnY2c4In0.qqgVHQu94DuWbLbgjWMN9w'
+            }).addTo(map);
+        </script>
+
+        <table>
+            <tr>
+                <td>Stop</td>
+                <td>Scheduled Time</td>
+                <% if(tripFound){%><td>Predicted Time</td><%}%>
+            </tr>
+            <% for(let i=1;i<arrivalTimes.length;i++){  %>
+                <tr>
+                    <td style="background-color: #dedede; border-right: 1px solid black; border-bottom: 1px solid black;">
+                        #<%= tripstops[i][tripstops[0].indexOf('stop_code')] %>: <%= tripstops[i][tripstops[0].indexOf('stop_name')] %>
+                    </td>
+                    <td style="background-color: #eeeeee; border-top: 1px solid black; border-left: 1px solid black;"><%= arrivalTimes[i] %></td>
+                    <% if(tripFound){%>
+                        <td style="background-color: #<%= colors[i]%>; border-top: 1px solid black; border-left: 1px solid black;"><%= actualTimes[i] %></td>
+                    <%}%>
+                </tr>
+            <%}%>
+        </table>
+
+        <% if(agency == 'TTC'){ %>
+            <script>
+                //
+            </script>
+        <% } else { %>
+            <script>
+                // Splits a CSV string into a 2D array
+                function strArray(string) {
+                    const array1 = string.split('\n');
+                    let array2 = [];
+                    for (const el of array1) {
+                        array2.push(el.split(','));
+                    }
+                    return array2;
+                }
+                // Decodes strings passed from Express server
+                function parseHtmlEntities(str) {
+                    return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
+                        var num = parseInt(numStr, 10); // read num as normal number
+                        return String.fromCharCode(num);
+                    });
+                }
+
+                const agency=`<%= agency%>`;
+                const tripstopsStr=`<%= tripStopsStr%>`;
+                const tripstops = strArray(tripstopsStr);
+                const color = `<%= routecolor%>`;
+                const vehicleFound = `<%= vehicleFound%>`;
+                const popup = `<%= popup%>`;
+                const shapeStr=`<%= shape%>`;
+                const shape = strArray(shapeStr);
+                const vehicle = JSON.parse(parseHtmlEntities(`<%= vehicle%>`));
+            </script>
+            <script src="/trip.js"></script>
+        <% } %>
+
+        <br>
+    </body>
+</html>

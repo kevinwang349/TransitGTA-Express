@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <%- include("../partials/head"); %> -->
+        <title>Stop schedule for <%= stopname %></title>
+    </head>
+    <body>
+        <p><%= title%></p>
+        <select id="update" onchange="generateTable()">
+            <option id="neither" value="0">Default stop schedule</option>
+            <option id="headway" value="1">Show headways between vehicle arrivals</option>
+            <option id="arrival" value="2">Separate arrivals and departures</option>
+        </select><br><br>
+        <table id="table"></table>
+        <a href="./nextbus?s=<%= stopid%>">Link to next vehicle arrival at this stop</a>
+
+        <script>
+            // Splits a CSV string into a 2D array
+            function strArray(string) {
+                const array1 = string.split('\n');
+                let array2 = [];
+                for (const el of array1) {
+                    array2.push(el.split(','));
+                }
+                return array2;
+            }
+
+            const agency = '<%= agency %>';
+            const title = '<%= title %>';
+            const stopname = '<%= stopname %>';
+            const isParentStr = '<%= isParent %>';
+            const isParent = (isParentStr == 'true');
+            const stoptripsStr = `<%= stoptrips %>`;
+            const stoptrips = strArray(stoptripsStr);
+            const stoproutesStr = `<%= stoproutes %>`;
+            const stoproutes = strArray(stoproutesStr);
+            const platformStr = `<%= platforms %>`;
+            const platforms = strArray(platformStr);
+            const arrivalTimesStr = `<%= arrivalTimes %>`;
+            const arrivalTimes = arrivalTimesStr.split(',');
+            const isArrivalStr = `<%= isArrival %>`;
+            const isArrival = isArrivalStr.split(',');
+        </script>
+        <script src="/stopschedule.js"></script>
+        <br>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "GO":{
+        "tripUpdates": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/TripUpdates/?key=30021837",
+        "vehiclePositions": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/VehiclePosition/?key=30021837",
+        "serviceataGlance": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/ServiceataGlance/Trains/All/?key=30021837"
+    },
+    "UPX":{
+        "tripUpdates": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/TripUpdates/?key=30021837",
+        "vehiclePositions": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/VehiclePosition/?key=30021837"
+    },
+    "VIA":{
+        "vehiclePositions": "https://tsimobile.viarail.ca/data/allData.json"
+    },
+    "YRT":{
+        "tripUpdates": "http://rtu.york.ca/gtfsrealtime/TripUpdates",
+        "vehiclePositions": "http://rtu.york.ca/gtfsrealtime/VehiclePositions"
+    },
+    "GRT":{
+        "tripUpdates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates",
+        "vehiclePositions": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions"
+    }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head"); %>
+        <title>
+            Fares for <%= agency %>
+        </title>
+</head>
+
+<body>
+    <% details.forEach(detail => {%>
+        <p><%= detail%></p>
+    <%})%>
+</body>
+
+</html>

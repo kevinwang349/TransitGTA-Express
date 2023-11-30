@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <%- include("../partials/head"); %> -->
+        <title>Fare calculator</title>
+    </head>
+    <body>
+        <table>
+            <tr><td></td><td>PRESTO fare</td><td>Cash fare</td></tr>
+            <tr><td>Adult</td><td>$<%= prestoFares[0]%></td><td>$<%= standardFares[0]%></td></tr>
+            <tr><td>Senior (>65)</td><td>$<%= prestoFares[1]%></td><td>$<%= standardFares[1]%></td></tr>
+            <tr><td>Youth (13-19)</td><td>$<%= prestoFares[2]%></td><td>$<%= standardFares[2]%></td></tr>
+            <tr><td>Child (<12)</td><td>FREE</td><td>FREE</td></tr>
+        </table>
+    </body>
+</html>
