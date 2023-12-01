@@ -1164,6 +1164,6 @@ function findRow(table=[[]], searchColName='', searchStr=''){
 }
 
 // Start the server
-const PORT = 3000;
+const PORT = 10000;
 app.listen(PORT);
 console.log('Server active on port: ' + PORT);
