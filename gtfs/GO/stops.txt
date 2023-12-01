@@ -73,7 +73,11 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 08043,Cornell Bus Terminal,43.879761,-79.232535,86,https://www.gotransit.com/find-a-station-or-stop/08043/station-details,0,,1,108043
 08042,Bramalea GO Bus,43.702137,-79.690014,32,https://www.gotransit.com/find-a-station-or-stop/08042/station-details,0,,1,108042
 08041,Bramalea GO Bus,43.702137,-79.690021,32,https://www.gotransit.com/find-a-station-or-stop/08041/station-details,0,,1,108041
+08032,Bramalea Bus Terminal,43.7186356,-79.7205734,32,https://www.gotransit.com/find-a-station-or-stop/08032/station-details,0,,1,108032
 08002,Allandale Waterfront GO Bus,44.373817,-79.689441,69,https://www.gotransit.com/find-a-station-or-stop/08002/station-details,0,,1,108002
+02834,Hwy. 48 @ 19th Ave.,43.945923,-79.278093,73,https://www.gotransit.com/find-a-station-or-stop/02834/station-details,0,,2,102834
+02833,Louth St. @ St. Paul St. W.,43.145281,-79.260042,83,https://www.gotransit.com/find-a-station-or-stop/02833/station-details,0,,2,102833
+02832,Louth St. @ St. Paul St. W.,43.144978,-79.259897,83,https://www.gotransit.com/find-a-station-or-stop/02832/station-details,0,,2,102832
 02831,Bradford GO,44.115842,-79.556401,65,https://www.gotransit.com/find-a-station-or-stop/02831/station-details,0,,2,102831
 02830,OId Elm GO,43.9899019629206,-79.2374555459893,74,https://www.gotransit.com/find-a-station-or-stop/02830/station-details,0,,1,102830
 02829,Yonge St. @ John St.,43.814391,-79.424193,60,https://www.gotransit.com/find-a-station-or-stop/02829/station-details,0,,1,102829
@@ -84,8 +88,6 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 02818,Victoria St. N. @ Frederick St.,43.4663507673236,-80.4579750554575,27,https://www.gotransit.com/find-a-station-or-stop/02818/station-details,0,,1,102818
 02816,Scarborough Centre Bus Terminal,43.77486,-79.26088,07,https://www.gotransit.com/find-a-station-or-stop/02816/station-details,0,,1,102816
 02815,Cornell Bus Terminal,43.879742,-79.232527,86,https://www.gotransit.com/find-a-station-or-stop/02815/station-details,0,,1,102815
-02814,St. Paul St. W. @ Leeper St. (St. Catharines GO),43.146856,-79.254428,83,https://www.gotransit.com/find-a-station-or-stop/02814/station-details,0,,1,102814
-02813,St. Paul St. W. @ Great Western St. (St. Catharines GO),43.147576,-79.253327,83,https://www.gotransit.com/find-a-station-or-stop/02813/station-details,0,,1,102813
 02812,Steeles Ave. @ Trafalgar Rd. (Toronto Premium Outlets),43.5743597133588,-79.8346358454101,23,https://www.gotransit.com/find-a-station-or-stop/02812/station-details,0,,1,102812
 02811,Steeles Ave. @ Trafalgar Rd. (Toronto Premium Outlets),43.5738830213569,-79.8356593239271,23,https://www.gotransit.com/find-a-station-or-stop/02811/station-details,0,,2,102811
 02809,Guelph St. @ Mountainview Rd. S.,43.650131,-79.902022,35,https://www.gotransit.com/find-a-station-or-stop/02809/station-details,0,,1,102809
@@ -150,7 +152,7 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 02719,York St. @ 800 York St.,43.5584831140902,-80.2149901373342,39,https://www.gotransit.com/find-a-station-or-stop/02719/station-details,0,,1,102719
 02718,Gordon St. @ Kortright Rd.,43.5224020262207,-80.2134931638836,39,https://www.gotransit.com/find-a-station-or-stop/02718/station-details,0,,2,102718
 02717,Gordon St. @ Clairfields Dr. E.,43.5057636408486,-80.1943022849076,39,https://www.gotransit.com/find-a-station-or-stop/02717/station-details,0,,1,102717
-02716,Courtice Rd. @ Baseline Rd. P&R,43.8860800890398,-78.7688846365461,95,https://www.gotransit.com/find-a-station-or-stop/02716/station-details,0,,1,102716
+02716,Courtice Rd. @ Baseline Rd. Park & Ride,43.8860800890398,-78.7688846365461,95,https://www.gotransit.com/find-a-station-or-stop/02716/station-details,0,,1,102716
 02715,First Ave. @ Front St. Park & Ride,43.884898,-78.85374,94,https://www.gotransit.com/find-a-station-or-stop/02715/station-details,0,,1,102715
 02714,First Ave. @ Front St. Park & Ride,43.885019,-78.854257,94,https://www.gotransit.com/find-a-station-or-stop/02714/station-details,0,,1,102714
 02712,Bovaird Dr. W. @ McLaughlin Rd. N.,43.6957585266119,-79.7981796900374,33,https://www.gotransit.com/find-a-station-or-stop/02712/station-details,0,,1,102712
@@ -307,7 +309,7 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 02163,Trafalgar Rd. @ Hwy. 407 Park & Ride,43.506545,-79.745813,13,https://www.gotransit.com/find-a-station-or-stop/02163/station-details,0,,1,102163
 02162,Hwy. 2 @ Hwy. 35/115 Park & Ride,43.91301,-78.612533,97,https://www.gotransit.com/find-a-station-or-stop/02162/station-details,0,,1,102162
 02159,Keele St. @ Church St.,43.852829,-79.5120239,61,https://www.gotransit.com/find-a-station-or-stop/02159/station-details,0,,2,102159
-02158,Major Mackenzie Dr. E. @ Keele St.,43.8550568,-79.5116119,61,https://www.gotransit.com/find-a-station-or-stop/02158/station-details,0,,1,102158
+02158,Major Mackenzie Dr. W. @ Keele St.,43.8550568,-79.5116119,61,https://www.gotransit.com/find-a-station-or-stop/02158/station-details,0,,1,102158
 02157,Maple GO Bus,43.859853,-79.505926,61,https://www.gotransit.com/find-a-station-or-stop/02157/station-details,0,,1,102157
 02153,Wilfrid Laurier University,43.4752655,-80.5272827,27,https://www.gotransit.com/find-a-station-or-stop/02153/station-details,0,,2,102153
 02151,Regional Rd. 25 @ Hwy. 401 Park & Ride,43.5274849,-79.9038162,24,https://www.gotransit.com/find-a-station-or-stop/02151/station-details,0,,1,102151
@@ -733,7 +735,7 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 00694,Toronto St. S. @ Campbell Dr.,44.1023788,-79.1256332,76,https://www.gotransit.com/find-a-station-or-stop/00694/station-details,0,,1,100694
 00693,Toronto St. S. @ Campbell Dr.,44.10191,-79.12558,76,https://www.gotransit.com/find-a-station-or-stop/00693/station-details,0,,1,100693
 00692,Toronto St. N. @ Albert St.,44.1093521,-79.1225128,76,https://www.gotransit.com/find-a-station-or-stop/00692/station-details,0,,2,100692
-00681,Durham Hwy. 47 @ Goodwood Rd.,44.0337105,-79.2021866,75,https://www.gotransit.com/find-a-station-or-stop/00681/station-details,0,,1,100681
+00681,Tenth Line @ Sleepy Hollow Ln.,44.0337105,-79.2021866,75,https://www.gotransit.com/find-a-station-or-stop/00681/station-details,0,,1,100681
 00634,Kingston Rd. @ Whites Rd.,43.8194008,-79.1146774,91,https://www.gotransit.com/find-a-station-or-stop/00634/station-details,0,,2,100634
 00633,Kingston Rd. @ Whites Rd.,43.8189011,-79.1159744,91,https://www.gotransit.com/find-a-station-or-stop/00633/station-details,0,,1,100633
 00623,Kingston Rd. @ Rougemount Dr.,43.80911,-79.12996,91,https://www.gotransit.com/find-a-station-or-stop/00623/station-details,0,,1,100623
@@ -764,9 +766,10 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 00367,Kingston Rd. @ Westney Rd.,43.85742,-79.04304,92,https://www.gotransit.com/find-a-station-or-stop/00367/station-details,0,,1,100367
 00365,Kingston Rd. @ Brock Rd.,43.8479996,-79.0733032,91,https://www.gotransit.com/find-a-station-or-stop/00365/station-details,0,,2,100365
 00359,Allandale Waterfront GO,44.373817,-79.689441,69,https://www.gotransit.com/find-a-station-or-stop/00359/station-details,0,,1,100359
+00358,Centennial College,43.7854233,-79.2290802,89,https://www.gotransit.com/find-a-station-or-stop/00358/station-details,0,,1,100358
 00354,Hurontario St. @ Hwy. 407 Park & Ride,43.6521416,-79.7108765,22,https://www.gotransit.com/find-a-station-or-stop/00354/station-details,0,,1,100354
 00350,Richmond Hill Centre,43.8401451,-79.4252853,60,https://www.gotransit.com/find-a-station-or-stop/00350/station-details,0,,1,100350
-00349,Town Line @ Mill St. (Orangeville) Park & Ride,43.9135475,-80.0906754,43,https://www.gotransit.com/find-a-station-or-stop/00349/station-details,0,,1,100349
+00349,Townline @ Mill St. (Orangeville) Park & Ride,43.9135475,-80.0906754,43,https://www.gotransit.com/find-a-station-or-stop/00349/station-details,0,,1,100349
 00347,Queen St. S. @ Allan Dr.,43.8719978,-79.7272873,58,https://www.gotransit.com/find-a-station-or-stop/00347/station-details,0,,2,100347
 00346,Queen St. S. @ Wilton Dr.,43.8719444,-79.7277222,58,https://www.gotransit.com/find-a-station-or-stop/00346/station-details,0,,2,100346
 00345,Barrie South GO Bus,44.351771,-79.628335,68,https://www.gotransit.com/find-a-station-or-stop/00345/station-details,0,,1,100345
@@ -817,7 +820,8 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 00241,Finch Ave. W. @ Longo Circle,43.7334518,-79.6333313,31,https://www.gotransit.com/find-a-station-or-stop/00241/station-details,0,,2,100241
 00231,Trinity Common Mall,43.7313271,-79.7631531,32,https://www.gotransit.com/find-a-station-or-stop/00231/station-details,0,,1,100231
 00228,Malton GO Bus,43.705143,-79.637825,31,https://www.gotransit.com/find-a-station-or-stop/00228/station-details,0,,1,100228
-00227,Steeles Ave. E. @ Rutherford Rd. S.,43.68031,-79.71787,33,https://www.gotransit.com/find-a-station-or-stop/00227/station-details,0,,1,100227
+00227,Steeles Ave. E. @ Rutherford St. S.,43.68031,-79.71787,33,https://www.gotransit.com/find-a-station-or-stop/00227/station-details,0,,1,100227
+00225,Bramalea Bus Terminal,43.7186356,-79.7205734,32,https://www.gotransit.com/find-a-station-or-stop/00225/station-details,0,,1,100225
 00223,Shopper's World,43.6675682,-79.7358246,33,https://www.gotransit.com/find-a-station-or-stop/00223/station-details,0,,1,100223
 00222,Shopper's World,43.6678429,-79.7354813,33,https://www.gotransit.com/find-a-station-or-stop/00222/station-details,0,,1,100222
 00221,Brampton Bus Terminal,43.6869087,-79.7628632,33,https://www.gotransit.com/find-a-station-or-stop/00221/station-details,0,,1,100221

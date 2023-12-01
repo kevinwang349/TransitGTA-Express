@@ -21,7 +21,6 @@ route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route
 09231223-61,GO,61,Richmond Hill,3,0099c7,FFFFFF
 09231223-56,GO,56,Oshawa / Oakville,3,6f298d,FFFFFF
 09231223-54,GO,54,Markham / Hwy 407 Terminal,3,6f298d,FFFFFF
-09231223-52,GO,52,Oshawa / Hwy 407 Terminal,3,6f298d,FFFFFF
 09231223-48,GO,48,Guelph / Hwy 407 Terminal,3,a21984,FFFFFF
 09231223-47,GO,47,Hamilton / Hwy 407 Terminal,3,a21984,FFFFFF
 09231223-41,GO,41,Hamilton / Pickering,3,a21984,FFFFFF

@@ -1,0 +1,6 @@
+service_id,start_date,end_date,monday,tuesday,wednesday,thursday,friday,saturday,sunday
+Saturday_merged_999962,20231204,20231224,0,0,0,0,0,1,1
+SaturdayReg_merged_999963,20231204,20231224,0,0,0,0,0,1,1
+WeekdayReg_merged_999964,20231204,20231224,1,1,1,1,1,0,0
+Weekday_merged_999965,20231204,20231224,1,1,1,1,1,0,0
+All Days_merged_999966,20231204,20231224,1,1,1,1,1,1,1
