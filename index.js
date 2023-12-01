@@ -1,14 +1,14 @@
-const express = require("express");
-const fs = require('fs');
-const fetch = require('node-fetch');
+import express, { static as _static } from "express";
+import { readFileSync } from 'fs';
+import fetch from 'node-fetch';
 const app = express();
 
-const protodecoder = require('./protodecoder.js');
+import { decode } from './protodecoder.js';
 
 // setting application's templating engine to ejs
 app.set("view engine", "ejs");
 
-app.use(express.static('public'));
+app.use(_static('public'));
 
 app.get("/", (req, res) => {
     res.render("pages/main");
@@ -59,7 +59,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
     }
 
     // Fetch vehicles on the route
-    const urls = JSON.parse(fs.readFileSync('./URL.json'));
+    const urls = JSON.parse(readFileSync('./URL.json'));
     const VPurl = urls[agency].vehiclePositions;
     let allVehicles = [{}];
     await fetch(VPurl).then(async (response) => {
@@ -79,7 +79,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
                 }
             }
             const protobufferarr = str.split(' ');
-            const gtfs = protodecoder.decode(protobufferarr, protodecoder.formatGTFS);
+            const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
         }
     });
@@ -95,7 +95,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
     // GO Transit only -- get ServiceataGlance data
     let serviceataGlance = {};
     if(agency == 'GO'){
-        const urls = JSON.parse(fs.readFileSync('./URL.json'));
+        const urls = JSON.parse(readFileSync('./URL.json'));
         const VPurl = urls[agency].serviceataGlance;
         await fetch(VPurl).then(async (response) => {
             const trips=await response.json();
@@ -303,7 +303,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
     }
     // Send schedule table to client
     const reverseDir = (dirid==0)?1:0;
-    const rsn = (agency=='VIa')?route[routes[0].indexOf('route_short_name')]:route[routes[0].indexOf('route_id')];
+    const rsn = (agency!='VIA')?route[routes[0].indexOf('route_short_name')]:route[routes[0].indexOf('route_id')];
     const json={
         title: `Schedule for route ${route[routes[0].indexOf('route_short_name')]} ${route[routes[0].indexOf('route_long_name')]} on ${date.toDateString()}:`,
         agency: agency,
@@ -636,7 +636,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     //console.log(stoptrips);
 
     // Get vehicles for each arrival from vehiclePositions
-    const urls = JSON.parse(fs.readFileSync('./URL.json'));
+    const urls = JSON.parse(readFileSync('./URL.json'));
     const VPurl = urls[agency].vehiclePositions;
     let allVehicles = [{}];
     await fetch(VPurl).then(async (response) => {
@@ -656,7 +656,7 @@ app.get("/:agency/nextbus", async (req, res) => {
                 }
             }
             const protobufferarr = str.split(' ');
-            const gtfs = protodecoder.decode(protobufferarr, protodecoder.formatGTFS);
+            const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
         }
     });
@@ -693,7 +693,7 @@ app.get("/:agency/nextbus", async (req, res) => {
                 }
             }
             const protobufferarr = str.split(' ');
-            const gtfs = protodecoder.decode(protobufferarr, protodecoder.formatGTFS);
+            const gtfs = decode(protobufferarr, formatGTFS);
             allTripUpdates = gtfs.entity;
         }
     });
@@ -820,7 +820,7 @@ app.get("/:agency/trip", async (req, res) => {
         color='dedede';
     }
 
-    const urls = JSON.parse(fs.readFileSync('./URL.json'));
+    const urls = JSON.parse(readFileSync('./URL.json'));
     // Look for the trip's vehicle in vehiclePositions
     const VPurl = urls[agency].vehiclePositions;
     let allVehicles = [{}];
@@ -843,7 +843,7 @@ app.get("/:agency/trip", async (req, res) => {
                 }
             }
             const protobufferarr = str.split(' ');
-            const gtfs = protodecoder.decode(protobufferarr, protodecoder.formatGTFS);
+            const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
         }
     });
@@ -926,7 +926,7 @@ app.get("/:agency/trip", async (req, res) => {
                 }
             }
             const protobufferarr = str.split(' ');
-            const gtfs = protodecoder.decode(protobufferarr, protodecoder.formatGTFS);
+            const gtfs = decode(protobufferarr, formatGTFS);
             allTripUpdates = gtfs.entity;
         }
     });
@@ -1007,7 +1007,7 @@ app.get("/:agency/trip", async (req, res) => {
 
 app.get("/:agency/map", async (req, res) => {
     const agency=req.params.agency;
-    const mapstr = fs.readFileSync('./maps.json');
+    const mapstr = readFileSync('./maps.json');
     const mapjson = JSON.parse(mapstr);
     const mapJSON = [];
     for(const map of mapjson){
@@ -1111,7 +1111,7 @@ app.get("/:agency/findService/:date/", async (req, res) => {
 
 // Read a CSV data file and return its contents in the form of a 2D array
 function fileArray(agency, filename, flag=false) {
-    const filestr = fs.readFileSync(`./gtfs/${agency}/${filename}.txt`).toString();
+    const filestr = readFileSync(`./gtfs/${agency}/${filename}.txt`).toString();
     let array1 = filestr.split('\r\n');
     if(flag) array1 = filestr.split('\n');
     let array2 = [];
