@@ -15,6 +15,22 @@
         "tripUpdates": "http://rtu.york.ca/gtfsrealtime/TripUpdates",
         "vehiclePositions": "http://rtu.york.ca/gtfsrealtime/VehiclePositions"
     },
+    "DRT":{
+        "tripUpdates": "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates",
+        "vehiclePositions": "https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions"
+    },
+    "MiWay":{
+        "tripUpdates": "https://www.miapp.ca/GTFS_RT/TripUpdate/TripUpdates.pb",
+        "vehiclePositions": "https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb"
+    },
+    "Brampton":{
+        "tripUpdates": "https://nextride.brampton.ca:81/API/TripUpdates?format=gtfs.proto",
+        "vehiclePositions": "https://nextride.brampton.ca:81/API/VehiclePositions?format=gtfs.proto"
+    },
+    "HSR":{
+        "tripUpdates": "https://opendata.hamilton.ca/gtfs-rt/GTFS_TripUpdates.pb",
+        "vehiclePositions": "https://opendata.hamilton.ca/gtfs-rt/GTFS_VehiclePositions.pb"
+    },
     "GRT":{
         "tripUpdates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates",
         "vehiclePositions": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions"
