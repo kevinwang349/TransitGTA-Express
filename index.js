@@ -3,7 +3,7 @@ import { readFileSync } from 'fs';
 import fetch from 'node-fetch';
 const app = express();
 
-import { decode } from './protodecoder.js';
+import { decode, formatGTFS } from './protodecoder.js';
 
 // setting application's templating engine to ejs
 app.set("view engine", "ejs");
@@ -166,10 +166,6 @@ app.get("/:agency/routevehicles", async (req, res) => {
     }
     res.render("pages/routevehicles", json);
 });
-/* To do:
-* Create routeshapes.txt (for all new agencies) and routestops.txt (possible for TTC)
-* Error checking in case of invalid route / invalid agency
-*/
 
 app.get("/:agency/routeschedule", async (req, res) => {
     const agency = req.params.agency;
@@ -1061,19 +1057,6 @@ app.get("/:agency/fare", async (req, res) => {
     }
 });
 
-/* Leaflet map testing method
-app.get("/leaflet", async (req, res) => {
-    let json="";
-    await fetch('http://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/VehiclePosition/?key=30021837').then(async (response) => {
-        const j=await response.json();
-        json=JSON.stringify(j);
-    });
-    res.render("pages/leaflettest",{
-        title: "leaflet test",
-        json: json
-    });
-});*/
-
 
 // Utility methods
 
@@ -1164,6 +1147,6 @@ function findRow(table=[[]], searchColName='', searchStr=''){
 }
 
 // Start the server
-const PORT = 10000;
+const PORT = 3000;
 app.listen(PORT);
 console.log('Server active on port: ' + PORT);

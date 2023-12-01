@@ -40,7 +40,7 @@ function decode(hex = [''], format = {}) {
             index = index + length + varlength;
             if (typeof name == 'object') {
                 // Decode embedded message by calling this decode function
-                data = this.decode(newhex, name);
+                data = decode(newhex, name);
                 name = name.name;
             } else {
                 // Decode utf-8 string
@@ -123,8 +123,6 @@ function decode(hex = [''], format = {}) {
     // Return the decoded JSON object
     return JSON;
 }
-
-export {decode};
 
 // A JSON object for the format of a GTFS-realtime protocol buffer. Basically a .proto file in JSON form.
 // Format for embedded messages => <field number>: { name: <field name>, <fields> }
@@ -253,6 +251,7 @@ const formatGTFS = {
     }
 }
 
+export {decode, formatGTFS};
 
 // Extra utility functions:
 
