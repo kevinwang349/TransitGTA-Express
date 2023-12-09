@@ -61,7 +61,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
     // Fetch vehicles on the route
     const urls = JSON.parse(readFileSync('./URL.json'));
     const VPurl = urls[agency].vehiclePositions;
-    let allVehicles = [{}];
+    let allVehicles = [];
     await fetch(VPurl).then(async (response) => {
         if(agency == 'GO'){
             const gtfs=await response.json();
@@ -82,7 +82,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
             const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
         }
-    });
+    }).catch(() => {});
     let vehicles = [];
     let vehicleTrips = [trips[0]];
     for(const v of allVehicles){
@@ -114,37 +114,11 @@ app.get("/:agency/routevehicles", async (req, res) => {
 
     // Get stops on the route
     const stops = fileArray(agency, 'stops');
-    let times=[];
-    let tripids=[];
-    let stopids=[];
     let routestops=[stops[0]];
-    if(agency=='GO'){ //***This requires routestops.txt
-        const allroutestops = fileArray('GO', 'routestops');
-        for(let i=1;i<allroutestops.length;i++){
-            if(allroutestops[i][allroutestops[0].indexOf('route_id')]==route[routes[0].indexOf('route_id')]){
-                routestops.push(allroutestops[i].slice(2));
-            }
-        }
-    }else{
-        times = fileArray(agency, 'stop_times');
-        for(let i=1;i<trips.length;i++){
-            if(trips[i][trips[0].indexOf('route_id')]==routeid){
-                if(!tripids.includes(trips[i][trips[0].indexOf('trip_id')])){
-                    tripids.push(trips[i][trips[0].indexOf('trip_id')]);
-                }
-            }
-        }
-        for(let i=1;i<times.length;i++){
-            if(tripids.includes(times[i][times[0].indexOf('trip_id')])){
-                if(!stopids.includes(times[i][times[0].indexOf('stop_id')])){
-                    stopids.push(times[i][times[0].indexOf('stop_id')]);
-                }
-            }
-        }
-        for(let i=1;i<stops.length;i++){
-            if(stopids.includes(stops[i][stops[0].indexOf('stop_id')])){
-                routestops.push(stops[i]);
-            }
+    const allroutestops = fileArray(agency, 'routestops');
+    for(let i=1;i<allroutestops.length;i++){
+        if(allroutestops[i][allroutestops[0].indexOf('route_id')]==route[routes[0].indexOf('route_id')]){
+            routestops.push(allroutestops[i].slice(2));
         }
     }
 
@@ -655,7 +629,7 @@ app.get("/:agency/nextbus", async (req, res) => {
             const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
         }
-    });
+    }).catch(() => {});
     let vehicles = [{}];
     let vehids = [''];
     for(let i=1;i<arrivalTimes.length;i++){
@@ -692,7 +666,7 @@ app.get("/:agency/nextbus", async (req, res) => {
             const gtfs = decode(protobufferarr, formatGTFS);
             allTripUpdates = gtfs.entity;
         }
-    });
+    }).catch(() => {});
     //let updates=[{}]; // for testing only
     let actualTimes=[""];
     for (let i = 1; i < arrivalTimes.length; i++) {
@@ -842,7 +816,7 @@ app.get("/:agency/trip", async (req, res) => {
             const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
         }
-    });
+    }).catch(() => {});
     let vehicle={};
     let vehicleFound=false;
     let popup='';
@@ -925,7 +899,7 @@ app.get("/:agency/trip", async (req, res) => {
             const gtfs = decode(protobufferarr, formatGTFS);
             allTripUpdates = gtfs.entity;
         }
-    });
+    }).catch(() => {});
     // Look for the trip in tripUpdates
     let update={};
     let tripFound=false;
