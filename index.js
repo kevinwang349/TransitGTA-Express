@@ -519,7 +519,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     let stopids=[stopid];
     let title='';
     if(currentStop.length>0){
-        stopname=currentStop[stops[0].indexOf('stop_name')];
+        const stopname=currentStop[stops[0].indexOf('stop_name')];
         if(agency=='GO' && currentStop[stops[0].indexOf('stop_code')]==''){
             title=`Current station is ${stopname}`
         }else{
