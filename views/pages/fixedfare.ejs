@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include("../partials/head"); %>
-        <title>
-            Fares for <%= agency %>
-        </title>
+    <title>Fares for <%= agency %></title>
 </head>
 
 <body>
+    <a href="https://transitGTA.kevinwang21.repl.co" style="font-size: 20px; color: #ff0000">Home</a>
+    
     <% details.forEach(detail => {%>
         <p><%= detail%></p>
     <%})%>

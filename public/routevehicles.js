@@ -1,6 +1,6 @@
 async function routevehs(routename){
     let shape = [];
-    // Add the route's path to the map *** Requires routeshapes.txt AND code to process shapes in index.js
+    // Add the route's path to the map
     //let branchctr=-1;
     //let currentBranch=-1;
     let currentShape=[];
