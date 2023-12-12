@@ -146,8 +146,6 @@ app.get("/:agency/routeschedule", async (req, res) => {
     // Load appropriate files
     const routes = fileArray(agency, 'routes');
     const trips = fileArray(agency, 'trips');
-    const stops = fileArray(agency, 'stops');
-    const times = fileArray(agency, 'stop_times');
 
     // Get URL flags
     const routeShortId = req.query.r;
@@ -186,6 +184,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
     // Create schedule table using stop times
     let scheduleTable=[[]];
     let stoptripids=[''];
+    const times = fileArray(agency, 'stop_times');
     for (let i = 1; i < times.length; i++) {
         const stop = times[i];
         if (tripids.includes(stop[times[0].indexOf('trip_id')])){
@@ -251,6 +250,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
     // Collect stop names and trip headsigns
     let stopnames=[];
     let headsigns=[];
+    const stops = fileArray(agency, 'stops');
     for(let j=0;j<scheduleTable[0].length;j++){
         const currentstop = findRow(stops, 'stop_id', scheduleTable[0][j]);
         stopnames.push(currentstop[stops[0].indexOf('stop_name')]);
