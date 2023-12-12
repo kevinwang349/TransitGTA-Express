@@ -16,6 +16,10 @@ function init() {
     // Continue button
     let continuebtn=document.getElementById('continue');
     continuebtn.addEventListener('click',updateForm);
+    // Make selections larger if on mobile
+    if (typeof screen.orientation !== 'undefined') {
+        agencySelect.style.fontSize = '50px';
+    }
 }
 
 function updateBackground(){
