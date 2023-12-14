@@ -394,7 +394,7 @@ app.get("/:agency/stopschedule", async (req, res) => {
         }
     }
     // Find all arrivals at this stop
-    let c=0;
+    let c=1;
     let stoptrips=[trips[0]];
     let arrivalTimes=["0"];
     let platforms=[stops[0]];
@@ -574,7 +574,7 @@ app.get("/:agency/nextbus", async (req, res) => {
         secs='0'+secs;
     }
     const currentTime=date.getHours()+':'+mins+':'+secs;
-    //console.log(currentTime);
+    console.log(currentTime);
     // Sort arrival times and trips using selection sort
     let arrivalTimes=[""];
     let stoptrips=[trips[0]];
