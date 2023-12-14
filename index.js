@@ -575,7 +575,8 @@ app.get("/:agency/nextbus", async (req, res) => {
         secs='0'+secs;
     }
     const currentTime=date.getHours()+':'+mins+':'+secs;
-    console.log(date);
+    //console.log(date);
+    //console.log(currentTime);
     // Sort arrival times and trips using selection sort
     let arrivalTimes=[""];
     let stoptrips=[trips[0]];
@@ -680,6 +681,7 @@ app.get("/:agency/nextbus", async (req, res) => {
                             if (stoptime.departure != undefined && stoptime.departure.time != undefined) {
                                 const newtime = stoptime.departure.time;
                                 const date = new Date(newtime * 1000);
+                                date.setUTCHours(date.getUTCHours()-5);
                                 sender = date.getHours() + ":";
                                 let mins = date.getMinutes();
                                 if (mins < 10) {
@@ -832,6 +834,7 @@ app.get("/:agency/trip", async (req, res) => {
             tripFound=true;
             for(const stop of vehicle.times){
                 const estimated = new Date(stop.estimated);
+                estimated.setUTCHours(estimated.getUTCHours()-5);
                 const hrs = (estimated.getHours()<10) ? "0"+estimated.getHours() : ""+estimated.getHours()
                 const mins = (estimated.getMinutes()<10) ? "0"+estimated.getMinutes() : ""+estimated.getMinutes()
                 const secs = (estimated.getSeconds()<10) ? "0"+estimated.getSeconds() : ""+estimated.getSeconds()
@@ -916,6 +919,7 @@ app.get("/:agency/trip", async (req, res) => {
                         if(tripstops[i][tripstops[0].indexOf('stop_id')] == stoptime.stop_id){
                             const newtime=stoptime.departure.time;
                             const date=new Date(newtime*1000);
+                            date.setUTCHours(date.getUTCHours()-5);
                             let sender=date.getHours()+":";
                             let mins=date.getMinutes();
                             if(mins<10){
