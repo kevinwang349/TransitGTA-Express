@@ -566,6 +566,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     //console.log(allArrivalTimes);
     // Get the current time
     const date=new Date();
+    date.setUTCHours(date.getUTCHours()-5);
     let mins=date.getMinutes();
     let secs=date.getSeconds();
     if(mins<10){
