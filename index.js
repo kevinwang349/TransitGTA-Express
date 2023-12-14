@@ -574,7 +574,7 @@ app.get("/:agency/nextbus", async (req, res) => {
         secs='0'+secs;
     }
     const currentTime=date.getHours()+':'+mins+':'+secs;
-    console.log(currentTime);
+    console.log(date);
     // Sort arrival times and trips using selection sort
     let arrivalTimes=[""];
     let stoptrips=[trips[0]];
@@ -915,7 +915,7 @@ app.get("/:agency/trip", async (req, res) => {
                         if(tripstops[i][tripstops[0].indexOf('stop_id')] == stoptime.stop_id){
                             const newtime=stoptime.departure.time;
                             const date=new Date(newtime*1000);
-                            sender=date.getHours()+":";
+                            let sender=date.getHours()+":";
                             let mins=date.getMinutes();
                             if(mins<10){
                                 sender+="0"+mins;
