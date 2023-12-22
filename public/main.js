@@ -480,7 +480,7 @@ async function redirect(event){
             }
         }*/
         if(stopid!='-'){
-            window.location.href=`/${agency}/nextbus/?s=${stopid}`;
+            window.location.href=`/${agency}/nextbus?s=${stopid}`;
         }else{
             display.innerHTML='Please enter a stop name in the text box and click Search, then select one from the dropdown menu.';
         }
@@ -498,7 +498,7 @@ async function redirect(event){
             }
         }
         if(routeid!='-'&&directionid!='-'){
-            window.location.href=`/${agency}/routeschedule/?r=${routeid}&d=${directionid}&t=${datestr}`;
+            window.location.href=`/${agency}/routeschedule?r=${routeid}&d=${directionid}&t=${datestr}`;
         }else{
             display.innerHTML='Please choose a route from the route list dropdown menu, then choose a direction from the direction list dropdown menu.';
         }
@@ -507,7 +507,7 @@ async function redirect(event){
     else if(command=='routevehicles'){
         let input=document.getElementById('routeid');
         let routeid=input.value;
-        window.location.href=`/${agency}/routevehicles/?r=${routeid}`;
+        window.location.href=`/${agency}/routevehicles?r=${routeid}`;
     }
     // Stopschedule: stop id (text input, search for stop name/id)
     //   Optional: date (date, default=current date)
@@ -516,7 +516,7 @@ async function redirect(event){
         const datestr=document.getElementById('date').value;
         let stopid=input.value;
         if(stopid!='-'){
-            window.location.href=`/${agency}/stopschedule/?s=${stopid}&t=${datestr}`;
+            window.location.href=`/${agency}/stopschedule?s=${stopid}&t=${datestr}`;
         }else{
             display.innerHTML='Please enter a stop name in the text box and click Search, then select one from the dropdown menu.';
         }
