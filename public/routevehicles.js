@@ -44,7 +44,6 @@ async function routevehs(routename){
         //shape.push([currentStop[routestops[0].indexOf('stop_lat')],currentStop[routestops[0].indexOf('stop_lon')]]); // ***
     }
     stopsLayer=L.layerGroup(stopmarkers);
-    map.addLayer(stopsLayer); // add stops to the map by default
 
     // Display vehicles on the route
     const vehiclemarkers=[];
@@ -144,6 +143,7 @@ async function routevehs(routename){
         "Vehicles": vehiclesLayer
     };
     layerControl=L.control.layers(null, overlays).addTo(map);
+    map.addLayer(vehiclesLayer); // add stops to the map by default
     // Add link to route schedule
     let link=document.createElement('a');
     link.setAttribute('href','./routeschedule?a='+agency+'&r='+route[routeLegend.indexOf('route_short_name')]);

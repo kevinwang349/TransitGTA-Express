@@ -22,6 +22,9 @@ function init() {
 }
 
 function updateOrientation(){
+    let p=document.createElement('p');
+    p.innerHTML=screen.orientation.type;
+    document.body.appendChild(p);
     let welcomeMsg=document.getElementById('welcomeMsg');
     let portraitMsg=document.getElementById('portraitMsg');
     if (screen.orientation.type == 'landscape-primary') {
@@ -62,11 +65,11 @@ async function updateForm(event){
     if(agencySelect.value=='-'||pageSelect.value=='-'){
         display.innerHTML=`Choose an agency and a page, then click Continue.`;
         return;
-    }else if(agencySelect.value=='TTC'&&pageSelect.value=='map'){
+    }/*else if(agencySelect.value=='TTC'&&pageSelect.value=='map'){
         display.style='text-align: center; font-size: 30px; color: #c45f00;';
         display.innerHTML='Sorry, maps for the TTC are currently not available.<br>Please choose a different agency or a different page.';
         return;
-    }
+    }*/
     agency=agencySelect.value;
     command=pageSelect.value;
     display.innerHTML=`Agency: ${agency}<br>Page: ${command}`
