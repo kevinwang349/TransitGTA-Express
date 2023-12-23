@@ -16,9 +16,20 @@ function init() {
     // Continue button
     let continuebtn=document.getElementById('continue');
     continuebtn.addEventListener('click',updateForm);
-    // Make selections larger if on mobile
-    if (typeof screen.orientation !== 'undefined') {
-        agencySelect.style.fontSize = '50px';
+    // If being used on mobile, display a message to ask the user to turn device to landscape mode
+    updateOrientation();
+    screen.orientation.addEventListener('change',updateOrientation);
+}
+
+function updateOrientation(){
+    let welcomeMsg=document.getElementById('welcomeMsg');
+    let portraitMsg=document.getElementById('portraitMsg');
+    if (screen.orientation.type == 'landscape-primary') {
+        welcomeMsg.style.display="";
+        portraitMsg.style.display="none";
+    } else if (screen.orientation.type == 'portrait-primary') {
+        welcomeMsg.style.display="none";
+        portraitMsg.style.display="";
     }
 }
 
