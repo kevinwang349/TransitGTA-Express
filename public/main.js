@@ -22,12 +22,9 @@ function init() {
 }
 
 function updateOrientation(){
-    let p=document.createElement('p');
-    p.innerHTML=screen.orientation.type;
-    document.body.appendChild(p);
     let welcomeMsg=document.getElementById('welcomeMsg');
     let portraitMsg=document.getElementById('portraitMsg');
-    if (screen.orientation.type == 'landscape-primary') {
+    if (screen.orientation.type == 'landscape-primary' || screen.orientation.type == 'landscape-secondary') {
         welcomeMsg.style.display="";
         portraitMsg.style.display="none";
     } else {

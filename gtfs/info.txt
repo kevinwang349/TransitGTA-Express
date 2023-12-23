@@ -13,31 +13,31 @@ GTFS last fetched Oct 25, 2023
 
 York Region Transit (YRT)
 GTFS: https://www.yrt.ca/google/google_transit.zip
-GTFS last fetched Nov 7, 2023
-GTFS valid until Dec 23, 2023
+GTFS last fetched Dec 23, 2023
+GTFS valid until Jan 6, 2024
 Trip Updates: http://rtu.york.ca/gtfsrealtime/TripUpdates
 Vehicle Positions: http://rtu.york.ca/gtfsrealtime/VehiclePositions
 Service Alerts: http://rtu.york.ca/gtfsrealtime/ServiceAlerts
 
 Grand River Transit
 GTFS: https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip
-GTFS last fetched Nov 7, 2023
-GTFS valid until Dec 24, 2023
+GTFS last fetched Dec 23, 2023
+GTFS valid until Apr 21, 2024
 Trip Updates: https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates
 Vehicle Positions: https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions
 
 MiWay
 GTFS: https://www.miapp.ca/GTFS/google_transit.zip
 GTFS last fetched Dec 1, 2023
-GTFS valid until Feb 25, 2023
+GTFS valid until Feb 25, 2024
 Trip Updates: https://www.miapp.ca/GTFS_RT/TripUpdate/TripUpdates.pb
 Vehicle Positions: https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb
 ** No service alerts feed
 
 Durham Region Transit (DRT)
 GTFS: https://maps.durham.ca/OpenDataGTFS/GTFS_Durham_TXT.zip
-GTFS last fetched Dec 1, 2023
-GTFS valid until Dec 24, 2023
+GTFS last fetched Dec 24, 2023
+GTFS valid until Jan 1, 2024
 Trip Updates: https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates
 Vehicle Positions: https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions
 Service Alerts: https://maps.durham.ca/OpenDataGTFS/alerts.pb
@@ -58,3 +58,9 @@ GTFS valid until Dec 30, 2023
 Trip Updates: https://opendata.hamilton.ca/gtfs-rt/GTFS_TripUpdates.pb
 Vehicle Positions: https://opendata.hamilton.ca/gtfs-rt/GTFS_VehiclePositions.pb
 Service Alerts: https://opendata.hamilton.ca/gtfs-rt/GTFS_ServiceAlerts.pb
+
+Toronto Transit Commission
+GTFS: http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-schedules/OpenData_TTC_Schedules.zip
+GTFS last fetched Dec 23, 2023
+GTFS valid until Jan 5, 2024
+** TTC uses Nextbus(Umo) API for real-time data

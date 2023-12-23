@@ -53,3 +53,4 @@ route_id,route_short_name,route_long_name,route_desc,route_type,route_url
 9,9,Lakeshore,,3,https://www.grt.ca/en/schedules-maps/schedules.aspx
 9801,9801,GCI Special,,3,
 9851,9851,GCI Special,,3,
+9952,9952,GCI - AST Special,,3,
