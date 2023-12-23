@@ -27,7 +27,7 @@ function updateOrientation(){
     if (screen.orientation.type == 'landscape-primary') {
         welcomeMsg.style.display="";
         portraitMsg.style.display="none";
-    } else if (screen.orientation.type == 'portrait-primary') {
+    } else {
         welcomeMsg.style.display="none";
         portraitMsg.style.display="";
     }
