@@ -6,16 +6,19 @@
     <body>
         <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
         
-        <p><%= title%></p>
-        <select id="update" onchange="generateTable()">
+        <p style="font-size: 20px;"><%= title%></p>
+        <select id="update" style="font-size: 25px;" onchange="generateTable()">
             <option id="neither" value="0">Default stop schedule</option>
             <option id="headway" value="1">Show headways between vehicle arrivals</option>
             <option id="arrival" value="2">Separate arrivals and departures</option>
         </select><br><br>
         <table id="table"></table>
-        <a href="./nextbus?s=<%= stopid%>">Link to next vehicle arrival at this stop</a>
+        <button onclick="nextBusRedirect()" style="font-size: 20px;">Next vehicle arrival at this stop</button>
 
         <script>
+            function nextBusRedirect(){
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/nextbus?s=<%= stopid%>';
+            }
             // Splits a CSV string into a 2D array
             function strArray(string) {
                 const array1 = string.split('\n');

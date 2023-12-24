@@ -140,7 +140,7 @@ async function generateMap(){
 }
 
 function zoomIn(position){
-    console.log(position.coords);
+    //console.log(position.coords);
     // Add marker at user's location
     const cvs = document.createElement('canvas');
     cvs.setAttribute('style', 'height: 20px, width: 20px');
@@ -193,5 +193,3 @@ function findRow(table=[[]], searchColName='', searchStr=''){
     }
     return [];
 }
-
-// Automatically zoom in on your location, display nearby stops / buses

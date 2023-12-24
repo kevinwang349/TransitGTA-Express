@@ -602,3 +602,5 @@ async function fileArray(fileName){
         resolve(array2);
     });*/
 }
+
+// Make the UI better for mobile -- place agency logos on a map and select them, then use buttons to navigate

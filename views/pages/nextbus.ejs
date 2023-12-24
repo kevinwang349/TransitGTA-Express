@@ -10,14 +10,14 @@
         <div style="width: 500px">
             <div style="height: 500px" id="map"></div>
         </div>
-        <p><%= title%></p>
-        <% if(arrivalTimes.length==2){%><p>Final arrival at this stop:</p>
-        <% }else if(arrivalTimes.length==1){%><p>There is no service at this stop</p>
-        <% }else{%><p>Next <%= (arrivalTimes.length-1)%> arrivals at this stop:</p><%}%>
+        <p style="font-size: 25px;"><%= title%></p>
+        <% if(arrivalTimes.length==2){%><p style="font-size: 25px;">Final arrival at this stop:</p>
+        <% }else if(arrivalTimes.length==1){%><p style="font-size: 25px;">There is no service at this stop today.</p>
+        <% }else{%><p style="font-size: 25px;">Next <%= (arrivalTimes.length-1)%> arrivals at this stop:</p><%}%>
 
         <table>
             <% for(let i=1;i<arrivalTimes.length;i++){ %>
-                <tr><td style="border-top: 1px solid black; border-left: 1px solid black; background-color: #<%= tintedColors[i]%>">
+                <tr><td style="font-size: 20px; border-top: 1px solid black; border-left: 1px solid black; background-color: #<%= tintedColors[i]%>">
                     <% if(vehicleIDs[i].length>0){ %>Vehicle <%= vehicleIDs[i]%> on <%}%>
                     <%= stoproutes[i][stoproutes[0].indexOf('route_short_name')]%> <%= stoproutes[i][stoproutes[0].indexOf('route_long_name')]%>
                          towards <a href="./trip?t=<%= stoptrips[i][stoptrips[0].indexOf('trip_id')]%>"><%= stoptrips[i][stoptrips[0].indexOf('trip_headsign')]%></a>
@@ -26,9 +26,13 @@
                 </td></tr>
             <% } %>
         </table>
-        <a href="./stopschedule?s=<%= stopid%>">Link to stop schedule at this stop</a>
+        <br>
+        <button onclick="scheduleRedirect()" style="font-size: 20px;">Stop schedule at this stop</button>
 
         <script>
+            function scheduleRedirect(){
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/stopschedule?s=<%= stopid%>';
+            }
             // Creates a leaflet map binded to an html <div> with id "map"
             var map = L.map('map');
             

@@ -124,6 +124,12 @@ async function generateTable(){
             table.appendChild(row);
         }
     }
+    if(stoptrips.length==1){
+        const errorRow=document.createElement('p');
+        errorRow.innerHTML='There are no buses at this stop today.';
+        errorRow.style.fontSize='30px';
+        table.appendChild(errorRow);
+    }
 }
 
 function display(output='') {
