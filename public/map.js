@@ -1,5 +1,6 @@
 let outerBox;
 let stopsLayer;
+let bounds=[];
 var map;
 
 async function init() {
@@ -54,7 +55,6 @@ async function generateMap(){
         zoomOffset: -1,
         accessToken: 'pk.eyJ1Ijoia2V2aW53MjQwMSIsImEiOiJja3I1ODZqdWszMmdqMnBwYW9qbWVnY2c4In0.qqgVHQu94DuWbLbgjWMN9w'
     }).addTo(map);
-    let bounds=[];
 
     // Fill the map with all stops
     let stops=await fileArray('stops');
@@ -84,7 +84,8 @@ async function generateMap(){
             map.removeLayer(stopsLayer);
         }
     });
-    map.fitBounds(L.latLngBounds(bounds));
+    // Zoom in to user's location
+    navigator.geolocation.getCurrentPosition(zoomIn, zoomOut);
 
     console.log('stops loaded');
 
@@ -138,6 +139,28 @@ async function generateMap(){
     //map.fitBounds(L.latLngBounds(bounds));
 }
 
+function zoomIn(position){
+    console.log(position.coords);
+    // Add marker at user's location
+    const cvs = document.createElement('canvas');
+    cvs.setAttribute('style', 'height: 20px, width: 20px');
+    const ctx = cvs.getContext('2d');
+    ctx.fillStyle = '#0000ff';
+    ctx.arc(10, 10, 9, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.arc(10, 10, 9, 0, Math.PI * 2);
+    ctx.stroke();
+    const srcUrl = cvs.toDataURL();
+    const circle = L.icon({ iconUrl: srcUrl, iconSize: [400, 200], iconAnchor: [10, 10], popupAnchor: [0, -9] });
+    L.marker([position.coords.latitude,position.coords.longitude],{icon:circle}).bindPopup("Your current location").addTo(map);
+    // Zoom to user's location
+    map.setView([position.coords.latitude,position.coords.longitude],14);
+}
+function zoomOut(error){
+    map.fitBounds(L.latLngBounds(bounds));
+}
+
 async function request(url) {
     let str='';
     let request = new XMLHttpRequest();
@@ -170,3 +193,5 @@ function findRow(table=[[]], searchColName='', searchStr=''){
     }
     return [];
 }
+
+// Automatically zoom in on your location, display nearby stops / buses
