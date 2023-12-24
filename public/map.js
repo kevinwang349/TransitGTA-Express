@@ -72,7 +72,7 @@ async function generateMap(){
         ctx.stroke();
         const srcUrl = cvs.toDataURL();
         const circle = L.icon({ iconUrl: srcUrl, iconSize: [200, 100], iconAnchor: [10, 10], popupAnchor: [0, -9] });
-        let pop=`#${currentStop[stops[0].indexOf('stop_code')]}: ${currentStop[stops[0].indexOf('stop_name')]}<br><a href='https://transitGTA.onrender.com/stopschedule?a=${agency}&s=${currentStop[stops[0].indexOf('stop_id')]}'>Stop schedule for this stop</a><br><a href='https://transitGTA.onrender.com/nextbus?a=${agency}&s=${currentStop[stops[0].indexOf('stop_id')]}'>Next vehicle arrival at this stop</a>`;
+        let pop=`#${currentStop[stops[0].indexOf('stop_code')]}: ${currentStop[stops[0].indexOf('stop_name')]}<br><a href='https://transitGTA.onrender.com/${agency}/stopschedule?s=${currentStop[stops[0].indexOf('stop_id')]}'>Stop schedule for this stop</a><br><a href='https://transitGTA.onrender.com/${agency}/nextbus?s=${currentStop[stops[0].indexOf('stop_id')]}'>Next vehicle arrival at this stop</a>`;
         stopmarkers.push(L.marker([currentStop[stops[0].indexOf('stop_lat')],currentStop[stops[0].indexOf('stop_lon')]],{icon:circle}).bindPopup(pop));
         bounds.push([stops[i][stops[0].indexOf('stop_lat')],stops[i][stops[0].indexOf('stop_lon')]]);
     }
