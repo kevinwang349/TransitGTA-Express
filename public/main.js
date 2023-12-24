@@ -69,7 +69,7 @@ async function updateForm(event){
     }*/
     agency=agencySelect.value;
     command=pageSelect.value;
-    display.innerHTML=`Agency: ${agency}<br>Page: ${command}`
+    display.innerHTML='';
     let brp=document.createElement('p');
     update.appendChild(brp);
     // Add respective selection items to the main form
