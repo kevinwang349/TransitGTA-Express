@@ -278,6 +278,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
         title: `Schedule for route ${route[routes[0].indexOf('route_short_name')]} ${route[routes[0].indexOf('route_long_name')]} on ${date.toDateString()}:`,
         agency: agency,
         routeshortname: rsn,
+        routes: routes,
         routecolor: tint(route[routes[0].indexOf('route_color')]),
         schedule: scheduleTable,
         colors: colors,

@@ -68,11 +68,6 @@ async function routevehsTTC(routeid){
             }
         }
     });
-    // Add link to route schedule
-    let link=document.createElement('a');
-    link.setAttribute('href','https://transitGTA.kevinwang21.repl.co/routeschedule/?a=TTC&r='+routeid);
-    link.innerText='Link to route schedule';
-    document.body.appendChild(link);
 }
 
 routevehsTTC(routeid);

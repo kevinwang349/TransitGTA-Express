@@ -11,6 +11,7 @@
             <div style="height: 500px" id="map"></div>
         </div>
         <br>
+        <button style="font-size: 25px;" onclick="routeScheduleRedirect()">See schedule for this route</button>
 
         <script>
             // Creates a leaflet map binded to an html <div> with id "map"
@@ -30,6 +31,11 @@
         <% if(agency == 'TTC'){ %>
             <script>
                 const routeid = <%= routeid %>;
+                
+                function routeScheduleRedirect(){
+                    //window.location.href='https://transitGTA.onrender.com/<%= agency %>/routeschedule?r=<%= routeid%>';
+                    alert('Sorry, route schedules for TTC are currently not available');
+                }
             </script>
             <script src="/routevehiclesTTC.js"></script>
         <% } else { %>
@@ -76,6 +82,10 @@
                 const json = JSON.parse(parseHtmlEntities(jsonStr));
                 const jsonStr2 = '<%= serviceataGlance %>';
                 const json2 = JSON.parse(parseHtmlEntities(jsonStr2));
+
+                function routeScheduleRedirect(){
+                    window.location.href='https://transitGTA.onrender.com/<%= agency %>/routeschedule?r='+route[routeLegend.indexOf('route_short_name')];
+                }
             </script>
             <script src="/routevehicles.js"></script>
         <% } %>

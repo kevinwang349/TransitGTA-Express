@@ -144,13 +144,6 @@ async function routevehs(routename){
     };
     layerControl=L.control.layers(null, overlays).addTo(map);
     map.addLayer(vehiclesLayer); // add stops to the map by default
-    // Add link to route schedule
-    let link=document.createElement('a');
-    link.setAttribute('href','./routeschedule?a='+agency+'&r='+route[routeLegend.indexOf('route_short_name')]);
-    link.innerText='Route schedule for '+route[routeLegend.indexOf('route_short_name')]+' '+route[routeLegend.indexOf('route_long_name')];
-    document.body.appendChild(link);
-    const date=new Date();
-    display('Timestamp: '+date.toLocaleTimeString()+' '+date.toDateString());
 
     // Display the map
     if(shape.length==0){

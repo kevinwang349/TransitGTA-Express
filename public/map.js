@@ -7,9 +7,6 @@ async function init() {
     outerBox=document.getElementById('outerbox');
     outerBox.innerHTML='';
     const mapName=document.getElementById('mapname').value;
-    if(mapName=='-'){
-        return;
-    }
 
     if(mapName=='Leaflet_Map'||mapName==undefined){
         generateMap();
@@ -30,10 +27,10 @@ async function getMap(mapName){
 }
 
 async function generateMap(){
-    // Add instructions
+    /* Add instructions
     const inst=document.createElement('p');
     inst.innerHTML='Zoom in to see stops';
-    outerBox.appendChild(inst);
+    outerBox.appendChild(inst);*/
     
     // Create the container div for the map
     const container = document.createElement('div');
@@ -193,3 +190,5 @@ function findRow(table=[[]], searchColName='', searchStr=''){
     }
     return [];
 }
+
+init();

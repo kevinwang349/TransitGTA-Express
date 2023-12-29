@@ -11,13 +11,12 @@
 
     <br><br>
     <select id="mapname" onchange="init()">
-        <option value="-">Choose a map from the menu</option>
         <option value="Leaflet_Map">Leaflet Map - all routes & stops</option>
         <% mapJSON.forEach(map => {%>
             <option value="<%= map.url%>"><%= map.name%></option>
         <%})%>
     </select>
-    <br><br>
+    <br>
     <div id="outerbox">
     </div>
 

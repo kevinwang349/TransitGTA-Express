@@ -6,7 +6,7 @@
     <body>
         <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
 
-        <p><%= title %></p>
+        <p style="font-size: 20px;"><%= title %></p>
         <div style="width: 90%; height: 570px; margin: auto; overflow: scroll; border: 2px black solid" id="outerBox" onscroll="updateDisplay()">
             <table>
                 <tr style="position: relative; background: white; z-index: 2; top: 0px;" id="stopsRow">
@@ -27,10 +27,29 @@
                         <%}%>
                     </tr>
                 <%}%>
+                <% if(schedule.length==1){ %>
+                    <tr><td style="font-size: 25px;">There is no service on this route today.</td></tr>
+                <%}%>
             </table>
         </div>
-        <a href="./routevehicles?r=<%= routeshortname %>">Route Vehicles for this route</a> <br>
-        <a href="./routeschedule?r=<%= routeshortname %>&d=<%= reverseDir %>&t=<%= dateStr %>">Route schedule in the opposite direction</a>
+        <br>
+        <button style="font-size: 25px;" onclick="routeVehiclesRedirect()">See locations of all vehicles on this route</button> <br><br>
+        <button style="font-size: 25px;" onclick="routeScheduleRedirect()">See schedule for the opposite direction</button>
+
+        <div style="font-size: 25px;" id="update">
+            <p style="margin-bottom: 0;">Find schedules for a different route or a different date:</p>
+            <select style="font-size: 20px;" id="routeid">
+                <% for(let i=1;i<routes.length;i++){ %>
+                    <% if(routes[i][routes[0].indexOf('route_short_name')] == routeshortname){ %>
+                        <option value="<%= routes[i][routes[0].indexOf('route_short_name')] %>" selected><%= routes[i][routes[0].indexOf('route_short_name')] %> <%= routes[i][routes[0].indexOf('route_long_name')] %></option>
+                    <%} else {%>
+                        <option value="<%= routes[i][routes[0].indexOf('route_short_name')] %>"><%= routes[i][routes[0].indexOf('route_short_name')] %> <%= routes[i][routes[0].indexOf('route_long_name')] %></option>
+                    <%}%>
+                <%}%>
+            </select> <br>
+            <label for="date">Choose a date: </label><input style="font-size: 20px;" id="date" type="date" value="2023-12-25"><br>
+            <button style="font-size: 20px;" onclick="newScheduleRedirect()">See new schedule</button>
+        </div>
 
         <script>
             // Update positions of top row (stops) and left column (trips) to force them to stick to the top / left of the schedule table box
@@ -42,6 +61,17 @@
                 for(const cell of cells){
                     cell.style.left=xpos+'px';
                 }
+            }
+            function routeVehiclesRedirect(){
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/routevehicles?r=<%= routeshortname %>';
+            }
+            function routeScheduleRedirect(){
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/routeschedule?r=<%= routeshortname %>&d=<%= reverseDir %>&t=<%= dateStr %>';
+            }
+            function newScheduleRedirect(){
+                const routename=document.getElementById('routeid').value;
+                const datestr=document.getElementById('date').value;
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/routeschedule?r='+routename+'&t='+datestr;
             }
         </script>
         <br>

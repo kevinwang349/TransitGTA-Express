@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs';
-const agency='HSR';
+const agency='TTC';
 
 function initGO() {
     const routes = fileArray('routes.txt')
