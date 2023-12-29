@@ -34,12 +34,12 @@ async function generateMap(){
     
     // Create the container div for the map
     const container = document.createElement('div');
-    container.setAttribute('style', 'width: 500px');
+    container.setAttribute('style', 'width: 95%');
     outerBox.appendChild(container);
 
     // Create the div that will hold the Leaflet map
     const mapdiv = document.createElement('div');
-    mapdiv.setAttribute('style', 'height: 500px');
+    mapdiv.setAttribute('style', 'height: 550px');
     container.appendChild(mapdiv);
 
     // Create the map and fill it with tiles
@@ -156,6 +156,7 @@ function zoomIn(position){
 }
 function zoomOut(error){
     map.fitBounds(L.latLngBounds(bounds));
+    map.setZoom(11);
 }
 
 async function request(url) {

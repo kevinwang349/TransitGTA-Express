@@ -8,12 +8,12 @@ import { decode, formatGTFS } from './protodecoder.js';
 // setting application's templating engine to ejs
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => { // root directory ==> main navigation form
-    res.render("pages/main");
+app.get("/", (req, res) => { // root directory ==> main navigation map
+    res.render("pages/home");
 });
-/*app.get("/home", (req, res) => {
-    res.render("pages/main");
-});*/
+app.get("/home", (req, res) => {
+    res.render("pages/home");
+});
 
 app.use(_static('public'));
 

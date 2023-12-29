@@ -17,10 +17,16 @@
         <%})%>
     </select>
     <br>
+    <p style="font-size: 20px;">Zoom in to see more detail and to display stops</p>
     <div id="outerbox">
     </div>
+    <br>
+    <button style="font-size: 25px;" onclick="routeListRedirect()">See a full list of routes, with schedules and current bus locations</button>
 
     <script>
+        function routeListRedirect(){
+            window.location.href='https://transitGTA.onrender.com/<%= agency %>/routelist';
+        }
         // Splits a CSV string into a 2D array
         function strArray(string) {
             const array1 = string.split('\n');
