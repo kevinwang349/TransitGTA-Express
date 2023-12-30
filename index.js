@@ -8,14 +8,14 @@ import { decode, formatGTFS } from './protodecoder.js';
 // setting application's templating engine to ejs
 app.set("view engine", "ejs");
 
+app.use(_static('public'));
+
 app.get("/", (req, res) => { // root directory ==> main navigation map
     res.render("pages/home");
 });
 app.get("/home", (req, res) => {
     res.render("pages/home");
 });
-
-app.use(_static('public'));
 
 app.get("/:agency/routelist", (req, res) => {
     const agency = req.params.agency;

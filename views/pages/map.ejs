@@ -9,14 +9,15 @@
 <body>
     <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
 
-    <br><br>
-    <select id="mapname" onchange="init()">
-        <option value="Leaflet_Map">Leaflet Map - all routes & stops</option>
+    <p style="font-size: 20px;" id="load">Loading...Please wait...</p>
+
+    <select id="mapname" style="font-size: 25px;" onchange="init()">
+        <option value="Leaflet_Map">All routes & stops</option>
         <% mapJSON.forEach(map => {%>
             <option value="<%= map.url%>"><%= map.name%></option>
         <%})%>
     </select>
-    <br>
+    <button style="font-size: 25px;" onclick="zoomToCurrent()">Zoom in to current location</button>
     <p style="font-size: 20px;">Zoom in to see more detail and to display stops</p>
     <div id="outerbox">
     </div>

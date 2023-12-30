@@ -27,11 +27,6 @@ async function getMap(mapName){
 }
 
 async function generateMap(){
-    /* Add instructions
-    const inst=document.createElement('p');
-    inst.innerHTML='Zoom in to see stops';
-    outerBox.appendChild(inst);*/
-    
     // Create the container div for the map
     const container = document.createElement('div');
     container.setAttribute('style', 'width: 95%');
@@ -81,8 +76,7 @@ async function generateMap(){
             map.removeLayer(stopsLayer);
         }
     });
-    // Zoom in to user's location
-    navigator.geolocation.getCurrentPosition(zoomIn, zoomOut);
+    zoomOut();
 
     console.log('stops loaded');
 
@@ -119,7 +113,7 @@ async function generateMap(){
                 if(shape.length>1){
                     dist=L.latLng(shape[shape.length-2]).distanceTo(shape[shape.length-1]);
                 }
-                if(dist>500){
+                if((route[routes[0].indexOf('route_type')]==2 && dist>2000) || (route[routes[0].indexOf('route_type')]==3 && dist>1000)){
                     currentBranch=shapes[i][3];
                     L.polyline(currentShape,{color: `#${routecolor}`}).addTo(map);
                     //console.log(dist);
@@ -134,8 +128,13 @@ async function generateMap(){
     }
     console.log('routes loaded');
     //map.fitBounds(L.latLngBounds(bounds));
+    document.getElementById('load').innerHTML='';
 }
 
+function zoomToCurrent(){
+    // Zoom in to user's location
+    navigator.geolocation.getCurrentPosition(zoomIn, zoomOut);
+}
 function zoomIn(position){
     //console.log(position.coords);
     // Add marker at user's location
