@@ -2,17 +2,19 @@
 <html lang="en">
     <head>
         <title>Fare calculator</title>
-    </head>
-    <body>
-        <img id="home" src="/logos/home.png" width="50px">
         <style>
             #home:hover{
                 cursor:grab;
             }
+            button{
+                font-size: 25px;
+                border-width: 1px;
+                border-radius: 12px;
+            }
         </style>
-        <script>
-            document.getElementById('home').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com'; });
-        </script>
+    </head>
+    <body>
+        <img id="home" src="/logos/home.png" width="50px">
         
         <form>
             <input type="text" id="stopsearch" style="width: 300px" placeholder="Please enter stop name / id for start">
@@ -30,6 +32,8 @@
         </form>
 
         <script>
+            document.getElementById('home').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com'; });
+            
             const stopsStr = `<%= stops %>`;
             const stops = strArray(stopsStr);
             

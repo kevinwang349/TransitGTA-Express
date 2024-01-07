@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <title>System Maps</title>
     <%- include("../partials/head") %>
-</head>
-
-<body>
-    <img id="home" src="/logos/home.png" width="50px">
     <style>
         #home:hover{
             cursor:grab;
         }
+        button{
+            font-size: 25px;
+            border-width: 1px;
+            border-radius: 12px;
+        }
     </style>
+</head>
+
+<body>
+    <img id="home" src="/logos/home.png" width="50px">
 
     <p style="font-size: 20px;" id="load">Loading...Please wait...</p>
 
@@ -22,12 +27,12 @@
             <option value="<%= map.url%>"><%= map.name%></option>
         <%})%>
     </select>
-    <button style="font-size: 25px;" onclick="zoomToCurrent()">Zoom in to current location</button>
+    <button onclick="zoomToCurrent()">Zoom in to current location</button><br><br>
+    <button onclick="routeListRedirect()">See a full list of routes, with schedules and current bus locations</button>
     <p style="font-size: 20px;">Zoom in to see more detail and to display stops</p>
     <div id="outerbox">
     </div>
     <br>
-    <button style="font-size: 25px;" onclick="routeListRedirect()">See a full list of routes, with schedules and current bus locations</button>
 
     <script>
         // Redirects

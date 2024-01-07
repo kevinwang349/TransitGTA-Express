@@ -2,14 +2,19 @@
 <html lang="en">
     <head>
         <title><%= title %></title>
-    </head>
-    <body>
-        <img id="home" src="/logos/home.png" width="50px">
         <style>
             #home:hover{
                 cursor:grab;
             }
+            button{
+                font-size: 25px;
+                border-width: 1px;
+                border-radius: 12px;
+            }
         </style>
+    </head>
+    <body>
+        <img id="home" src="/logos/home.png" width="50px">
 
         <p style="font-size: 20px;"><%= title %></p>
         <div style="width: 90%; height: 570px; margin: auto; overflow: scroll; border: 2px black solid" id="outerBox" onscroll="updateDisplay()">

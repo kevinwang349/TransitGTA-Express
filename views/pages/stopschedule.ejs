@@ -2,14 +2,19 @@
 <html lang="en">
     <head>
         <title>Stop schedule for <%= stopname %></title>
-    </head>
-    <body>
-        <img id="home" src="/logos/home.png" width="50px">
         <style>
             #home:hover{
                 cursor:grab;
             }
+            button{
+                font-size: 25px;
+                border-width: 1px;
+                border-radius: 12px;
+            }
         </style>
+    </head>
+    <body>
+        <img id="home" src="/logos/home.png" width="50px">
         
         <p style="font-size: 20px;"><%= title%></p>
         <select id="update" style="font-size: 25px;" onchange="generateTable()">
