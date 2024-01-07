@@ -7,7 +7,12 @@
 </head>
 
 <body>
-    <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+    <img id="home" src="/logos/home.png" width="50px">
+    <style>
+        #home:hover{
+            cursor:grab;
+        }
+    </style>
 
     <p style="font-size: 20px;" id="load">Loading...Please wait...</p>
 
@@ -25,6 +30,10 @@
     <button style="font-size: 25px;" onclick="routeListRedirect()">See a full list of routes, with schedules and current bus locations</button>
 
     <script>
+        // Redirects
+        document.getElementById('home').addEventListener('click',() => {
+            window.location.href='https://transitGTA.onrender.com';
+        });
         function routeListRedirect(){
             window.location.href='https://transitGTA.onrender.com/<%= agency %>/routelist';
         }

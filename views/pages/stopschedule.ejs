@@ -4,7 +4,12 @@
         <title>Stop schedule for <%= stopname %></title>
     </head>
     <body>
-        <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+        <img id="home" src="/logos/home.png" width="50px">
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+        </style>
         
         <p style="font-size: 20px;"><%= title%></p>
         <select id="update" style="font-size: 25px;" onchange="generateTable()">
@@ -16,6 +21,10 @@
         <button onclick="nextBusRedirect()" style="font-size: 20px;">Next vehicle arrival at this stop</button>
 
         <script>
+            // Redirects
+            document.getElementById('home').addEventListener('click',() => {
+                window.location.href='https://transitGTA.onrender.com';
+            });
             function nextBusRedirect(){
                 window.location.href='https://transitGTA.onrender.com/<%= agency %>/nextbus?s=<%= stopid%>';
             }

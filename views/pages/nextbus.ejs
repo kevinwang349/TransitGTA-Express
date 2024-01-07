@@ -5,7 +5,12 @@
         <title><%= title %></title>
     </head>
     <body>
-        <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+        <img id="home" src="/logos/home.png" width="50px">
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+        </style>
         
         <div style="width: 500px">
             <div style="height: 500px" id="map"></div>
@@ -30,9 +35,14 @@
         <button onclick="scheduleRedirect()" style="font-size: 20px;">Stop schedule at this stop</button>
 
         <script>
+            // Redirects
+            document.getElementById('home').addEventListener('click',() => {
+                window.location.href='https://transitGTA.onrender.com';
+            });
             function scheduleRedirect(){
                 window.location.href='https://transitGTA.onrender.com/<%= agency %>/stopschedule?s=<%= stopid%>';
             }
+
             // Creates a leaflet map binded to an html <div> with id "map"
             var map = L.map('map');
             

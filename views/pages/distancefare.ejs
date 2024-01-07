@@ -4,7 +4,15 @@
         <title>Fare calculator</title>
     </head>
     <body>
-        <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+        <img id="home" src="/logos/home.png" width="50px">
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+        </style>
+        <script>
+            document.getElementById('home').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com'; });
+        </script>
         
         <table>
             <tr><td></td><td>PRESTO fare</td><td>Cash fare</td></tr>

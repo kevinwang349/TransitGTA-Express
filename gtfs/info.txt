@@ -64,3 +64,11 @@ GTFS: http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-sched
 GTFS last fetched Dec 23, 2023
 GTFS valid until Jan 5, 2024
 ** TTC uses Nextbus(Umo) API for real-time data
+
+In progress:
+Add home icon
+
+Future:
+Add functionality for TTC
+Add route filter for Nextbus
+Create a full functionality pathfinder by creating a list of routes and then finding trips

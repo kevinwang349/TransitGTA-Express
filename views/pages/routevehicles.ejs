@@ -5,7 +5,12 @@
         <title>Route Vehicles</title>
     </head>
     <body>
-        <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+        <img id="home" src="/logos/home.png" width="50px">
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+        </style>
 
         <div style="width: 500px">
             <div style="height: 500px" id="map"></div>
@@ -14,6 +19,8 @@
         <button style="font-size: 25px;" onclick="routeScheduleRedirect()">See schedule for this route</button>
 
         <script>
+            document.getElementById('home').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com'; });
+
             // Creates a leaflet map binded to an html <div> with id "map"
             var map = L.map('map');
     

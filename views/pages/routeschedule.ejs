@@ -4,7 +4,12 @@
         <title><%= title %></title>
     </head>
     <body>
-        <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+        <img id="home" src="/logos/home.png" width="50px">
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+        </style>
 
         <p style="font-size: 20px;"><%= title %></p>
         <div style="width: 90%; height: 570px; margin: auto; overflow: scroll; border: 2px black solid" id="outerBox" onscroll="updateDisplay()">
@@ -62,6 +67,10 @@
                     cell.style.left=xpos+'px';
                 }
             }
+            // Redirect functions
+            document.getElementById('home').addEventListener('click',() => {
+                window.location.href='https://transitGTA.onrender.com';
+            });
             function routeVehiclesRedirect(){
                 window.location.href='https://transitGTA.onrender.com/<%= agency %>/routevehicles?r=<%= routeshortname %>';
             }

@@ -5,7 +5,12 @@
         <title>Trip Schedule</title>
     </head>
     <body>
-        <a href="https://transitGTA.onrender.com" style="font-size: 20px; color: #ff0000">Home</a>
+        <img id="home" src="/logos/home.png" width="50px">
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+        </style>
         
         <div style="width: 500px">
             <div style="height: 500px" id="map"></div>
@@ -13,6 +18,8 @@
         <p><%= title%></p>
 
         <script>
+            document.getElementById('home').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com'; });
+
             // Creates a leaflet map binded to an html <div> with id "map"
             var map = L.map('map');
     
@@ -46,41 +53,35 @@
             <%}%>
         </table>
 
-        <% if(agency == 'TTC'){ %>
-            <script>
-                //
-            </script>
-        <% } else { %>
-            <script>
-                // Splits a CSV string into a 2D array
-                function strArray(string) {
-                    const array1 = string.split('\n');
-                    let array2 = [];
-                    for (const el of array1) {
-                        array2.push(el.split(','));
-                    }
-                    return array2;
+        <script>
+            // Splits a CSV string into a 2D array
+            function strArray(string) {
+                const array1 = string.split('\n');
+                let array2 = [];
+                for (const el of array1) {
+                    array2.push(el.split(','));
                 }
-                // Decodes strings passed from Express server
-                function parseHtmlEntities(str) {
-                    return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
-                        var num = parseInt(numStr, 10); // read num as normal number
-                        return String.fromCharCode(num);
-                    });
-                }
+                return array2;
+            }
+            // Decodes strings passed from Express server
+            function parseHtmlEntities(str) {
+                return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
+                    var num = parseInt(numStr, 10); // read num as normal number
+                    return String.fromCharCode(num);
+                });
+            }
 
-                const agency=`<%= agency%>`;
-                const tripstopsStr=`<%= tripStopsStr%>`;
-                const tripstops = strArray(tripstopsStr);
-                const color = `<%= routecolor%>`;
-                const vehicleFound = `<%= vehicleFound%>`;
-                const popup = `<%= popup%>`;
-                const shapeStr=`<%= shape%>`;
-                const shape = strArray(shapeStr);
-                const vehicle = JSON.parse(parseHtmlEntities(`<%= vehicle%>`));
-            </script>
-            <script src="/trip.js"></script>
-        <% } %>
+            const agency=`<%= agency%>`;
+            const tripstopsStr=`<%= tripStopsStr%>`;
+            const tripstops = strArray(tripstopsStr);
+            const color = `<%= routecolor%>`;
+            const vehicleFound = `<%= vehicleFound%>`;
+            const popup = `<%= popup%>`;
+            const shapeStr=`<%= shape%>`;
+            const shape = strArray(shapeStr);
+            const vehicle = JSON.parse(parseHtmlEntities(`<%= vehicle%>`));
+        </script>
+        <script src="/trip.js"></script>
 
         <br>
     </body>
