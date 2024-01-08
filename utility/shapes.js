@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs';
-const agency='HSR';
+const agency='Brampton';
 
 function init() {
     const routes = fileArray('routes.txt')
@@ -67,7 +67,7 @@ function init() {
 }
 
 function fileArray(filename) {
-    const response = readFileSync('./gtfs/'+agency+'/' + filename);
+    const response = readFileSync('../gtfs/'+agency+'/' + filename);
     const txt = new TextDecoder("utf-8").decode(response);
     const array1 = txt.split("\r\n");
     let array2 = [];
@@ -89,7 +89,7 @@ function arrayFile(filename, array) {
         }
     }
     let str = array2.join('\r\n');
-    writeFileSync('./gtfs/'+agency+'/' + filename, str);
+    writeFileSync('../gtfs/'+agency+'/' + filename, str);
 }
 
 init();

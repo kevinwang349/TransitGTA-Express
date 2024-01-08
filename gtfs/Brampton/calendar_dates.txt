@@ -1,1 +1,2 @@
 service_id,date,exception_type
+240108-MULTI-Weekday-03,20240219,2

@@ -91,22 +91,7 @@ async function generateMap(){
             routecolor='aaaaaa';
         }
         for (let i=1;i<shapes.length;i++) {
-            if(shapes[i][0]==route[routes[0].indexOf('route_id')]){
-                shape.push(shapes[i].slice(1,3));
-                bounds.push(shapes[i].slice(1,3));
-                let dist=0;
-                if(shape.length>1){
-                    dist=L.latLng(shape[shape.length-2]).distanceTo(shape[shape.length-1]);
-                }
-                if(dist>500){
-                    currentBranch=shapes[i][3];
-                    L.polyline(currentShape,{color: `#${routecolor}`}).addTo(map);
-                    //console.log(dist);
-                    currentShape=[];
-                }else{
-                    currentShape.push(shapes[i].slice(1,3));
-                }
-            }else if(agency=='GO'&&shapes[i][0]==route[routes[0].indexOf('route_short_name')]){
+            if(shapes[i][0]==route[routes[0].indexOf('route_short_name')]){
                 shape.push(shapes[i].slice(1,3));
                 bounds.push(shapes[i].slice(1,3));
                 let dist=0;
@@ -126,6 +111,7 @@ async function generateMap(){
         //L.polyline(shape,{color: `#${route[routes[0].indexOf('route_color')]}`}).addTo(map)
         L.polyline(currentShape,{color: `#${routecolor}`}).addTo(map);
     }
+    //console.log(shapes);
     console.log('routes loaded');
     //map.fitBounds(L.latLngBounds(bounds));
     document.getElementById('load').innerHTML='';

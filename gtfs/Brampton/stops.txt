@@ -182,6 +182,8 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00002350,1214,"Kensington Rd w/of Bramalea Rd",,  43.722391, -79.716940,,,0,,,1
 00002360,1215,"Kensington Rd at Kingscross Rd",,  43.721741, -79.718392,,,0,,,1
 00002370,1216,"Kensington Rd at Central Park Dr",,  43.720630, -79.719729,,,0,,,1
+00002390,1218,"Central Park Dr at Knightsbridge Rd",,  43.718001, -79.717910,,,0,,,1
+00002410,3540,"Knightsbridge Rd w/of Central Park Drive",,  43.717559, -79.717953,,,0,,,1
 00002430,1220,"Bramalea Rd n/of Steeles Ave E",,  43.705553, -79.691834,,,0,,,1
 00002450,1222,"Bramalea Rd at East Dr",,  43.706748, -79.693537,,,0,,,1
 00002460,1223,"Bramalea Rd n/of East Dr",,  43.707983, -79.695182,,,0,,,1
@@ -283,7 +285,6 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00003720,6038,"Goreway Dr at Dorcas St",,  43.715148, -79.633503,,,0,,,1
 00003730,6039,"Goreway Dr at Etude Dr",,  43.717124, -79.636164,,,0,,,1
 00003740,6040,"Goreway Dr at Jolliffe Ave",,  43.719148, -79.638998,,,0,,,1
-00003760,1335,"Advance Blvd at Steeles Ave E",,  43.698093, -79.696638,,,0,,,1
 00003810,1336,"Bramalea Rd n/of Dearbourne Blvd",,  43.709281, -79.696904,,,0,,,1
 00003820,1337,"Bramalea Rd opp Alexandria Gate",,  43.711182, -79.699470,,,0,,,0
 00003830,1338,"Bramalea Rd opp Algonquin Blvd",,  43.713566, -79.702660,,,0,,,0
@@ -501,7 +502,6 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00006670,6081,"Dixie Rd n/of Courtneypark Dr",,  43.663560, -79.658995,,,0,,,1
 00006740,1560,"Hilldale Cres at Hayden Crt",,  43.725701, -79.729435,,,0,,,1
 00006750,1561,"Hilldale Cres opp Holley Hedge Crt",,  43.725517, -79.731386,,,0,,,1
-00006760,1562,"Hilldale Cres at Hamlet Crt",,  43.726765, -79.731902,,,0,,,1
 00006770,1563,"Hilldale Cres at Hyde Park Crt",,  43.727507, -79.731108,,,0,,,1
 00006780,1564,"Hilldale Cres opp Hallcrown Crt",,  43.729131, -79.729375,,,0,,,1
 00006790,1565,"Hilldale Cres opp Hedley Crt",,  43.729352, -79.727173,,,0,,,0
@@ -527,8 +527,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00007280,1586,"Williams Pky E at Bramalea Rd  (North Peel S.S.)",,  43.733091, -79.731047,,,0,,,1
 00007320,1587,"Hilldale Cres at Hedley Crt",,  43.729482, -79.727051,,,0,,,1
 00007330,1588,"Hilldale Cres at Hallcrown Crt",,  43.729252, -79.729519,,,0,,,1
-00007340,1589,"Hilldale Cres at Homer Square",,  43.727862, -79.731000,,,0,,,1
-00007350,1590,"Hilldale Cres at Hamlet Crt",,  43.726838, -79.732104,,,0,,,1
+00007340,1589,"Hilldale Cres btwn Homer Sq and Horatio Crt",,  43.727478, -79.731420,,,0,,,1
 00007360,1591,"Hilldale Cres at Hollyhedge Crt",,  43.725364, -79.731438,,,0,,,1
 00007370,1592,"Hilldale Cres s/of Hector Crt",,  43.725605, -79.728864,,,0,,,1
 00007455,1593,"Major William Sharpe Dr e/of Chinguacousy Rd",,  43.676794, -79.794583,,,0,,,1
@@ -663,7 +662,6 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00009310,1751,"Hurontario St at Tremblay St",,  43.712453, -79.795573,,,0,,,1
 00009320,1752,"Hurontario St opp Fisherman Dr",,  43.715026, -79.798973,,,0,,,1
 00009330,1753,"Sandalwood Pkwy e/of Main St",,  43.718320, -79.802312,,,0,,,1
-00009340,1754,"Sandalwood Pky E btwn Hurontario St and Sunforest",,  43.719246, -79.801276,,,0,,,1
 00009350,1755,"Sandalwood Pky E at Sunforest Dr",,  43.720585, -79.799867,,,0,,,1
 00009360,1756,"Sandalwood Pky E at 95 Sandalwood (Firestation)",,  43.722585, -79.797758,,,0,,,1
 00009380,1758,"Conestoga Dr opp Loafers Lake Lane",,  43.726117, -79.797960,,,0,,,1
@@ -879,7 +877,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00011650,1988,"Sandalwood Pky W at Van Kirk Dr",,  43.709289, -79.810014,,,0,,,1
 00011660,1989,"Sandalwood Pkwy opp 130 Sandalwood Pkwy",,  43.714010, -79.806956,,,0,,,1
 00011670,1990,"Sandalwood Pky W at Hurontario St",,  43.717050, -79.803701,,,0,,,1
-00011730,1991,"Heart Lake Terminal Route 204 Stop",,  43.727784, -79.798138,,,0,place_HTLK,,1
+00011730,1991,"Heart Lake Terminal Route 204/218 Stop",,  43.727784, -79.798138,,,0,place_HTLK,,1
 00011750,1992,"Sandalwood Pky E at Richvale Dr (EB)",,  43.729690, -79.790252,,,0,,,1
 00011760,1993,"Sandalwood Pky E opp Royal Palm Dr (W)",,  43.731029, -79.788573,,,0,,,1
 00011770,1994,"Sandalwood Pky E at Glover Gate",,  43.733340, -79.785423,,,0,,,1
@@ -934,6 +932,8 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00012290,2044,"Van Kirk Dr at Wanless Dr",,  43.718267, -79.821419,,,0,,,1
 00012295,3608,"Wanless Dr at 225 Wanless Dr",,  43.721601, -79.818258,,,0,,,1
 00012300,2045,"Wanless Dr opp Tournament Dr",,  43.723651, -79.816173,,,0,,,1
+00012360,2050,"Conestoga Dr n/of Ebby Ave",,  43.718128, -79.788350,,,0,,,0
+00012370,2052,"Conestoga Dr s/of Ebby Ave (at Heart Lake S.S.)",,  43.717049, -79.788034,,,0,,,1
 00012400,2057,"Wanless Dr w/of Hurontario St",,  43.725304, -79.814391,,,0,,,1
 00012410,2058,"Hurontario St at 10886 Hurontario St",,  43.723918, -79.811726,,,0,,,1
 00012420,2059,"Hurontario St opp Petworth Dr",,  43.721380, -79.808256,,,0,,,1
@@ -1251,7 +1251,6 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00016710,2455,"Castlemore Rd e/of Airport Rd",,  43.764171, -79.721012,,,0,,,1
 00016715,2456,"Castlemore Rd w/of Horizon St",,  43.767621, -79.716790,,,0,,,1
 00016720,2457,"Castlemore Rd e/of Bayridge Dr",,  43.769797, -79.714385,,,0,,,1
-00016730,2458,"Goreway Dr s/of Castlemore Rd",,  43.771452, -79.709262,,,0,,,1
 00016740,2459,"Goreway Dr at Cottrelle Blvd",,  43.770045, -79.707385,,,0,,,1
 00016750,2460,"Goreway Dr at 9658 Goreway Dr",,  43.765667, -79.701461,,,0,,,0
 00016755,2461,"Goreway Dr at 9370 Goreway Dr",,  43.760328, -79.694314,,,0,,,0
@@ -1279,7 +1278,6 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00017060,2490,"Goreway Dr at 9400 Goreway Dr",,  43.760726, -79.694556,,,0,,,0
 00017070,2491,"Goreway Dr opp 9658 Goreway Dr",,  43.765816, -79.701379,,,0,,,0
 00017075,2492,"Goreway Dr n/of Cottrelle Blvd",,  43.770524, -79.707765,,,0,,,1
-00017080,2493,"Goreway Dr at Castlemore Rd",,  43.772468, -79.710341,,,0,,,0
 00017090,2494,"Airport Road - Zum Bovaird Station Stop WB",,  43.762611, -79.723553,,,0,,,1
 00017100,2495,"Bovaird Dr E btwn Airport Rd & Mountainash Rd",,  43.760286, -79.726476,,,0,,,0
 00017120,2496,"Torbram - Zum Bovaird Station Stop WB",,  43.754069, -79.734670,,,0,,,1
@@ -1594,6 +1592,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00023040,2939,"Queen St E w/of Hwy 410 Ramp ( at Burger King )",,  43.703170, -79.740688,,,0,,,1
 00023058,3584,"Queen St w/of Dixie Rd",,  43.713638, -79.729076,,,0,,,0
 00023070,2942,"Peel Centre Dr e/of BCC Entrance (opp ROP Bldg)",,  43.717339, -79.723411,,,0,,,1
+00023140,2949,"Team Canada Dr btwn Knightsbridge & Peel Cente Dr",,  43.717650, -79.719575,,,0,,,1
 00023150,2950,"Peel Centre Dr at Region of Peel Bldg.",,  43.718550, -79.722318,,,0,,,1
 00023180,2954,"Queen St E w/of Hwy 410 (Petro Canada)",,  43.703861, -79.740470,,,0,,,1
 00023190,2956,"Rutherford Rd N n/of Queen St E",,  43.702254, -79.742905,,,0,,,1
@@ -1601,7 +1600,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00023210,2958,"Rutherford Rd N at Madoc Dr",,  43.704396, -79.747285,,,0,,,1
 00023220,2959,"Rutherford Rd N at Herkley Dr",,  43.706221, -79.750375,,,0,,,1
 00023230,2960,"Rutherford Rd N at Vodden St E",,  43.706955, -79.754044,,,0,,,0
-00023235,2961,"Rutherford Rd N at Gordon Dr",,  43.707542, -79.755621,,,0,,,1
+00023235,2961,"Rutherford Rd n/of Vodden St",,  43.707542, -79.755621,,,0,,,1
 00023250,2963,"Rutherford Rd N at Archdekin Dr (N)",,  43.709673, -79.757438,,,0,,,1
 00023260,2964,"Rutherford Rd N s/of Williams Pky E",,  43.712928, -79.759991,,,0,,,1
 00023265,2965,"Rutherford Rd N btwn Williams Pky & Wikander Way",,  43.714315, -79.762461,,,0,,,1
@@ -2109,7 +2108,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00045140,3479,"Father Tobin Rd at Fernforest Dr",,  43.756554, -79.772830,,,0,,,1
 00045150,3480,"Father Tobin Rd w/of Moira Creek Dr",,  43.753655, -79.776293,,,0,,,1
 00045160,3481,"Father Tobin Rd e/of Dixie Rd",,  43.752260, -79.778025,,,0,,,1
-00045170,3482,"Father Tobin Rd at Bramalea Rd",,  43.760760, -79.767141,,,0,,,1
+00045170,3482,"Father Tobin Rd w/of Bramalea Rd",,  43.760760, -79.767141,,,0,,,1
 00045175,3483,"Father Tobin Rd e/of Bramalea Rd",,  43.761641, -79.766234,,,0,,,1
 00045180,3484,"Father Tobin Rd at Severin St",,  43.763657, -79.764039,,,0,,,1
 00045185,3485,"Father Tobin Rd e/of Sunny Meadow Blvd",,  43.766060, -79.761252,,,0,,,1
@@ -2130,8 +2129,8 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00045520,3550,"Downtown Terminal Route 52 Stop",,  43.687064, -79.762237,,,0,place_4CRN,,1
 00045528,4001,"Bramalea Terminal Route 1/1A WB - Departure",,  43.719117, -79.720436,,,0,place_CITY,,1
 00045533,4004,"Bramalea Terminal Route 1/1A EB - Departure",,  43.718761, -79.720816,,,0,place_CITY,,1
-00045538,4005,"Bramalea Terminal Route 18/18B NB - Departure",,  43.718914, -79.720875,,,0,place_CITY,,1
-00045543,4006,"Bramalea Terminal Route 18 SB/185 Stop",,  43.719021, -79.720749,,,0,place_CITY,,1
+00045538,4005,"Bramalea Terminal Route 18 NB Stop",,  43.718914, -79.720875,,,0,place_CITY,,1
+00045543,4006,"Bramalea Terminal Route 18 SB Stop",,  43.719021, -79.720749,,,0,place_CITY,,1
 00045545,4007,"Bramalea Terminal Route 15/15A SB Stop",,  43.719136, -79.720610,,,0,place_CITY,,1
 00045550,4008,"Bramalea Terminal Route 15/15A NB Stop",,  43.719243, -79.720496,,,0,place_CITY,,1
 00045555,4009,"Bramalea Terminal Route 12 / 205 / 217",,  43.718969, -79.720154,,,0,place_CITY,,1
@@ -2140,7 +2139,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00045570,4012,"Bramalea Terminal Route 10/16 Stop",,  43.718694, -79.720483,,,0,place_CITY,,1
 00045575,4016,"Bramalea Terminal Route 115 Stop",,  43.718713, -79.720569,,,0,place_CITY,,1
 00045580,4017,"Bramalea Terminal Route 13/20 Stop",,  43.718980, -79.720278,,,0,place_CITY,,1
-00045585,4018,"Bramalea Terminal Route 8/205 Stop",,  43.719060, -79.720189,,,0,place_CITY,,1
+00045585,4018,"Bramalea Terminal Route 8 Stop",,  43.719060, -79.720189,,,0,place_CITY,,1
 00045590,3882,"Ganton Heights e/of Bevington Rd",,  43.676741, -79.825811,,,0,,,1
 00045595,3883,"Ganton Heights e/of Stemford Rd",,  43.676418, -79.827462,,,0,,,1
 00046000,3497,"Torbram Rd s/of Countryside Dr",,  43.773870, -79.760568,,,0,,,1
@@ -2658,14 +2657,13 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 16090580,3177,"Braidwood Lake Rd n/of Petworth Rd",,  43.723230, -79.807762,,,0,,,0
 16090581,3178,"University of Toronto Mississauga Campus Stop",,  43.547850, -79.664834,,,0,,,0
 16103101,3286,"Peel Memorial Hospital - Route 8 / 25 WB",,  43.690966, -79.752355,,,0,place_PMH,,1
-16103103,3179,"Mississauga Rd s/of Financial Dr",,  43.634843, -79.786394,,,0,,,1
+16103103,3179,"Mississauga Rd s/of Financial Dr",,  43.634201, -79.785501,,,0,,,1
 16103104,3288,"Peel Memorial Hospital - Route 8 EB / 24 WB",,  43.691043, -79.752487,,,0,place_PMH,,1
 17010203,3291,"James Potter Rd btwn Bonnie Braes & Timbercove",,  43.657124, -79.782095,,,0,,,1
 17010204,3292,"James Potter Rd btwn Beechmont & Bonnie Braes",,  43.656866, -79.782345,,,0,,,1
 17010205,3293,"Robert Parkinson Dr at Humberstone Cres",,  43.701310, -79.857768,,,0,,,1
 17030601,3294,"Heart Lake Rd s/of Kayak Heights",,  43.730002, -79.772384,,,0,,,0
 17030602,3295,"James Potter Rd s/of Borrelli Dr",,  43.661423, -79.782911,,,0,,,1
-17030603,3296,"The Gore Rd s/of Mayfield Rd",,  43.819026, -79.726515,,,0,,,0
 17030606,3300,"Creditview Rd s/of Remembrance Rd",,  43.698094, -79.848354,,,0,,,1
 17030607,3301,"Creditview Rd s/of Kilkarrin Rd",,  43.701280, -79.852681,,,0,,,1
 17030608,3302,"Ray Lawson Blvd at 300 Ray Lawson Blvd",,  43.653416, -79.730590,,,0,,,1
@@ -2677,7 +2675,6 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 17090508,3400,"Russell Creek Dr s/of Dolbyhill Dr",,  43.759660, -79.779062,,,0,,,1
 17090509,3401,"Russell Creek Dr n/of Countryside Dr",,  43.758653, -79.777500,,,0,,,1
 17090511,5002,"12203 Airport Rd (Legacy warehouse)",,  43.800533, -79.760607,,,0,,,0
-17103007,3959,"Gordon Randle Dr s/of Mayfield Rd",,  43.805395, -79.742788,,,0,,,0
 17103008,3960,"Gordon Randle Dr n/of Layton St",,  43.804008, -79.740559,,,0,,,1
 17103009,3961,"Gordon Randle Dr n/of Erintown Cir (N)",,  43.802639, -79.736524,,,0,,,1
 17103010,3962,"Gordon Randle Dr n/of Snaresbrook Cir (N)",,  43.800804, -79.733093,,,0,,,1
@@ -2781,6 +2778,8 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 18090458,4195,"Sandalwood Pkwy e/of Robert Parkinson Dr",,  43.686991, -79.837661,,,0,,,1
 18090459,4196,"Sandalwood Pkwy w/of Robert Parkinson Dr",,  43.686553, -79.838394,,,0,,,1
 18090460,4197,"Mavis Rd at Rollingwood walkway",,  43.641440, -79.743217,,,0,,,1
+18102902,4199,"Highway 7 w/of Gibraltar Rd",,  43.768313, -79.641639,,,0,,,1
+18102903,4200,"Highway 7 e/of New Huntington Rd",,  43.768719, -79.641243,,,0,,,1
 19010701,4201,"Elbern Markell Dr n/of Waterwide Cres (N)",,  43.666887, -79.818168,,,0,,,1
 19030401,4202,"Bovaird Dr w/of Elbern Markell Dr",,  43.668788, -79.827396,,,0,,,0
 19030402,4215,"McLaughlin Rd btwn Horwood Dr & Queen St",,  43.676970, -79.771969,,,0,,,1
@@ -2849,13 +2848,11 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 22080600,4292,"The Gore Rd n/of Countryside Dr",,  43.811863, -79.717214,,,0,,,1
 22080601,4293,"The Gore Rd n/of Grafton Cres",,  43.805754, -79.708919,,,0,,,1
 22080602,4294,"The Gore Rd n/of Edgeforest Dr",,  43.802343, -79.704264,,,0,,,1
-22080603,4295,"The Gore Rd n/of Countryside Dr",,  43.812082, -79.716995,,,0,,,0
 22080604,4296,"Creditview Rd s/of Mayfield Rd",,  43.704138, -79.856497,,,0,,,0
 22103101,6222,"Viscount Rd s/of American Dr",,  43.691311, -79.618871,,,0,,,1
 22103102,6223,"Viscount Station - Route 505A Stop",,  43.689576, -79.615285,,,0,,,1
 22103103,6224,"American Dr w/of Viscount Rd",,  43.691071, -79.619941,,,0,,,1
 22103104,6225,"Airport Rd s/of Derry Rd",,  43.702088, -79.640133,,,0,,,1
-22103105,4297,"John Carroll Dr n/of Squire Ellis Dr",,  43.811386, -79.732689,,,0,,,1
 22103106,4298,"Squire Ellis Dr w/of Landview Rd",,  43.812261, -79.729213,,,0,,,1
 22103107,4299,"Squire Ellis Dr w/of Martin Byrne Dr",,  43.812562, -79.727201,,,0,,,1
 23010900,4301,"Mississauga Rd n/of Steeles Ave",,  43.627783, -79.776819,,,0,,,1
@@ -2909,6 +2906,9 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 23090437,4350,"Gore Meadows CC - Route 35/36 SB Stop",,  43.793525, -79.695830,,,0,place_GOMD,,1
 23103001,4352,"Wanless Dr e/of McLaughlin Rd",,  43.716209, -79.824330,,,0,place_WAMG,,1
 23103002,4353,"Remembrance Rd w/of Chinguacousy Rd",,  43.708624, -79.839110,,,0,,,1
+24010800,4354,"Countryside Dr e/of John Carroll Dr",,  43.804467, -79.724819,,,0,,,1
+24010801,4355,"John Carroll Dr btwn Elderbridge Rd and Carl Finlay Dr",,  43.807308, -79.728427,,,0,,,1
+24010802,4356,"John Carroll Dr btwn Cloverhaven Rd and Venue Rd",,  43.810434, -79.731804,,,0,,,1
 place_4CRN,,"Downtown Terminal",,  43.686933, -79.762487,,,1,,,1
 place_CITY,,"Bramalea Terminal",,  43.718956, -79.720601,,,1,,,1
 place_GATE,,"Brampton Gateway Terminal",,  43.666101, -79.733925,,,1,,,1
