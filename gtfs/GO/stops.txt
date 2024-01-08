@@ -1,4 +1,4 @@
-stop_id,stop_name,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_code
+﻿stop_id,stop_name,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_code
 WR,West Harbour GO,43.266775,-79.866222,18,https://www.gotransit.com/find-a-station-or-stop/WR/station-details,0,,1,
 WH,Whitby GO,43.86484,-78.93818,93,https://www.gotransit.com/find-a-station-or-stop/WH/station-details,0,,1,
 WE,Weston GO,43.70022,-79.514671,04,https://www.gotransit.com/find-a-station-or-stop/WE/station-details,0,,1,
@@ -82,7 +82,6 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 02830,OId Elm GO,43.9899019629206,-79.2374555459893,74,https://www.gotransit.com/find-a-station-or-stop/02830/station-details,0,,1,102830
 02829,Yonge St. @ John St.,43.814391,-79.424193,60,https://www.gotransit.com/find-a-station-or-stop/02829/station-details,0,,1,102829
 02828,Barrie Transit Terminal,44.387438,-79.690317,69,https://www.gotransit.com/find-a-station-or-stop/02828/station-details,0,,1,102828
-02827,Bramalea Bus Terminal,43.718277,-79.718485,32,https://www.gotransit.com/find-a-station-or-stop/02827/station-details,0,,1,102827
 02821,Yonge St. @ Poyntz Ave.,43.760053363685,-79.4107512589806,05,https://www.gotransit.com/find-a-station-or-stop/02821/station-details,0,,1,102821
 02819,Victoria St. N. @ Frederick St.,43.4661769073305,-80.4573893890337,27,https://www.gotransit.com/find-a-station-or-stop/02819/station-details,0,,1,102819
 02818,Victoria St. N. @ Frederick St.,43.4663507673236,-80.4579750554575,27,https://www.gotransit.com/find-a-station-or-stop/02818/station-details,0,,1,102818
@@ -111,7 +110,6 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 02780,Brock University,43.118136,-79.249325,83,https://www.gotransit.com/find-a-station-or-stop/02780/station-details,0,,1,102780
 02779,Baldwin St. @ Hwy. 407 Park & Ride,43.9449147110778,-78.9599680461866,51,https://www.gotransit.com/find-a-station-or-stop/02779/station-details,0,,1,102779
 02778,Kipling Bus Terminal,43.635688,-79.538441,03,https://www.gotransit.com/find-a-station-or-stop/02778/station-details,0,,1,102778
-02777,Centennial College,43.785812,-79.229268,89,https://www.gotransit.com/find-a-station-or-stop/02777/station-details,0,,1,102777
 02775,Port Credit GO,43.555598,-79.587457,10,https://www.gotransit.com/find-a-station-or-stop/02775/station-details,0,,1,102775
 02772,Yonge St. @ Sheppard Ave.,43.762187996328,-79.4109345055581,05,https://www.gotransit.com/find-a-station-or-stop/02772/station-details,0,,1,102772
 02771,Yonge St. @ Hwy. 407,43.8384664250903,-79.4293096916894,60,https://www.gotransit.com/find-a-station-or-stop/02771/station-details,0,,1,102771
@@ -712,7 +710,6 @@ AC,Acton GO,43.6338043,-80.034111,37,https://www.gotransit.com/find-a-station-or
 00802,Alma St. @ Fall St.,43.6140785,-80.148674,38,https://www.gotransit.com/find-a-station-or-stop/00802/station-details,0,,2,100802
 00801,Main St. S. @ Frederick St.,43.6113472,-80.1336594,38,https://www.gotransit.com/find-a-station-or-stop/00801/station-details,0,,2,100801
 00738,Hwy. 48 @ 19th Ave.,43.945339,-79.277901,73,https://www.gotransit.com/find-a-station-or-stop/00738/station-details,0,,2,100738
-00737,Hwy. 48 @ 19th Ave.,43.945057,-79.278046,73,https://www.gotransit.com/find-a-station-or-stop/00737/station-details,0,,2,100737
 00736,Finch Bus Terminal,43.7819481,-79.4159088,05,https://www.gotransit.com/find-a-station-or-stop/00736/station-details,0,,1,100736
 00734,King St. E. @ Simpson Ave.,43.9116249,-78.6742783,96,https://www.gotransit.com/find-a-station-or-stop/00734/station-details,0,,2,100734
 00732,Main St. W. @ Longwood Rd. S.,43.2590866,-79.901741,18,https://www.gotransit.com/find-a-station-or-stop/00732/station-details,0,,2,100732
