@@ -1,4 +1,4 @@
-﻿shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled
+shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled
 PAUN,43.68293206,-79.6133587,1,0
 PAUN,43.68413737,-79.61494042,2,185
 PAUN,43.68450764,-79.61537819,3,240

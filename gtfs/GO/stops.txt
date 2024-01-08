@@ -1,4 +1,4 @@
-﻿stop_id,stop_name,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_code
+stop_id,stop_name,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_code
 WR,West Harbour GO,43.266775,-79.866222,18,https://www.gotransit.com/find-a-station-or-stop/WR/station-details,0,,1,
 WH,Whitby GO,43.86484,-78.93818,93,https://www.gotransit.com/find-a-station-or-stop/WH/station-details,0,,1,
 WE,Weston GO,43.70022,-79.514671,04,https://www.gotransit.com/find-a-station-or-stop/WE/station-details,0,,1,

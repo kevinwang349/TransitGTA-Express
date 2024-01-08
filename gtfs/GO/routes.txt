@@ -1,4 +1,4 @@
-﻿route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
+route_id,agency_id,route_short_name,route_long_name,route_type,route_color,route_text_color
 01240424-ST,GO,ST,Stouffville,2,794500,FFFFFF
 01240424-RH,GO,RH,Richmond Hill,2,0099c7,FFFFFF
 01240424-MI,GO,MI,Milton,2,f57f25,FFFFFF

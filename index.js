@@ -289,6 +289,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
         reverseDir: reverseDir
     }
     res.render("pages/routeschedule",json);
+    //res.send(json);
 });
 // Returns true if time1str is after time2str,
 //  and false if time1str is before or the same as time2str

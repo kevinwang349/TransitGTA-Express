@@ -1,4 +1,4 @@
-﻿service_id,date,exception_type
+service_id,date,exception_type
 20240310,20240310,1
 20240101,20240101,1
 20240501,20240501,1

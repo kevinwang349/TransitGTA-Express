@@ -1,4 +1,4 @@
-﻿stop_id,stop_name,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_code
+stop_id,stop_name,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding,stop_code
 WE,Weston GO/UP,43.70058,-79.51355,,https://www.upexpress.com/up-express-stations/WestonStation,0,,1,
 UN,UP Express Union Station,43.644238,-79.383555,,https://www.upexpress.com/up-express-stations/UnionStation,0,,1,
 PA,UP Express Pearson Airport,43.682683,-79.612968,,https://www.upexpress.com/up-express-stations/PearsonT1Station,0,,1,
