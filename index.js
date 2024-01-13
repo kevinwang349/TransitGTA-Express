@@ -581,8 +581,8 @@ app.get("/:agency/nextbus", async (req, res) => {
         secs='0'+secs;
     }
     const currentTime=date.getHours()+':'+mins+':'+secs;
-    //console.log(date);
-    //console.log(currentTime);
+    console.log(date);
+    console.log(currentTime);
     // Sort arrival times and trips using selection sort
     let arrivalTimes=[""];
     let stoptrips=[trips[0]];
@@ -636,6 +636,7 @@ app.get("/:agency/nextbus", async (req, res) => {
             const protobufferarr = str.split(' ');
             const gtfs = decode(protobufferarr, formatGTFS);
             allVehicles = gtfs.entity;
+            console.log(gtfs.header.timestamp);
         }
     }).catch(() => {});
     let vehicles = [{}];
@@ -733,7 +734,6 @@ app.get("/:agency/nextbus", async (req, res) => {
         "stopsLegend": stops[0]
     };
     res.render("pages/nextbus", json);
-    console.log(allVehicles);
 
     //res.send(json);
     /*console.log(stopid);
