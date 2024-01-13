@@ -1,11 +1,11 @@
 async function nextPrediction(){
     // Get all necessary resources
     const stops=await fileArray('stops');
-    // If no route filter selected, add all route ids to the routeids filter
+    /* If no route filter selected, add all route ids to the routeids filter
     const routes=await fileArray('routes');
     for(let i=0;i<routes.length;i++){
         routeids.push(routes[i][routes[0].indexOf('route_id')]);
-    }
+    }*/
     // Find and display the stop
     let currentStop=findRow(stops,'stop_code',stopid);
     display('Current stop is #'+currentStop[stops[0].indexOf('stop_code')]+' '+currentStop[stops[0].indexOf('stop_name')]);
@@ -116,4 +116,26 @@ async function nextPrediction(){
         map.fitBounds(L.latLngBounds(shape));
     },2000);
 }
-//nextPrediction();
+
+async function fileArray(fileName){
+    const file = await fetch(`/TTC/fileArray/${fileName}`).then((response) => {return response.json()}).then((json) => {return json.file});
+    return file;
+}
+
+// Find a row in a 2D table
+function findRow(table=[[]], searchColName='', searchStr=''){
+    for(const row of table){
+        if(row[table[0].indexOf(searchColName)]==searchStr){
+            return row;
+        }
+    }
+    return [];
+}
+
+function display(text){
+    const p=document.createElement('p');
+    p.innerHTML=text;
+    document.body.appendChild(p);
+}
+
+nextPrediction();

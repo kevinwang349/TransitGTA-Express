@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head"); %>
+        <title><%= title %></title>
+        <style>
+            #home:hover{
+                cursor:grab;
+            }
+            button{
+                font-size: 25px;
+                border-width: 1px;
+                border-radius: 12px;
+            }button:hover{
+                cursor:grab;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="home" src="/logos/home.png" width="50px">
+        
+        <div style="width: 500px">
+            <div style="height: 500px" id="map"></div>
+        </div>
+        <p style="font-size: 25px;"><%= title%></p>
+
+        <table>
+            <% for(let i=0;i<directionNames.length;i++){ %>
+                <th style="font-size: 20px; border-top: 1px solid black; border-left: 1px solid black; background-color: #ff7777"><%= directionNames[i]%></th>
+                <% for(let j=0;j<directionArrivals[i].length;j++){ %>
+                    <tr><td style="font-size: 20px; border-top: 1px solid black; border-left: 1px solid black;"><%= directionArrivals[i][j]%></td></tr>
+                <% } %>
+            <% } %>
+        </table>
+        <br>
+        <button onclick="scheduleRedirect()" style="font-size: 20px;">Stop schedule at this stop</button>
+
+        <script>
+            // Redirects
+            document.getElementById('home').addEventListener('click',() => {
+                window.location.href='https://transitGTA.onrender.com';
+            });
+            function scheduleRedirect(){
+                window.location.href='https://transitGTA.onrender.com/TTC/stopschedule?s=<%= stopid%>';
+            }
+            function tripRedirect(tripid){
+                window.location.href='https://transitGTA.onrender.com/TTC/trip?t='+tripid;
+            }
+            // Splits a CSV string into a 2D array
+            function strArray(string) {
+                const array1 = string.split('\n');
+                let array2 = [];
+                for (const el of array1) {
+                    array2.push(el.split(','));
+                }
+                return array2;
+            }
+            // Decodes strings passed from Express server
+            function parseHtmlEntities(str) {
+                return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
+                    var num = parseInt(numStr, 10); // read num as normal number
+                    return String.fromCharCode(num);
+                });
+            }
+
+            // Creates a leaflet map binded to an html <div> with id "map"
+            var map = L.map('map');
+            
+            // Adds the basemap tiles to the map
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1Ijoia2V2aW53MjQwMSIsImEiOiJja3I1ODZqdWszMmdqMnBwYW9qbWVnY2c4In0.qqgVHQu94DuWbLbgjWMN9w'
+            }).addTo(map);
+
+            const currentStopStr=`<%= currentStop%>`;
+            const currentStop = currentStopStr.split(',');
+            const stopsStr=`<%= stopsLegend%>`;
+            const stops = stopsStr.split(',');
+            const vehicleStr=`<%= vehicles%>`;
+            const vehicles = JSON.parse(parseHtmlEntities(vehicleStr));
+
+            // Add the stop to the map
+            let stoplat=currentStop[stops.indexOf('stop_lat')]
+            let stoplon=currentStop[stops.indexOf('stop_lon')]
+            let shape=[[stoplat,stoplon]];
+            const cvs = document.createElement('canvas');
+            cvs.setAttribute('style', 'height: 20px, width: 20px');
+            const ctx = cvs.getContext('2d');
+            ctx.fillStyle = '#ff0000';
+            ctx.arc(10, 10, 9, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#ffffff';
+            ctx.arc(10, 10, 9, 0, Math.PI * 2);
+            ctx.stroke();
+            const srcUrl = cvs.toDataURL();
+            const circle = L.icon({ iconUrl: srcUrl, iconSize: [200, 100], iconAnchor: [10, 10], popupAnchor: [0, -9] });
+            let pop=`#${currentStop[stops.indexOf('stop_code')]}: ${currentStop[stops.indexOf('stop_name')]}`;
+            L.marker([stoplat,stoplon],{icon:circle}).addTo(map).bindPopup(pop);
+
+            // Add the vehicles to the map
+            for(const vehicleList of vehicles){
+                for(const vehicle of vehicleList){
+                    let popup=`<div style="font-size: 20px;">Vehicle ${vehicle.id} on <a href="./trip?t=${vehicle.tripid}">${vehicle.route}</a><br>${vehicle.arrival}</div>`;
+                    const canvas = document.createElement('canvas');
+                    canvas.setAttribute('style', 'height: 30px, width: 30px');
+                    // Draw a marker
+                    const ctx = canvas.getContext('2d');
+                    const angleRad=vehicle.heading*Math.PI/180;
+                    const radius=15*Math.sqrt(2);
+                    const ctrx=radius*Math.sin(angleRad+Math.PI/4);
+                    const ctry=radius*Math.cos(angleRad+Math.PI/4);
+                    ctx.rotate(angleRad);
+                    ctx.fillStyle = '#ff0000';
+                    ctx.arc(ctrx, ctry, 10, 0, Math.PI*2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.strokeStyle = '#000000';
+                    ctx.arc(ctrx, ctry, 10, -Math.PI/4, 5*Math.PI/4);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(ctrx-10/Math.sqrt(2),ctry-10/Math.sqrt(2));
+                    ctx.lineTo(ctrx,ctry-10*Math.sqrt(2));
+                    ctx.lineTo(ctrx+10/Math.sqrt(2),ctry-10/Math.sqrt(2));
+                    ctx.fill();
+                    ctx.stroke();
+                    const src = canvas.toDataURL();
+                    const icon = L.icon({iconUrl: src,iconSize: [300,150],iconAnchor: [15,15],popupAnchor: [0,-14]});
+                    L.marker([vehicle.lat,vehicle.lon], { icon: icon }).addTo(map).bindPopup(popup);
+                    shape.push([vehicle.lat,vehicle.lon]);
+                }
+            }
+            map.fitBounds(L.latLngBounds(shape))
+        </script>
+        <br>
+    </body>
+</html>

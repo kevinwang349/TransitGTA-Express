@@ -91,6 +91,7 @@ function init() {
                 tripids.push(newtrips[j][newtrips[0].indexOf('trip_id')]);
             }
         }
+        console.log(tripids.length);
         const stopids=[routes[i][routes[0].indexOf('route_id')],routes[i][routes[0].indexOf('route_short_name')]];
         for(let j=1;j<newtimes.length;j++){
             const stopid = newtimes[j][newtimes[0].indexOf('stop_id')];

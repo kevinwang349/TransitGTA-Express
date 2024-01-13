@@ -62,14 +62,12 @@ Service Alerts: https://opendata.hamilton.ca/gtfs-rt/GTFS_ServiceAlerts.pb
 
 Toronto Transit Commission
 GTFS: http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-schedules/OpenData_TTC_Schedules.zip
-GTFS last fetched Dec 23, 2023
-GTFS valid until Jan 5, 2024
+GTFS last fetched Jan 11, 2024
+GTFS valid until Feb 17, 2024
 ** TTC uses Nextbus(Umo) API for real-time data
 
-In progress:
-Add home icon
 
 Future:
-Add functionality for TTC
+Create new Trips for TTC to use real-time data
 Add route filter for Nextbus
 Create a full functionality pathfinder by creating a list of routes and then finding trips

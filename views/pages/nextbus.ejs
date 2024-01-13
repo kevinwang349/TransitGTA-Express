@@ -62,47 +62,38 @@
                 zoomOffset: -1,
                 accessToken: 'pk.eyJ1Ijoia2V2aW53MjQwMSIsImEiOiJja3I1ODZqdWszMmdqMnBwYW9qbWVnY2c4In0.qqgVHQu94DuWbLbgjWMN9w'
             }).addTo(map);
+
+            // Splits a CSV string into a 2D array
+            function strArray(string) {
+                const array1 = string.split('\n');
+                let array2 = [];
+                for (const el of array1) {
+                    array2.push(el.split(','));
+                }
+                return array2;
+            }
+            // Decodes strings passed from Express server
+            function parseHtmlEntities(str) {
+                return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
+                    var num = parseInt(numStr, 10); // read num as normal number
+                    return String.fromCharCode(num);
+                });
+            }
+
+            const currentStopStr=`<%= currentStop%>`;
+            const currentStop = currentStopStr.split(',');
+            const arrivalTimesStr=`<%= arrivalTimes%>`;
+            const arrivalTimes = arrivalTimesStr.split(',');
+            const actualTimesStr=`<%= actualTimes%>`;
+            const actualTimes = actualTimesStr.split(',');
+            const stoproutesStr=`<%= stoproutesStr%>`;
+            const stoproutes = strArray(stoproutesStr);
+            const stopsStr=`<%= stopsLegend%>`;
+            const stops = stopsStr.split(',');
+            const vehicleStr=`<%= vehicles%>`;
+            const vehicles = JSON.parse(parseHtmlEntities(vehicleStr));
         </script>
-
-        <% if(agency == 'TTC'){ %>
-            <script>
-                //
-            </script>
-            <!--script src="/nextbusTTC.js"></script-->
-        <% } else { %>
-            <script>
-                // Splits a CSV string into a 2D array
-                function strArray(string) {
-                    const array1 = string.split('\n');
-                    let array2 = [];
-                    for (const el of array1) {
-                        array2.push(el.split(','));
-                    }
-                    return array2;
-                }
-                // Decodes strings passed from Express server
-                function parseHtmlEntities(str) {
-                    return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
-                        var num = parseInt(numStr, 10); // read num as normal number
-                        return String.fromCharCode(num);
-                    });
-                }
-
-                const currentStopStr=`<%= currentStop%>`;
-                const currentStop = currentStopStr.split(',');
-                const arrivalTimesStr=`<%= arrivalTimes%>`;
-                const arrivalTimes = arrivalTimesStr.split(',');
-                const actualTimesStr=`<%= actualTimes%>`;
-                const actualTimes = actualTimesStr.split(',');
-                const stoproutesStr=`<%= stoproutesStr%>`;
-                const stoproutes = strArray(stoproutesStr);
-                const stopsStr=`<%= stopsLegend%>`;
-                const stops = stopsStr.split(',');
-                const vehicleStr=`<%= vehicles%>`;
-                const vehicles = JSON.parse(parseHtmlEntities(vehicleStr));
-            </script>
-            <script src="/nextbus.js"></script>
-        <% } %>
+        <script src="/nextbus.js"></script>
 
         <br>
     </body>

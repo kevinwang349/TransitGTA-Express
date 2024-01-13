@@ -31,7 +31,7 @@
     </select>
     <button onclick="zoomToCurrent()">Zoom in to current location</button><br><br>
     <button onclick="routeListRedirect()">See a full list of routes, with schedules and current bus locations</button>
-    <p style="font-size: 20px;">Zoom in to see more detail and to display stops</p>
+    <p style="font-size: 20px;">Zoom in to see more detail, and to show bus stops and current bus locations</p>
     <div id="outerbox">
     </div>
     <br>
@@ -64,6 +64,13 @@
         const agency=`<%= agency%>`;
         const routeShapesStr=`<%= routeshapes%>`;
         const shapes=strArray(routeShapesStr);
+        const directionsStr=`<%= directions%>`;
+        const directions=strArray(directionsStr);
+        const stopsStr = `<%= stops %>`;
+        const stops = strArray(stopsStr);
+        const routesStr = `<%= routes %>`;
+        const routes = strArray(routesStr);
+        const vehicles=JSON.parse(parseHtmlEntities(`<%= vehicles%>`));
     </script>
     <script type="text/javascript" src="/map.js"></script>
 </body>

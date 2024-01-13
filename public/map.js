@@ -1,5 +1,6 @@
 let outerBox;
 let stopsLayer;
+let vehiclesLayer;
 let bounds=[];
 var map;
 
@@ -48,40 +49,57 @@ async function generateMap(){
         accessToken: 'pk.eyJ1Ijoia2V2aW53MjQwMSIsImEiOiJja3I1ODZqdWszMmdqMnBwYW9qbWVnY2c4In0.qqgVHQu94DuWbLbgjWMN9w'
     }).addTo(map);
 
-    // Fill the map with all stops
-    let stops=await fileArray('stops');
-    let stopmarkers=[];
-    for(let i=1;i<stops.length;i++){
-        let currentStop=stops[i];
-        const cvs = document.createElement('canvas');
-        cvs.setAttribute('style', 'height: 20px, width: 20px');
-        const ctx = cvs.getContext('2d');
-        ctx.fillStyle = '#ff0000';
-        ctx.arc(10, 10, 9, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = '#000000';
-        ctx.arc(10, 10, 9, 0, Math.PI * 2);
-        ctx.stroke();
-        const srcUrl = cvs.toDataURL();
-        const circle = L.icon({ iconUrl: srcUrl, iconSize: [200, 100], iconAnchor: [10, 10], popupAnchor: [0, -9] });
-        let pop=`#${currentStop[stops[0].indexOf('stop_code')]}: ${currentStop[stops[0].indexOf('stop_name')]}<br><a href='https://transitGTA.onrender.com/${agency}/stopschedule?s=${currentStop[stops[0].indexOf('stop_id')]}'>Stop schedule for this stop</a><br><a href='https://transitGTA.onrender.com/${agency}/nextbus?s=${currentStop[stops[0].indexOf('stop_id')]}'>Next vehicle arrival at this stop</a>`;
-        stopmarkers.push(L.marker([currentStop[stops[0].indexOf('stop_lat')],currentStop[stops[0].indexOf('stop_lon')]],{icon:circle}).bindPopup(pop));
-        bounds.push([stops[i][stops[0].indexOf('stop_lat')],stops[i][stops[0].indexOf('stop_lon')]]);
-    }
-    stopsLayer=L.layerGroup(stopmarkers);
-    map.on('zoomend', function() {
-        if(map.getZoom()>13&&!map.hasLayer(stopsLayer)){
-            stopsLayer.addTo(map);
-        }else if(map.getZoom()<13&&map.hasLayer(stopsLayer)){
-            map.removeLayer(stopsLayer);
+    // Fill the map with all vehicles for TTC
+    if(agency=='TTC'){
+        let vehiclemarkers=[];
+        for (const vehicle of vehicles) {
+            let popup = `Vehicle ${vehicle.id} on route `;
+            const canvas = document.createElement('canvas');
+            canvas.setAttribute('style', 'height: 30px, width: 30px');
+            const context = canvas.getContext('2d');
+            let hasDirection=false;
+            for (const direction of directions) {
+                if (vehicle.dirTag == direction[directions[0].indexOf('dirTag')]) {
+                    const dir=direction[directions[0].indexOf('dirTitle')];
+                    popup += `${dir.substring(dir.indexOf('-')+2)}`;
+                    hasDirection=true;
+                }
+            }
+            if(!hasDirection){
+                for(let i=1;i<routes.length;i++){
+                    if (vehicle.routeTag == routes[i][routes[0].indexOf('route_short_name')]) {
+                        popup += routes[i][routes[0].indexOf('route_short_name')]+' '+routes[i][routes[0].indexOf('route_long_name')];
+                    }
+                }
+            }
+            context.fillStyle = '#ff0000';
+            context.arc(15, 15, 14, 0, Math.PI * 2);
+            context.fill();
+            context.fillStyle = '#000000';
+            context.arc(15, 15, 14, 0, Math.PI * 2);
+            context.stroke();
+            context.fillStyle = '#ffffff';
+            context.font = '9px sans-serif';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(vehicle.id, 15, 15);
+            const src = canvas.toDataURL();
+            const icon = L.icon({ iconUrl: src, iconSize: [300, 150], iconAnchor: [15, 15], popupAnchor: [0, -14] });
+            vehiclemarkers.push(L.marker([vehicle.lat, vehicle.lon], { icon: icon }).bindPopup(popup));
+            bounds.push([vehicle.lat, vehicle.lon]);
         }
-    });
-    zoomOut();
-
-    console.log('stops loaded');
+        vehiclesLayer=L.layerGroup(vehiclemarkers);
+        map.on('zoomend', function() {
+            if(map.getZoom()>12&&!map.hasLayer(vehiclesLayer)){
+                vehiclesLayer.addTo(map);
+            }else if(map.getZoom()<=12&&map.hasLayer(vehiclesLayer)){
+                map.removeLayer(vehiclesLayer);
+            }
+        });
+        console.log('vehicles loaded');
+    }
 
     // Fill the map with all routes
-    let routes=await fileArray('routes');
     for(let h=1;h<routes.length;h++){
         let shape=[];
         let route=routes[h];
@@ -98,7 +116,7 @@ async function generateMap(){
                 if(shape.length>1){
                     dist=L.latLng(shape[shape.length-2]).distanceTo(shape[shape.length-1]);
                 }
-                if((route[routes[0].indexOf('route_type')]==2 && dist>2000) || (route[routes[0].indexOf('route_type')]==3 && dist>1000)){
+                if((route[routes[0].indexOf('route_type')]==2 && dist>2000) || (route[routes[0].indexOf('route_type')]==3 && dist>1000) || (route[routes[0].indexOf('route_type')]==0 && dist>1000)){
                     currentBranch=shapes[i][3];
                     L.polyline(currentShape,{color: `#${routecolor}`}).addTo(map);
                     //console.log(dist);
@@ -111,10 +129,46 @@ async function generateMap(){
         //L.polyline(shape,{color: `#${route[routes[0].indexOf('route_color')]}`}).addTo(map)
         L.polyline(currentShape,{color: `#${routecolor}`}).addTo(map);
     }
+    zoomOut();
     //console.log(shapes);
     console.log('routes loaded');
     //map.fitBounds(L.latLngBounds(bounds));
     document.getElementById('load').innerHTML='';
+
+    // Display stops if the map is sufficiently zoomed in
+    stopsLayer=L.layerGroup();
+    map.on('moveend', async () => {
+        if(map.getZoom()>13){
+            // Use map boundaries to calculate map width / height
+            const latRange=(map.getBounds()._northEast.lat-map.getBounds()._southWest.lat)/2.0;
+            const lngRange=(map.getBounds()._northEast.lng-map.getBounds()._southWest.lng)/2.0;
+            const stops = await fetch(`/${agency}/localStops?lat=${map.getCenter().lat}&lng=${map.getCenter().lng}&latRange=${latRange}&lngRange=${lngRange}`).then((response) => {return response.json()}).then((json) => {return json.stops});
+            let stopmarkers=[];
+            for(let i=1;i<stops.length;i++){
+                let currentStop=stops[i];
+                const cvs = document.createElement('canvas');
+                cvs.setAttribute('style', 'height: 20px, width: 20px');
+                const ctx = cvs.getContext('2d');
+                ctx.fillStyle = '#0000ff';
+                ctx.arc(10, 10, 9, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#000000';
+                ctx.arc(10, 10, 9, 0, Math.PI * 2);
+                ctx.stroke();
+                const srcUrl = cvs.toDataURL();
+                const circle = L.icon({ iconUrl: srcUrl, iconSize: [200, 100], iconAnchor: [10, 10], popupAnchor: [0, -9] });
+                let pop=`#${currentStop[stops[0].indexOf('stop_code')]}: ${currentStop[stops[0].indexOf('stop_name')]}<br><a href='https://transitGTA.onrender.com/${agency}/stopschedule?s=${currentStop[stops[0].indexOf('stop_id')]}'>Stop schedule for this stop</a><br><a href='https://transitGTA.onrender.com/${agency}/nextbus?s=${currentStop[stops[0].indexOf('stop_id')]}'>Next vehicle arrival at this stop</a>`;
+                stopmarkers.push(L.marker([currentStop[stops[0].indexOf('stop_lat')],currentStop[stops[0].indexOf('stop_lon')]],{icon:circle}).bindPopup(pop));
+                bounds.push([stops[i][stops[0].indexOf('stop_lat')],stops[i][stops[0].indexOf('stop_lon')]]);
+            }
+            map.removeLayer(stopsLayer);
+            stopsLayer=L.layerGroup(stopmarkers);
+            stopsLayer.addTo(map);
+        }else if(map.getZoom()<=13&&map.hasLayer(stopsLayer)){
+            map.removeLayer(stopsLayer);
+            stopsLayer=L.layerGroup();
+        }
+    });
 }
 
 function zoomToCurrent(){

@@ -493,8 +493,12 @@ function subtract(time1str, time2str){
 
 app.get("/:agency/nextbus", async (req, res) => {
     const agency = req.params.agency;
-    // Get all url flags
     const stopid = req.query.s;
+    if(agency=='TTC') {
+        nextPrediction(stopid,res);
+        return;
+    }
+    // Get all url flags
     const routelist = req.query.r; // filter by routes
     let routeids=[];
     if(routelist!=undefined&&routelist.length>0){
@@ -729,6 +733,7 @@ app.get("/:agency/nextbus", async (req, res) => {
         "stopsLegend": stops[0]
     };
     res.render("pages/nextbus", json);
+    console.log(allVehicles);
 
     //res.send(json);
     /*console.log(stopid);
@@ -740,6 +745,111 @@ app.get("/:agency/nextbus", async (req, res) => {
     console.log(updates);
     console.log(actualTimes);*/
 });
+async function nextPrediction(stopid,res){
+    // Get all necessary resources
+    const stops=fileArray('TTC','stops');
+    /* If no route filter selected, add all route ids to the routeids filter
+    const routes=fileArray('routes');
+    for(let i=0;i<routes.length;i++){
+        routeids.push(routes[i][routes[0].indexOf('route_id')]);
+    }*/
+    // Find and display the stop
+    let currentStop=findRow(stops,'stop_id',stopid);
+    const title = 'Current stop is #'+currentStop[stops[0].indexOf('stop_code')]+' '+currentStop[stops[0].indexOf('stop_name')];
+    let directionNames=[];
+    let directionArrivals=[];
+    let vehicles=[];
+    let i=0;
+    await fetch('https://retro.umoiq.com/service/publicJSONFeed?command=predictions&a=ttc&stopId=' + currentStop[stops[0].indexOf('stop_code')]).then(async (response) => {
+        const predictionsjson=await response.json();
+        let predictions=predictionsjson.predictions;
+        if(predictionsjson.Error!=undefined){
+            res.send(predictionsjson.Error.content);
+            return;
+        }
+        if(predictions.length==undefined){
+            predictions=[predictions];
+        }
+        for(const prediction of predictions){
+            if(prediction.dirTitleBecauseNoPredictions!=undefined){
+                directionNames.push(prediction.dirTitleBecauseNoPredictions+':');
+                directionArrivals.push([]);
+                continue;
+            }
+            let directions=prediction.direction;
+            if(directions.length==undefined){
+                directions=[directions];
+            }
+            for(const direction of directions){
+                directionNames.push(direction.title+':');
+                let times=direction.prediction;
+                if(times.length==undefined){
+                    times=[times];
+                }
+                directionArrivals.push([]);
+                vehicles.push([]);
+                for(const time of times){
+                    // Display the arrival time
+                    let date=new Date(parseInt(time.epochTime));
+                    //console.log(date);
+                    let seconds=time.seconds;
+                    let minsRemaining=time.minutes;
+                    let secsRemaining=seconds-minsRemaining*60;
+                    let sender='Arriving in ';
+                    if(minsRemaining==1){
+                        sender+='1 minute and '+secsRemaining+' second(s) at ';
+                    }else if(minsRemaining==0){
+                        sender+=secsRemaining+' seconds at ';
+                    }else{
+                        sender+=minsRemaining+' minutes and '+secsRemaining+' second(s) at ';
+                    }
+                    let hours=date.getHours();
+                    let minutes=date.getMinutes();
+                    if(minutes<10){
+                        minutes='0'+minutes;
+                    }
+                    if(hours==0){
+                        sender+='12:'+minutes+' AM';
+                    }else if(hours>12){
+                        hours-=12;
+                        sender+=hours+':'+minutes+' PM';
+                    }else{
+                        sender+=hours+':'+minutes+' AM';
+                    }
+                    // Add the vehicle to the map
+                    await fetch('https://retro.umoiq.com/service/publicJSONFeed?command=vehicleLocation&a=ttc&v='+time.vehicle).then(async (response) => {
+                        const vehjson=await response.json();
+                        const vehicle=vehjson.vehicle;
+                        vehicle.tripid=time.tripTag;
+                        vehicle.route=direction.title;
+                        vehicle.arrival=sender;
+                        vehicles[i].push(vehicle);
+                    });
+                    if(parseInt(time.vehicle)<5000 && parseInt(time.vehicle)>4000){
+                        directionArrivals[i].push('Streetcar #'+time.vehicle+' '+sender);
+                    }else{
+                        directionArrivals[i].push('Bus #'+time.vehicle+' '+sender);
+                    }
+                }
+                i++;
+            }
+        }
+    });
+    setTimeout(() => {
+        // Send data
+        const json={
+            "title": title,
+            "currentStop": currentStop,
+            "stopsLegend": stops[0],
+            "stopid": stopid,
+            "directionNames": directionNames,
+            "directionArrivals": directionArrivals,
+            "vehicles": JSON.stringify(vehicles)
+        };
+        res.render('pages/nextbusTTC',json);
+        //res.send(json);
+    },2000);
+}
 
 
 app.get("/:agency/trip", async (req, res) => {
@@ -793,6 +903,27 @@ app.get("/:agency/trip", async (req, res) => {
     let color=currentRoute[routes[0].indexOf('route_color')];
     if(color==undefined){
         color='dedede';
+    }
+
+    if(agency=='TTC'){ // cannot find real-time trip or vehicle data for TTC (for now)
+        const title = `Current trip is on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
+        const json={
+            "agency": agency,
+            "title": title,
+            "colors": [],
+            "arrivalTimes": arrivalTimes,
+            "tripFound": false,
+            "actualTimes": [],
+            "tripstops": tripstops,
+            "tripStopsStr": arrayStr(tripstops),
+            "routecolor": color,
+            "vehicleFound": false,
+            "popup": "",
+            "shape": arrayStr(shape),
+            "vehicle": "{}"
+        };
+        res.render("pages/trip", json);
+        return;
     }
 
     const urls = JSON.parse(readFileSync('./URL.json'));
@@ -996,13 +1127,68 @@ app.get("/:agency/map", async (req, res) => {
             mapJSON.push(m);
         }
     }
+    const routes = fileArray(agency,'routes');
+    const stops = fileArray(agency,'stops');
+    // Get all vehicles
+    const urls = JSON.parse(readFileSync('./URL.json'));
+    const VPurl = urls[agency].vehiclePositions;
+    let allVehicles = [{}];
+    await fetch(VPurl).then(async (response) => {
+        if(agency == 'VIA'){
+            allVehicles=await response.json();
+        }else if(agency == 'TTC'){
+            const gtfs=await response.json();
+            allVehicles = gtfs.vehicle;
+        }else if(agency == 'GO'){
+            const gtfs=await response.json();
+            allVehicles = gtfs.entity;
+        }else{
+            const buffer = await response.buffer();
+            const hex = buffer.toString('hex').split('');
+            let str = '';
+            let c = 0;
+            for (const char of hex) {
+                c++;
+                str += char;
+                if (c % 2 == 0) {
+                    str += ' ';
+                }
+            }
+            const protobufferarr = str.split(' ');
+            const gtfs = decode(protobufferarr, formatGTFS);
+            allVehicles = gtfs.entity;
+        }
+    }).catch(() => {});
     const routeshapes = fileArray(agency,'routeshapes');
+    let directions=[];
+    if(agency == 'TTC'){
+        directions = fileArray(agency,'directions');
+    }
     const json={
         "agency": agency,
         "mapJSON": mapJSON,
-        "routeshapes": arrayStr(routeshapes)
+        "routeshapes": arrayStr(routeshapes),
+        "directions": arrayStr(directions),
+        "routes": arrayStr(routes),
+        "stops": arrayStr(stops),
+        "vehicles": JSON.stringify(allVehicles)
     };
     res.render('pages/map',json);
+});
+app.get("/:agency/localStops", async (req, res) => {
+    const agency = req.params.agency;
+    const lat = req.query.lat;
+    const lng = req.query.lng;
+    const latRange = req.query.latRange;
+    const lngRange = req.query.lngRange;
+    const stops = fileArray(agency,'stops');
+    const newstops = [stops[0]];
+    for(let i=1;i<stops.length;i++){
+        if(Math.abs(stops[i][stops[0].indexOf('stop_lat')]-lat)<=latRange && Math.abs(stops[i][stops[0].indexOf('stop_lon')]-lng) <= lngRange){
+            newstops.push(stops[i]);
+        }
+    }
+    res.send({stops: newstops});
 });
 
 app.get("/GO/fare/:startStop/:endStop/", async (req, res) => {
@@ -1075,6 +1261,9 @@ app.get("/:agency/findService/:date/", async (req, res) => {
 
 // Read a CSV data file and return its contents in the form of a 2D array
 function fileArray(agency, filename, flag=false) {
+    if(agency=='TTC'&&filename=='stop_times'){
+        return fileArrayStopTimes();
+    }
     const filestr = readFileSync(`./gtfs/${agency}/${filename}.txt`).toString();
     let array1 = filestr.split('\r\n');
     if(flag) array1 = filestr.split('\n');
@@ -1087,6 +1276,18 @@ function fileArray(agency, filename, flag=false) {
 app.get("/:agency/fileArray/:file/", async (req, res) => {
     res.send({'file': fileArray(req.params.agency, req.params.file)});
 });
+function fileArrayStopTimes() { // for TTC's stop_times file only
+    const serviceids=findService('TTC');
+    let stoptimes=[['trip_id','arrival_time','departure_time','stop_id','stop_sequence','stop_headsign','pickup_type','drop_off_type','shape_dist_traveled']];
+    for(const id of serviceids){
+        const filestr = readFileSync(`./gtfs/TTC/${id}.txt`).toString();
+        let array1 = filestr.split('\r\n');
+        for (let i=1;i<array1.length;i++) {
+            if (array1[i].length > 0) stoptimes.push(array1[i].split(','));
+        }
+    }
+    return stoptimes;
+}
 
 // Creates a string version of a 2D array
 function arrayStr(array1) {

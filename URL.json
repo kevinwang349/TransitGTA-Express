@@ -8,6 +8,9 @@
         "tripUpdates": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/TripUpdates/?key=30021837",
         "vehiclePositions": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/VehiclePosition/?key=30021837"
     },
+    "TTC":{
+        "vehiclePositions": "https://retro.umoiq.com/service/publicJSONFeed?command=vehicleLocations&a=ttc"
+    },
     "VIA":{
         "vehiclePositions": "https://tsimobile.viarail.ca/data/allData.json"
     },

@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs';
-const agency='Brampton';
+const agency='TTC';
 
 function init() {
     const routes = fileArray('routes.txt')

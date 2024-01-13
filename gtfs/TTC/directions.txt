@@ -1,0 +1,583 @@
+route_short_name,route_long_name,dirName,dirTag,dirTitle,branch
+10,10-Van Horne,West,10_1_10,West - 10 Van Horne towards Don Mills Station,10
+10,10-Van Horne,East,10_0_10,East - 10 Van Horne towards Victoria Park,10
+100,100-Flemingdon Park,North,100_1_100A,North - 100a Flemingdon Park towards Don Mills & Wynford,100A
+100,100-Flemingdon Park,South,100_0_100A,South - 100a Flemingdon Park towards Broadview Station,100A
+101,101-Downsview Park,South,101_0_101,South - 101 Downsview Park towards Stanley Greene Blvd,101
+101,101-Downsview Park,North,101_1_101,North - 101 Downsview Park towards Downsview Park Station,101
+102,102-Markham Rd.,South,102_0_102D,South - 102 Markham Rd towards Warden Station - Extra Fare Required North of Steeles,102
+102,102-Markham Rd.,North,102_1_102Cam,North - 102c Markham Rd towards Steeles via Dynamic Dr,102C
+102,102-Markham Rd.,North,102_1_102D,North - 102d Markham Rd towards Major Mackenzie - Extra Fare Required North of Steeles,102D
+102,102-Markham Rd.,South,102_0_102Cpm,South - 102c Markham Rd towards Warden Station via Dynamic Dr,102C
+104,104-Faywood,North,104_1_104,North - 104 Faywood towards Sheppard West Station,104
+104,104-Faywood,South,104_0_104,South - 104 Faywood towards Wilson Station,104
+105,105-Dufferin North,North,105_1_105A,North - 105a Dufferin North towards Steeles,105A
+105,105-Dufferin North,South,105_0_105A,South - 105 Dufferin North towards Sheppard West Station,105
+106,106-Sentinel,East,106_0_106,East - 106 Sentinel towards Sheppard West Station,106
+106,106-Sentinel,West,106_1_106pv,West - 106 Sentinel towards  Pioneer Village Station,106
+107,107-York University Heights,South,107_0_107Dwi,South - 107f York University Heights towards Wilson Station,107F
+107,107-York University Heights,North,107_1_wi107D,North - 107d York University Heights towards Steeles via Alness and Supertest,107D
+107,107-York University Heights,North,107_1_wi107A,North - 107a York University Heights  towards Steeles via Keele,107A
+107,107-York University Heights,South,107_0_107A,South - 107a York University Heights  towards Sheppard West  Station via Alness,107A
+107,107-York University Heights,South,107_0_107Cwi,South - 107f York University Heights towards Wilson Station,107F
+107,107-York University Heights,North,107_1_107B,North - 107b York University Heights  towards Steeles via Alness,107B
+108,108-Driftwood,East,108_0_108Cpv,East - 108c Driftwood towards Wilson Station via Arleta,108C
+108,108-Driftwood,West,108_1_108C,West - 108b Driftwood towards Pioneer Village Station via Arleta,108B
+108,108-Driftwood,West,108_1_108A,West - 108a Driftwood towards Pioneer Village Station via Grandravine,108A
+108,108-Driftwood,East,108_0_108A,East - 108a Driftwood towards Sheppard West Station via Grandravine,108A
+109,109-Ranee,North,109_1_109B,North - 109b Ranee towards Neptune via Marlee and Flemington,109B
+109,109-Ranee,South,109_0_109C,South - 109c Ranee towards Eglinton West Station  via Varna and Marlee,109C
+109,109-Ranee,South,109_0_109B,South - 109b Ranee towards Eglinton West Station  via Flemington and Marlee,109B
+109,109-Ranee,North,109_1_109C,North - 109c Ranee towards Neptune via Marlee and Varna,109C
+11,11-Bayview,North,11_1_11A,North - 11a Bayview towards Steeles via Sunnybrook,11A
+11,11-Bayview,South,11_0_11A,South - 11 Bayview towards Davisville Station via Sunnybrook,11
+110,110-Islington South,North,110_1_110C,North - 110c Islington South towards Islington Station,110C
+110,110-Islington South,North,110_1_110B,North - 110b Islington South towards Islington Station via 30th Street and Horner,110B
+110,110-Islington South,South,110_0_110C,South - 110c Islington South towards Kipling and Lake Shore,110C
+110,110-Islington South,North,110_1_110A,North - 110a Islington South towards Islington Station via Browns Line and Horner,110A
+110,110-Islington South,South,110_0_110B,South - 110b Islington South towards Long Branch via Horner and 30th Street,110B
+110,110-Islington South,South,110_0_110A,South - 110a Islington South towards Long Branch via Horner and Browns Line,110A
+111,111-East Mall,North,111_1_111,North - 111 East Mall towards Eglinton,111
+111,111-East Mall,South,111_0_111,South - 111 East Mall towards Kipling Station,111
+112,112-West Mall,South,112_0_112Cp,South - 112 West Mall towards Kipling Station,112
+112,112-West Mall,North,112_1_112Ca,North - 112c West Mall towards Disco Rd,112C
+113,113-Danforth Road,East,113_0_113,East - 113 Danforth Road towards Kennedy Station,113
+113,113-Danforth Road,West,113_1_113,West - 113 Danforth Road towards Main Street Station,113
+115,115-Silver Hills,West,115_1_115,West - 115 Silver Hills towards York Mills Station,115
+115,115-Silver Hills,East,115_0_115,East - 115 Silver Hills towards Leslie,115
+116,116-Morningside,West,116_1_116,West - 116 Morningside towards Kennedy Station,116
+116,116-Morningside,East,116_0_116am*,East - 116 Morningside towards Finch,116
+118,118-Thistle Down,East,118_0_118a,East - 118 Thistle Down towards Wilson Station via Tandridge,118
+118,118-Thistle Down,West,118_1_118p,West - 118 Thistle Down towards Thistle Down via Tandridge,118
+118,118-Thistle Down,West,118_1_118a,West - 118 Thistle Down towards Thistle Down,118
+118,118-Thistle Down,East,118_0_118p,East - 118 Thistle Down towards Wilson Station,118
+119,119-Torbarrie,West,119_1_119p,West - 119 Torbarrie towards Torbarrie and Clayson,119
+119,119-Torbarrie,West,119_1_119a,West - 119 Torbarrie towards Torbarrie and Clayson,119
+119,119-Torbarrie,East,119_0_119p,East - 119 Torbarrie towards Wilson Stn,119
+119,119-Torbarrie,East,119_0_119a,East - 119 Torbarrie towards Wilson Stn,119
+12,12-Kingston Road,West,12_1_NMVI,West - 12e Kingston Rd Express towards Victoria Park Station,12E
+12,12-Kingston Road,East,12_0_12D,East - 12d Kingston Rd towards U of T Scarborough,12D
+12,12-Kingston Road,West,12_1_12D,West - 12 Kingston Rd towards Victoria Park Station,12
+12,12-Kingston Road,East,12_0_12C,East - 12c Kingston Rd towards St Clair and Barkdene Hills,12C
+12,12-Kingston Road,East,12_0_12B,East - 12b Kingston Rd towards Kennedy Station via Brimley,12B
+12,12-Kingston Road,East,12_0_12A,East - 12a Kingston Rd towards Kennedy Station via Variety Village and Brimley,12A
+12,12-Kingston Road,West,12_1_12Bam*,West - 12b Kingston Rd towards Victoria Park Station via Brimley,12B
+12,12-Kingston Road,West,12_1_12Aam*,West - 12a Kingston Rd towards Victoria Park Station via Brimley and Variety Village,12A
+12,12-Kingston Road,East,12_0_12Cam,East - 12c Kingston Rd towards St Clair and Barkdene Hills,12C
+120,120-Calvington,East,120_0_120,East - 120 Calvington towards Wilson Station,120
+120,120-Calvington,West,120_1_120,West - 120 Calvington towards Sheppard/Jane,120
+121,121-Esplanade-River,West,121_1_121,West - 121 Esplanade-River towards Union Station,121
+121,121-Esplanade-River,East,121_0_121,East - 121 Esplanade-River towards Broadview,121
+122,122-Graydon Hall,East,122_0_122,East - 122 Graydon Hall towards Roywood via Lesmill,122
+122,122-Graydon Hall,West,122_1_122,West - 122 Graydon Hall towards York Mills Station,122
+123,123-Sherway,North,123_1_123C,North - 123c Sherway towards Kipling Station via North Queen and Shorncliffe,123C
+123,123-Sherway,South,123_0_123C,South - 123c Sherway towards Long Branch via Shorncliffe and North Queen,123C
+123,123-Sherway,North,123_1_123B,North - 123b Sherway towards Kipling Station via East Mall and Shorncliffe,123B
+123,123-Sherway,South,123_0_123B,South - 123b Sherway towards Long Branch via Shorncliffe and East Mall,123B
+123,123-Sherway,North,123_1_123F,North - 123f Sherway towards Kipling Station via West Mall,123F
+123,123-Sherway,South,123_0_123F,South - 123f Sherway towards Sherway via West Mall,123F
+124,124-Sunnybrook,East,124_0_124Con,East - 124 Sunnybrook towards Sunnybrook Hospital via Lawrence Station,124
+124,124-Sunnybrook,West,124_1_124Con,West - 124 Sunnybrook towards Avenue Rd (Roe Loop) via Lawrence Station,124
+125,125-Drewry,West,125_1_125,West - 125 Drewry towards Bathurst (Torresdale),125
+125,125-Drewry,East,125_0_125,East - 125 Drewry towards Finch Station,125
+126,126-Christie,South,126_0_126Con,South - 126 Christie towards Christie Station,126
+126,126-Christie,North,126_1_126Con,North - 126 Christie towards St Clair West Station,126
+127,127-Davenport,West,127_1_127,West - 127 Davenport towards St Clair & Old Weston Rd,127
+127,127-Davenport,East,127_0_127,East - 127 Davenport towards Spadina Station,127
+128,128-Stanley Greene,West,128_1_128,West - 128 Stanley Greene towards Wilson Station,128
+128,128-Stanley Greene,East,128_0_128,East - 128 Stanley Greene towards Stanley Greene Blvd,128
+129,129-McCowan North,North,129_1_129A,North - 129a McCowan North towards Major Mackenzie via Scarborough Ctr Stn Extra Fare Required North of Steeles,129A
+129,129-McCowan North,South,129_0_129A,South - 129 McCowan North towards Kennedy Stn via Scarborough Ctr Stn Extra Fare Required North of Steeles,129
+13,13-Avenue Road,South,13_0_13B,South - 13b Avenue Rd towards Gerrard,13B
+13,13-Avenue Road,North,13_1_13B,North - 13 Avenue Rd towards Eglinton Station,13
+130,130-Middlefield,South,130_0_130B,South - 130b Middlefield towards Scarborough Centre via Maybrook,130B
+130,130-Middlefield,South,130_0_130A,South - 130a Middlefield towards Scarborough Centre,130A
+130,130-Middlefield,North,130_1_130B,North - 130b Middlefield towards Steeles via Maybrook,130B
+130,130-Middlefield,North,130_1_130A,North - 130a Middlefield towards Steeles,130A
+131,131-Nugget,East,131_1_131r,East - 131 Nugget towards Old Finch/Morningview via Scarborough Centre,131
+131,131-Nugget,West,131_0_131r,West - 131 Nugget towards Kennedy Stn via Scarborough Centre,131
+131,131-Nugget,West,131_0_131,West - 131 Nugget towards Kennedy Stn via Scarborough Centre,131
+132,132-Milner,West,132_0_132,West - 132 Milner towards Scarborough Centre,132
+132,132-Milner,East,132_1_132,East - 132 Milner towards McLevin & Hupfield,132
+133,133-Neilson,North,133_1_133,North - 133 Neilson towards Morningside Heights via Scarborough Centre Stn and Centenary,133
+133,133-Neilson,South,133_0_133*,South - 133 Neilson towards Kennedy Stn via Centenary and Scarborough Centre Stn,133
+134,134-Progress,North,134_1_134D,North - 134d Progress towards Finch via Centennial College and Tapscott,134D
+134,134-Progress,South,134_0_134Dr,South - 134 Progress towards Scarborough Centre via Centennial College,134
+134,134-Progress,North,134_1_134Dr,North - 134d Progress towards Finch via Centennial College and Crow Trail,134D
+134,134-Progress,North,134_1_134Bam,North - 134b Progress towards McNicoll via Tapscott,134B
+134,134-Progress,South,134_0_134D,South - 134 Progress towards Scarborough Centre via Centennial College,134
+134,134-Progress,North,134_1_134Bpm,North - 134b Progress towards McNicoll via Tapscott,134B
+135,135-Gerrard,West,135_1_135,West - 135 Gerrard towards Main Street Station,135
+135,135-Gerrard,East,135_0_135,East - 135 Gerrard towards Warden Station,135
+14,14-Glencairn,West,14_1_14,West - 14 Glencairn towards Caledonia,14
+14,14-Glencairn,East,14_0_14,East - 14 Glencairn towards Davisville Station,14
+15,15-Evans,West,15_0_15,West - 15 Evans towards Sherway,15
+15,15-Evans,East,15_1_15,East - 15 Evans towards Royal York Station,15
+16,16-McCowan,North,16_1_16,North - 16 McCowan towards Scarborough Centre,16
+16,16-McCowan,South,16_0_16dd,South - 16 McCowan towards Danforth Ave,16
+160,160-Bathurst North,North,160_1_160xWI,North - 160 Bathurst North towards Centre Street Extra Fare Required North of Steeles,160
+160,160-Bathurst North,South,160_0_160,South - 160 Bathurst North towards Wilson Station Extra Fare Required North of Steeles,160
+161,161-Rogers Road,West,161_1_161,West - 161 Rogers Rd towards Jane,161
+161,161-Rogers Road,East,161_0_161,East - 161 Rogers Rd towards Ossington Station,161
+162,162-Lawrence-Donway,East,162_0_162con,East - 162 Lawrence-Donway towards Don Mills via Lawrence Station,162
+162,162-Lawrence-Donway,West,162_1_162con,West - 162 Lawrence-Donway towards Avenue Road (Roe Loop) via Lawrence Station,162
+165,165-Weston Rd. North,East,165_0_SIYK*wi,East - 165 Weston Rd North towards York Mills Station,165
+165,165-Weston Rd. North,West,165_1_165,West - 165 Weston Rd North towards Steeles,165
+165,165-Weston Rd. North,East,165_0_SIYK*,East - 165 Weston Rd North towards York Mills Station,165
+167,167-Pharmacy North,South,167_0_167A,South - 167a Pharmacy North towards Don Mills Station via Consumers Rd,167A
+167,167-Pharmacy North,North,167_1_167B,North - 167b Pharmacy North towards Steeles,167B
+167,167-Pharmacy North,North,167_1_167A,North - 167a Pharmacy North towards Steeles via Consumers Rd,167A
+167,167-Pharmacy North,South,167_0_167B,South - 167b Pharmacy North towards Don Mills Station,167B
+168,168-Symington,South,168_0_AVED,South - 168 Symington towards Dundas West Station,168
+168,168-Symington,North,168_1_EDAV,North - 168 Symington towards Rogers Rd & Weston Rd,168
+169,169-Huntingwood,East,169_0_169A,East - 169a Huntingwood towards Scarborough Centre via Van Horne,169A
+169,169-Huntingwood,West,169_1_169B,West - 169b Huntingwood towards Don Mills Station,169B
+169,169-Huntingwood,West,169_1_169A,West - 169a Huntingwood towards Don Mills Station via Van Horne,169A
+169,169-Huntingwood,East,169_0_169B,East - 169b Huntingwood towards Scarborough Centre,169B
+17,17-Birchmount,North,17_1_17A,North - 17a Birchmount towards Highway 7 Extra Fare Required North of Steeles,17A
+17,17-Birchmount,South,17_0_17A,South - 17 Birchmount towards Warden Station Extra Fare Required North of Steeles,17
+171,171-Mount Dennis,North,171_1_171,North - 171 Mount Dennis towards Jane,171
+171,171-Mount Dennis,South,171_0_171,South - 171 Mount Dennis towards Industry St,171
+176,176-Mimico GO,East,176_0_176am,East - 176 Mimico GO towards Parklawn,176
+176,176-Mimico GO,West,176_1_176am,West - 176 Mimico GO towards Mimico GO Station,176
+184,184-Ancaster Park,West,184_1_184,West - 184 Ancaster Park towards De Havilland,184
+184,184-Ancaster Park,East,184_0_184,East - 184 Ancaster Park towards Wilson Station,184
+189,189-Stockyards,West,189_1_189,West - 189 Stockyards towards Scarlett Rd,189
+189,189-Stockyards,East,189_0_189,East - 189 Stockyards towards High Park Station via Keele Station,189
+19,19-Bay,South,19_0_19,South - 19 Bay towards Queens Quay and Sherbourne,19
+19,19-Bay,North,19_1_19,North - 19 Bay towards Dupont,19
+20,20-Cliffside,East,20_0_20,East - 20 Cliffside towards Kennedy Station,20
+20,20-Cliffside,West,20_1_20am*,West - 20 Cliffside towards Main Street Station,20
+21,21-Brimley,North,21_1_21Cam*,North - 21c Brimley towards Steeles Ave E via Scarborough Centre Station,21C
+21,21-Brimley,South,21_0_21C,South - 21c Brimley towards Kennedy Station via Scarborough Centre Station,21C
+22,22-Coxwell,North,22_1_22,North - 22 Coxwell towards Coxwell Station,22
+22,22-Coxwell,South,22_0_22,South - 22 Coxwell towards Queen,22
+23,23-Dawes,South,23_0_23,South - 23 Dawes towards Main Street Station,23
+23,23-Dawes,North,23_1_23,North - 23 Dawes towards St Clair,23
+24,24-Victoria Park,North,24_1_24B,North - 24b Victoria Park towards Don Mills Station via Consumers Rd,24B
+24,24-Victoria Park,South,24_0_24B,South - 24b Victoria Park towards Victoria Park Station via Consumers Rd,24B
+24,24-Victoria Park,North,24_1_da24A,North - 24a Victoria Park towards Steeles,24A
+24,24-Victoria Park,South,24_0_24Ada,South - 24 Victoria Park towards Danforth,24
+25,25-Don Mills,North,25_1_25C,North - 25c Don Mills towards Steeles,25C
+25,25-Don Mills,North,25_1_25A,North - 25a Don Mills towards Steeles,25A
+25,25-Don Mills,South,25_0_25C,South - 25c Don Mills towards Don Mills Station,25C
+25,25-Don Mills,South,25_0_25B,South - 25b Don Mills towards Pape Station,25B
+25,25-Don Mills,North,25_1_FEFM,North - 25a Don Mills towards Steeles,25A
+25,25-Don Mills,South,25_0_25A,South - 25a Don Mills towards Pape Station,25A
+25,25-Don Mills,South,25_0_25A*,South - 25a Don Mills towards Pape Station,25A
+26,26-Dupont,West,26_1_26,West - 26 Dupont towards Jane Station,26
+26,26-Dupont,East,26_0_26,East - 26 Dupont towards St George Station,26
+28,28-Bayview South,West,28_1_28,West - 28 Bayview South towards Davisville Station,28
+28,28-Bayview South,East,28_0_28,East - 28 Bayview South towards Brick Works,28
+29,29-Dufferin,South,29_0_TREX,South - 29 Dufferin towards Exhibition (Dufferin Gate),29
+29,29-Dufferin,North,29_1_EXTR,North - 29 Dufferin towards Wilson Station,29
+30,30-High Park North,South,30_0_30A,South - 30a High Park North towards High Park Station,30A
+30,30-High Park North,North,30_1_30A,North - 30a High Park North towards Runnymede,30A
+300,300-Bloor-Danforth Night Bus,East,300_0_300Bstn,East - 300b Bloor-Danforth towards Kennedy Station,300B
+300,300-Bloor-Danforth Night Bus,East,300_0_300B*,East - 300b Bloor-Danforth towards Kennedy Station,300B
+300,300-Bloor-Danforth Night Bus,West,300_1_300B*stn,West - 300b Bloor-Danforth towards West Mall via Kipling Station,300B
+300,300-Bloor-Danforth Night Bus,East,300_0_300A,East - 300a Bloor-Danforth towards Warden,300A
+300,300-Bloor-Danforth Night Bus,West,300_1_T1T3,West - 300a Bloor-Danforth towards Pearson Airport,300A
+301,301-Queen,West,301_1_NELO,West - 301l Queen Replacement Bus towards Long Branch,301L
+301,301-Queen,East,301_0_301bus,East - 301 Queen Replacement Bus towards Neville Park,301
+302,302-Kingston Rd-McCowan Night Bus,North,302_1_302,North - 302 Kingston-McCowan towards Steeles,302
+302,302-Kingston Rd-McCowan Night Bus,South,302_0_302,South - 302 Kingston-McCowan towards Victoria Park and Kingston Rd,302
+304,304-King,East,304_0_304Bus,East - 304 King Replacement Bus towards Broadview Station,304
+304,304-King,West,304_1_304Bus,West - 304 King Replacement Bus towards Dundas West Station,304
+306,306-Carlton,West,306_1_306,West - 306 Carlton towards Dundas West Station,306
+306,306-Carlton,East,306_0_306,East - 306 Carlton towards Main Street Station,306
+307,307-Bathurst Night Bus,South,307_0_307vBA,South - 307 Bathurst towards Exhibition,307
+307,307-Bathurst Night Bus,North,307_1_307,North - 307 Bathurst towards Steeles,307
+31,31-Greenwood,North,31_1_31Con,North - 31 Greenwood towards Coxwell Station via Greenwood Station,31
+31,31-Greenwood,South,31_0_31Con,South - 31 Greenwood towards Queen & Eastern,31
+310,310-Spadina,North,310_1_310,North - 310 Spadina towards Spadina Station,310
+310,310-Spadina,South,310_0_310,South - 310 Spadina towards Union Station,310
+312,312-St.Clair-Junction Night Bus,West,312_1_312,West - 312 St Clair-Junction towards Dundas West Station,312
+312,312-St.Clair-Junction Night Bus,East,312_0_312,East - 312 St Clair-Junction towards St Clair Station,312
+315,315-Evans - Brown'S Line Night Bus,West,315_1_315,West - 315 Evans-Brown'S Line towards Long Branch via Sherway,315
+315,315-Evans - Brown'S Line Night Bus,East,315_0_315,East - 315 Evans-Brown'S Line towards Royal York Station,315
+32,32-Eglinton West,West,32_1_32D,West - 32d Eglinton West towards Jane & Emmett,32D
+32,32-Eglinton West,West,32_1_32C,West - 32c Eglinton West towards Jane & Lawrence via Trethewey,32C
+32,32-Eglinton West,West,32_1_32A,West - 32a Eglinton West towards Renforth Station,32A
+32,32-Eglinton West,East,32_0_32D,East - 32d Eglinton West towards Eglinton West Station,32D
+32,32-Eglinton West,East,32_0_32C,East - 32 Eglinton West towards Eglinton Station via Eglinton West Station,32
+32,32-Eglinton West,East,32_0_32A,East - 32 Eglinton West towards Eglinton Station via Eglinton West Station,32
+32,32-Eglinton West,West,32_1_MMEV,West - 32d Eglinton West towards Jane & Emmett,32D
+32,32-Eglinton West,East,32_0_PIJA,East - 32 Eglinton West towards Eglinton Station via Eglinton West Station,32
+320,320-Yonge Night Bus,North,320_1_320*,North - 320 Yonge towards Steeles via Finch Station,320
+320,320-Yonge Night Bus,South,320_0_320,South - 320 Yonge towards Queens Quay,320
+320,320-Yonge Night Bus,South,320_0_SYES,South - 320s Yonge Short Turn towards Eglinton Station,320S
+320,320-Yonge Night Bus,North,320_1_QQFS,North - 320s Yonge Short Turn,320S
+320,320-Yonge Night Bus,South,320_0_FSQQ,South - 320 Yonge towards Queens Quay,320
+320,320-Yonge Night Bus,North,320_1_SSSY*,North - 320 Yonge towards Steeles,320
+322,322-Coxwell Night Bus,West,322_1_322,West - 322 Coxwell towards Broadview Station,322
+322,322-Coxwell Night Bus,East,322_0_322,East - 322 Coxwell towards Victoria Park via Kingston Rd,322
+322,322-Coxwell Night Bus,East,322_0_BIWD,East - 322s Coxwell towards Warden via Victoria Park and Danforth,322S
+324,324-Victoria Park Night Bus,South,324_0_324,South - 324 Victoria Park towards Kingston Rd,324
+324,324-Victoria Park Night Bus,North,324_1_324v,North - 324 Victoria Park towards Steeles via Sheppard and Warden,324
+324,324-Victoria Park Night Bus,North,324_1_324,North - 324 Victoria Park towards Steeles via Sheppard and Warden,324
+325,325-Don Mills Night Bus,North,325_1_ps325*,North - 325 Don Mills towards Steeles,325
+325,325-Don Mills Night Bus,South,325_0_325*,South - 325 Don Mills towards Eastern,325
+325,325-Don Mills Night Bus,North,325_1_325,North - 325 Don Mills towards Steeles,325
+329,329-Dufferin Night Bus,North,329_1_329con,North - 329 Dufferin towards Steeles via Liberty Village,329
+329,329-Dufferin Night Bus,South,329_0_329con,South - 329 Dufferin towards Exhibition (Princes' Gate) via Liberty Village,329
+33,33-Forest Hill,South,33_0_33Con,South - 33 Forest Hill towards St Clair West Station,33
+33,33-Forest Hill,North,33_1_33Con,North - 33 Forest Hill towards Eglinton (Roselawn),33
+332,332-Eglinton West Night Bus,West,332_1_332,West - 332 Eglinton West towards Renforth and Pearson Airport,332
+332,332-Eglinton West Night Bus,West,332_1_T1T3,West - 332 Eglinton West towards Eglinton Station,332
+332,332-Eglinton West Night Bus,East,332_0_332,East - 332 Eglinton West towards Eglinton Station,332
+334,334-Eglinton East Night Bus,East,334_0_334,East - 334 Eglinton East towards Finch and Neilson via Kingston Rd and Morningside,334
+334,334-Eglinton East Night Bus,West,334_1_334,West - 334 Eglinton East towards Eglinton Station,334
+334,334-Eglinton East Night Bus,East,334_0_334*,East - 334 Eglinton East towards Finch and Neilson via Kingston Rd and Morningside,334
+335,335-Jane Night Bus,North,335_1_335,North - 335 Jane towards York University,335
+335,335-Jane Night Bus,South,335_0_335,South - 335 Jane towards Jane Station,335
+336,336-Finch West Night Bus,East,336_0_WDFS,East - 336 Finch West towards Finch Station,336
+336,336-Finch West Night Bus,West,336_1_336,West - 336 Finch West towards Woodbine Race Track,336
+337,337-Islington Night Bus,North,337_1_337slpk,North - 337 Islington towards Steeles,337
+337,337-Islington Night Bus,South,337_0_337,South - 337 Islington towards Lake Shore,337
+339,339-Finch East Night Bus,West,339_1_ne339,West - 339 Finch East towards Finch Station,339
+339,339-Finch East Night Bus,East,339_0_339*,East - 339 Finch East towards Markham Rd,339
+339,339-Finch East Night Bus,West,339_1_NWTA,West - 339s Finch East Short Turn,339S
+34,34-Eglinton East,East,34_0_34C,East - 34c Eglinton East towards Flemingdon Park (Grenoble & Spanbridge),34C
+34,34-Eglinton East,East,34_0_34B,East - 34b Eglinton East towards Kennedy Station,34B
+34,34-Eglinton East,West,34_1_34C,West - 34 Eglinton East towards Eglinton Station,34
+34,34-Eglinton East,East,34_0_34Aam,East - 34a Eglinton East towards Kennedy Station,34A
+34,34-Eglinton East,West,34_1_34A,West - 34 Eglinton East towards Eglinton Station,34
+341,341-Keele Night Bus,North,341_1_341,North - 341 Keele towards York University,341
+341,341-Keele Night Bus,South,341_0_341,South - 341 Keele towards Keele Station,341
+343,343-Kennedy Night Bus,North,343_1_343,North - 343 Kennedy towards Steeles,343
+343,343-Kennedy Night Bus,South,343_0_343,South - 343 Kennedy towards Kennedy Station,343
+35,35-Jane,North,35_1_35B,North - 35b Jane towards Pioneer Village Station via Hullmar,35B
+35,35-Jane,South,35_0_35B,South - 35b Jane towards Jane Station via Hullmar,35B
+35,35-Jane,North,35_1_35A,North - 35a Jane towards Pioneer Village Station,35A
+35,35-Jane,South,35_0_35A,South - 35a Jane towards Jane Station,35A
+352,352-Lawrence West Night Bus,West,352_1_T1T3,West - 352 Lawrence West towards Sunnybrook Hospital,352
+352,352-Lawrence West Night Bus,West,352_1_352,West - 352 Lawrence West towards Pearson Airport,352
+352,352-Lawrence West Night Bus,East,352_0_352,East - 352 Lawrence West towards Sunnybrook Hospital,352
+353,353-Steeles Night Bus,East,353_0_353pv,East - 353 Steeles East towards Staines,353
+353,353-Steeles Night Bus,West,353_1_353,West - 353 Steeles East towards York University,353
+354,354-Lawrence East Night Bus,West,354_1_354B,West - 354 Lawrence East towards Eglinton Station,354
+354,354-Lawrence East Night Bus,East,354_0_354B,East - 354 Lawrence East towards Starspray Blvd,354
+36,36-Finch West,West,36_1_FIHW,West - 36b Finch West towards Humberwood,36B
+36,36-Finch West,West,36_1_36FCon,West - 36f Finch West towards Weston Rd and Milvan via Fenmar,36F
+36,36-Finch West,West,36_1_36JCon,West - 36b Finch West towards Humberwood,36B
+36,36-Finch West,West,36_1_36DCon,West - 36d Finch West towards Weston Rd and Milvan,36D
+36,36-Finch West,East,36_0_36JCon,East - 36a Finch West towards Finch Station,36A
+363,363-Ossington Night Bus,South,363_0_363,South - 363 Ossington towards Exhibition,363
+363,363-Ossington Night Bus,North,363_1_363,North - 363 Ossington towards Eglinton West Station,363
+365,365-Parliament Night Bus,South,365_0_365,South - 365 Parliament towards Queens Quay and Sherbourne,365
+365,365-Parliament Night Bus,North,365_1_365,North - 365 Parliament towards Castle Frank Station,365
+37,37-Islington,North,37_1_37A,North - 37a Islington towards Woodbine and Humberwood via Rexdale Blvd,37A
+37,37-Islington,South,37_0_37B,South - 37 Islington towards Islington Station,37
+37,37-Islington,South,37_0_37A,South - 37 Islington towards Islington Station,37
+37,37-Islington,North,37_1_37B*,North - 37b Islington towards Steeles,37B
+38,38-Highland Creek,East,38_0_38A,East - 38a Highland Creek towards Rouge Hill GO Stn via Scarborough Ctr,38A
+38,38-Highland Creek,West,38_1_38A,West - 38 Highland Creek towards Kennedy Station via Scarborough Ctr,38
+384,384-Sheppard West Night Bus,West,384_1_384,West - 384 Sheppard West towards Weston Rd,384
+384,384-Sheppard West Night Bus,East,384_0_384,East - 384 Sheppard West towards Sheppard-Yonge Station,384
+385,385-Sheppard East Night Bus,East,385_0_385,East - 385 Sheppard East towards Meadowvale,385
+385,385-Sheppard East Night Bus,West,385_1_385,West - 385 Sheppard East towards Sheppard-Yonge Station,385
+39,39-Finch East,West,39_1_39C,West - 39 Finch East towards Finch Station,39
+39,39-Finch East,West,39_1_39B,West - 39 Finch East towards Finch Station,39
+39,39-Finch East,West,39_1_39A,West - 39 Finch East towards Finch Station,39
+39,39-Finch East,East,39_0_39C,East - 39c Finch East towards Victoria Park and Gordon Baker,39C
+39,39-Finch East,East,39_0_39B,East - 39b Finch East towards Old Finch and Morningview,39B
+39,39-Finch East,East,39_0_TANE,East - 39a Finch East towards Neilson,39A
+395,395-York Mills Night Bus,West,395_1_395,West - 395 York Mills towards York Mills Station,395
+395,395-York Mills Night Bus,East,395_0_395,East - 395 York Mills towards Meadowvale and Sheppard,395
+396,396-Wilson Night Bus,East,396_0_396*,East - 396 Wilson towards York Mills Station,396
+396,396-Wilson Night Bus,West,396_1_396*,West - 396 Wilson towards Martin Grove and Steeles,396
+396,396-Wilson Night Bus,East,396_0_396,East - 396 Wilson towards York Mills Station,396
+40,40-Junction-Dundas West,East,40_0_40B,East - 40 Junction-Dundas West towards Dundas West Station,40
+40,40-Junction-Dundas West,West,40_1_40A,West - 40a Junction-Dundas West towards Kipling Station,40A
+40,40-Junction-Dundas West,East,40_0_40A,East - 40 Junction-Dundas West towards Dundas West Station,40
+41,41-Keele,South,41_0_41,South - 41 Keele towards Keele Station,41
+41,41-Keele,North,41_1_41pv,North - 41 Keele towards Pioneer Village Station,41
+42,42-Cummer,East,42_0_42A,East - 42a Cummer towards Middlefield,42A
+42,42-Cummer,West,42_1_42A,West - 42 Cummer towards Finch Station,42
+43,43-Kennedy,South,43_0_43ASun,South - 43 Kennedy towards Kennedy Station,43
+43,43-Kennedy,South,43_0_43B,South - 43 Kennedy towards Kennedy Station,43
+43,43-Kennedy,North,43_1_43B,North - 43b Kennedy towards Scarborough Centre,43B
+43,43-Kennedy,North,43_1_43A,North - 43a Kennedy towards Steeles,43A
+44,44-Kipling South,North,44_1_44,North - 44 Kipling South towards Kipling Station,44
+44,44-Kipling South,South,44_0_44,South - 44 Kipling South towards Lake Shore,44
+45,45-Kipling,North,45_1_45Aam,North - 45a Kipling towards Steeles,45A
+45,45-Kipling,South,45_0_45B,South - 45 Kipling towards Kipling Station,45
+45,45-Kipling,South,45_0_45Aam,South - 45 Kipling towards Kipling Station,45
+45,45-Kipling,North,45_1_45Bam,North - 45b Kipling towards Carlingview via Belfield,45B
+46,46-Martin Grove,South,46_0_NTKP,South - 46e Martin Grove Express towards Kipling Station,46E
+46,46-Martin Grove,North,46_1_46,North - 46 Martin Grove towards Steeles,46
+46,46-Martin Grove,South,46_0_46,South - 46 Martin Grove towards Kipling Station,46
+47,47-Lansdowne,South,47_0_47C,South - 47c Lansdowne towards Queen via Orfus and Caledonia,47C
+47,47-Lansdowne,South,47_0_47B,South - 47b Lansdowne towards Queen via Bridgeland and Caledonia,47B
+47,47-Lansdowne,North,47_1_47C,North - 47c Lansdowne towards Yorkdale Station via Caledonia and Orfus,47C
+47,47-Lansdowne,North,47_1_47B,North - 47b Lansdowne towards Yorkdale Station via Caledonia and Bridgeland,47B
+48,48-Rathburn,West,48_1_48,West - 48 Rathburn towards Mill Rd,48
+48,48-Rathburn,East,48_0_48,East - 48 Rathburn towards Royal York Station,48
+49,49-Bloor West,West,49_1_49,West - 49 Bloor towards Markland Wood,49
+49,49-Bloor West,East,49_0_49,East - 49 Bloor West towards Kipling Station,49
+50,50-Burnhamthorpe,East,50_0_50,East - 50 Burnhamthorpe towards Islington Station,50
+50,50-Burnhamthorpe,West,50_1_50,West - 50 Burnhamthorpe towards Mill Road,50
+501,501-Queen,East,501_0_501D,East - 501d Queen towards Neville Park,501D
+501,501-Queen,East,501_0_501C,East - 501 Queen Short Turn towards McCaul,501
+501,501-Queen,East,501_0_501Bbus,East - 501b Queen Replacement Bus towards Broadview and Gerrard,501B
+501,501-Queen,West,501_1_501D,West - 501d Queen towards York and King via Church,501D
+501,501-Queen,West,501_1_501C,West - 501 Queen towards Long Branch,501
+501,501-Queen,West,501_1_501Bbus,West - 501b Queen Replacement Bus towards Bathurst,501B
+503,503-Kingston Rd,East,503_0_503con,East - 503 Kingston Rd towards Victoria Park,503
+503,503-Kingston Rd,West,503_1_503con,West - 503 Kingston Rd towards Spadina via King,503
+504,504-King,West,504_1_504Dbus,West - 504/505 Replacement Bus towards Parliament and King,504/
+504,504-King,West,504_1_br504A,West - 504a King  towards Dundas West Station,504A
+504,504-King,East,504_0_504B,East - 504a King towards Distillery,504A
+504,504-King,East,504_0_504A,East - 504a King towards Distillery,504A
+504,504-King,East,504_0_504Dbus,East - 504/505 Replacement Bus towards Broadview Station,504/
+505,505-Dundas,West,505_1_505con,West - 505 Dundas towards Dundas West Station via Queen and Gerrard,505
+505,505-Dundas,East,505_0_QUKQ,East - 505 Dundas towards Kingston Rd and Queen via Gerrard,505
+505,505-Dundas,East,505_0_DWRD,East - 505 Dundas Short Turn towards Roncesvalles and Queen,505
+505,505-Dundas,East,505_0_505con,East - 505 Dundas towards Kingston Rd and Queen via Gerrard,505
+506,506-Carlton,East,506_0_506,East - 506 Carlton towards Main Street Station,506
+506,506-Carlton,East,506_0_HPCL,East - 506 Carlton Short Turn towards Lansdowne,506
+506,506-Carlton,West,506_1_MSDW,West - 506 Carlton towards High Park,506
+507,507-Long Branch,West,507_1_507,West - 507 Long Branch towards Long Branch,507
+507,507-Long Branch,East,507_0_507,East - 507 Long Branch towards Humber,507
+508,508-Lake Shore,East,508_0_rq508,East - 508 Lake Shore towards Parliament via King,508
+508,508-Lake Shore,East,508_0_508,East - 508 Lake Shore towards Parliament via King,508
+508,508-Lake Shore,West,508_1_508rq,West - 508 Lake Shore towards Roncesvalles,508
+508,508-Lake Shore,West,508_1_508lo,West - 508 Lake Shore towards Long Branch,508
+509,509-Harbourfront,East,509_0_509,East - 509 Harbourfront towards Union Station,509
+509,509-Harbourfront,West,509_1_509,West - 509 Harbourfront towards Exhibition,509
+51,51-Leslie,South,51_0_51,South - 51 Leslie towards Eglinton Station,51
+51,51-Leslie,North,51_1_51,North - 51 Leslie towards Steeles,51
+510,510-Spadina,North,510_1_510A,North - 510 Spadina towards Spadina Station,510
+510,510-Spadina,South,510_0_510A,South - 510a Spadina towards Union Station,510A
+511,511-Bathurst,North,511_1_511am,North - 511 Bathurst towards Bathurst Station,511
+511,511-Bathurst,South,511_0_511am,South - 511 Bathurst towards Exhibition,511
+512,512-St. Clair,East,512_0_512bus,East - 512 St Clair Replacement Bus towards St Clair Station,512
+512,512-St. Clair,West,512_1_512bus,West - 512 St Clair Replacement Bus towards Keele,512
+52,52-Lawrence West,West,52_1_ESWM*,West - 52b Lawrence West towards Westwood via Dixon Rd Extra Fare Required West of Airport,52B
+52,52-Lawrence West,East,52_0_WMES,East - 52 Lawrence West towards Eglinton Station via Avenue Rd Extra Fare Required West of Airport,52
+52,52-Lawrence West,West,52_1_T1T3,West - 52 Lawrence West towards Eglinton Station via Avenue Rd,52
+52,52-Lawrence West,West,52_1_52Fcon,West - 52f Lawrence West towards Royal York,52F
+52,52-Lawrence West,West,52_1_52Bcon,West - 52b Lawrence West towards Westwood via Dixon Rd Extra Fare Required West of Airport,52B
+52,52-Lawrence West,East,52_0_52G,East - 52g Lawrence West towards Lawrence West Station,52G
+52,52-Lawrence West,East,52_0_TOES,East - 52 Lawrence West towards Eglinton Station via Avenue Rd,52
+52,52-Lawrence West,West,52_1_52G,West - 52g Lawrence West towards Martin Grove via The Westway,52G
+53,53-Steeles East,East,53_0_53A,East - 53a Steeles East towards Staines,53A
+53,53-Steeles East,West,53_1_53A,West - 53 Steeles East towards Finch Station,53
+54,54-Lawrence East,West,54_1_54B,West - 54 Lawrence East towards Eglinton Station,54
+54,54-Lawrence East,West,54_1_54A,West - 54 Lawrence East towards Eglinton Station,54
+54,54-Lawrence East,East,54_0_54B,East - 54b Lawrence East towards Orton Park,54B
+54,54-Lawrence East,East,54_0_54A,East - 54a Lawrence East towards Starspray,54A
+54,54-Lawrence East,East,54_0_54Bpm,East - 54b Lawrence East towards Orton Park,54B
+55,55-Warren Park,North,55_1_55,North - 55 Warren Park towards Warren Park,55
+55,55-Warren Park,South,55_0_55,South - 55 Warren Park towards Jane Station,55
+56,56-Leaside,North,56_1_56A,North - 56a Leaside towards Eglinton Station,56A
+56,56-Leaside,South,56_0_56A,South - 56 Leaside towards Donlands Station,56
+57,57-Midland,South,57_0_57,South - 57 Midland towards Kennedy Station,57
+57,57-Midland,North,57_1_57am*,North - 57 Midland towards Steeles,57
+59,59-Maple Leaf,West,59_1_59B,West - 59b Maple Leaf towards Weston Rd via Culford and Benton and Church,59B
+59,59-Maple Leaf,West,59_1_59A,West - 59a Maple Leaf towards Weston Rd via Benton and Culford and Gary Dr,59A
+59,59-Maple Leaf,East,59_0_59B,East - 59 Maple Leaf towards Lawrence West Station via Culford and Benton,59
+59,59-Maple Leaf,East,59_0_59A,East - 59 Maple Leaf towards Lawrence West Station via Culford and Benton,59
+60,60-Steeles West,West,60_1_60D,West - 60d Steeles West towards Highway 27 via Pioneer Village Station,60D
+60,60-Steeles West,West,60_1_60B,West - 60b Steeles West towards Martin Grove via Pioneer Village Station,60B
+60,60-Steeles West,East,60_0_60D,East - 60 Steeles West towards Finch Station via Pioneer Village Station and Highway 27,60
+60,60-Steeles West,East,60_0_60B,East - 60 Steeles West towards Finch Station via Pioneer Village Station,60
+61,61-Avenue Road North,South,61_0_61,South - 61 Avenue Road North towards Eglinton Station,61
+61,61-Avenue Road North,North,61_1_61,North - 61 Avenue Road North towards Highway 401,61
+62,62-Mortimer,East,62_0_62,East - 62 Mortimer towards Main Street Station,62
+62,62-Mortimer,West,62_1_62,West - 62 Mortimer towards Broadview Station,62
+63,63-Ossington,North,63_1_63AamSun,North - 63a Ossington towards Eglinton West Station,63A
+63,63-Ossington,South,63_0_63AamSun,South - 63 Ossington towards Liberty Village,63
+63,63-Ossington,North,63_1_63Apm,North - 63a Ossington towards Eglinton West Station,63A
+63,63-Ossington,South,63_0_63Apm,South - 63 Ossington towards Liberty Village,63
+64,64-Main,North,64_1_64,North - 64 Main towards Main Street Station,64
+64,64-Main,South,64_0_64,South - 64 Main towards Queen,64
+65,65-Parliament,North,65_1_65,North - 65 Parliament towards Castle Frank Station,65
+65,65-Parliament,South,65_0_65,South - 65 Parliament towards Queens Quay and Sherbourne,65
+66,66-Prince Edward,North,66_1_66B,North - 66 Prince Edward towards Old Mill Station,66
+66,66-Prince Edward,North,66_1_66A,North - 66 Prince Edward towards Old Mill Station,66
+66,66-Prince Edward,South,66_0_66B,South - 66b Prince Edward towards Lakeshore,66B
+66,66-Prince Edward,South,66_0_66A,South - 66a Prince Edward towards Humber Loop,66A
+67,67-Pharmacy,South,67_0_67A,South - 67 Pharmacy towards Victoria Park Station,67
+67,67-Pharmacy,North,67_1_DA67,North - 67a Pharmacy towards Ellesmere,67A
+68,68-Warden,South,68_0_68Ada,South - 68 Warden towards Warden Station,68
+68,68-Warden,South,68_0_68Adaly,South - 68 Warden towards Warden Station,68
+68,68-Warden,North,68_1_wd68B,North - 68b Warden towards Major Mackenzie Extra Fare Required North of Steeles,68B
+68,68-Warden,South,68_0_68B,South - 68 Warden towards Warden Station Extra Fare Required North of Steeles,68
+69,69-Warden South,South,69_0_69B,South - 69b Warden South towards Kingston Rd via Birchmount,69B
+69,69-Warden South,South,69_0_69A,South - 69a Warden South towards Kingston Rd via Warden,69A
+69,69-Warden South,North,69_1_69B,North - 69b Warden South towards Warden Station via Warden,69B
+69,69-Warden South,North,69_1_69A,North - 69a Warden South towards Warden Station via Birchmount,69A
+7,7-Bathurst,South,7_0_7,South - 7 Bathurst towards Bathurst Station,7
+7,7-Bathurst,North,7_1_7,North - 7 Bathurst towards Steeles,7
+70,70-O'Connor,West,70_0_70A,West - 70 O'Connor towards Coxwell Station,70
+70,70-O'Connor,East,70_1_70A,East - 70a O'Connor towards Eglinton,70A
+71,71-Runnymede,North,71_1_71,North - 71 Runnymede towards Industry St,71
+71,71-Runnymede,South,71_0_71,South - 71 Runnymede towards Runnymede Station,71
+72,72-Pape,North,72_1_72C,North - 72 Pape towards Pape Station,72
+72,72-Pape,North,72_1_72B,North - 72 Pape towards Pape Station via Queens Quay and Commissioners,72
+72,72-Pape,North,72_1_72A,North - 72 Pape towards Pape Station,72
+72,72-Pape,South,72_0_72C,South - 72c Pape towards Commissioners,72C
+72,72-Pape,South,72_0_72B,South - 72b Pape towards Union Stn via Commissioners and Queens Quay,72B
+72,72-Pape,South,72_0_72A,South - 72a Pape towards Eastern,72A
+73,73-Royal York,South,73_0_73Cp,South - 73 Royal York towards Royal York Station,73
+73,73-Royal York,North,73_1_73C,North - 73c Royal York towards Claireport via Albion Rd,73C
+73,73-Royal York,North,73_1_73B,North - 73b Royal York towards Eglinton and La Rose,73B
+74,74-Mount Pleasant,North,74_1_74,North - 74a Mount Pleasant towards Doncliffe,74A
+74,74-Mount Pleasant,South,74_0_74,South - 74 Mount Pleasant towards St Clair Station,74
+75,75-Sherbourne,North,75_1_75A,North - 75 Sherbourne towards South Drive and Summerhill,75
+75,75-Sherbourne,South,75_0_75A,South - 75 Sherbourne towards Queens Quay,75
+76,76-Royal York South,South,76_0_76B,South - 76b Royal York South towards Queensway and Grand Avenue,76B
+76,76-Royal York South,South,76_0_76A,South - 76a Royal York South towards Lake Shore,76A
+76,76-Royal York South,North,76_1_76A,North - 76 Royal York South towards Royal York Station,76
+77,77-Swansea,South,77_0_77,South - 77 Swansea towards Queensway,77
+77,77-Swansea,North,77_1_77,North - 77 Swansea towards Runnymede Station,77
+78,78-St. Andrews,West,78_1_78,West - 78 St Andrews towards York Mills Station,78
+78,78-St. Andrews,East,78_0_78,East - 78 St Andrews towards Bayview,78
+79,79-Scarlett Rd.,South,79_0_79A,South - 79a Scarlett Rd towards Runnymede Station via Foxwell/Pritchard,79A
+79,79-Scarlett Rd.,North,79_1_79B,North - 79b Scarlett Rd towards Lawrence & Jane via St Clair,79B
+79,79-Scarlett Rd.,North,79_1_79A,North - 79a Scarlett Rd towards Lawrence & Jane via Pritchard/Foxwell,79A
+79,79-Scarlett Rd.,South,79_0_PILW,South - 79s Scarlett Rd Short Turn,79S
+79,79-Scarlett Rd.,South,79_0_79B,South - 79b Scarlett Rd towards Runnymede Station via St Clair,79B
+8,8-Broadview,South,8_1_8,South - 8 Broadview towards Broadview Station via O'Connor,8
+8,8-Broadview,North,8_0_8,North - 8 Broadview towards Warden Station via O'Connor,8
+80,80-Queensway,East,80_0_80,East - 80 Queensway towards Keele Station via Parkside Dr,80
+80,80-Queensway,West,80_1_80,West - 80 Queensway towards Sherway,80
+81,81-Thorncliffe Park,North,81_1_81,North - 81 Thorncliffe Park towards Thorncliffe,81
+81,81-Thorncliffe Park,South,81_0_81,South - 81 Thorncliffe Park towards Pape Station,81
+82,82-Rosedale,East,82_1_82,East - 82 Rosedale towards Summerhill,82
+82,82-Rosedale,West,82_0_82,West - 82 Rosedale towards Rosedale Station,82
+83,83-Jones,North,83_1_83,North - 83 Jones towards Donlands Station,83
+83,83-Jones,South,83_0_83,South - 83 Jones towards Commissioners,83
+84,84-Sheppard West,West,84_1_SRFE,West - 84 Sheppard West towards Sheppard-Yonge Station via Sheppard West Station,84
+84,84-Sheppard West,East,84_0_WESH*,East - 84 Sheppard West towards Sheppard-Yonge Station via Sheppard West Station,84
+84,84-Sheppard West,West,84_1_84D,West - 84d Sheppard West towards Pioneer Village Station via Oakdale,84D
+84,84-Sheppard West,East,84_0_84Cp,East - 84 Sheppard West towards Sheppard-Yonge Station via Sheppard West Station,84
+84,84-Sheppard West,East,84_0_84D,East - 84 Sheppard West towards Sheppard-Yonge Station via Sheppard West Station,84
+84,84-Sheppard West,West,84_1_84A,West - 84a Sheppard West towards Weston Rd,84A
+84,84-Sheppard West,East,84_0_84A,East - 84 Sheppard West towards Sheppard-Yonge Station via Sheppard West Station,84
+84,84-Sheppard West,West,84_1_84Cp,West - 84c Sheppard West towards Steeles via Arrow Rd,84C
+84,84-Sheppard West,East,84_0_BASH,East - 84 Sheppard West towards Sheppard-Yonge Station via Sheppard West Station,84
+85,85-Sheppard East,West,85_1_85D,West - 85a Sheppard East towards Don Mills Station,85A
+85,85-Sheppard East,East,85_0_85Bd,East - 85b Sheppard East towards Toronto Zoo,85B
+85,85-Sheppard East,West,85_1_85Bd,West - 85 Sheppard East towards Sheppard-Yonge Station,85
+85,85-Sheppard East,East,85_0_85D,East - 85a Sheppard East towards Rouge Hill GO Station via Toronto Zoo,85A
+85,85-Sheppard East,East,85_0_85A,East - 85a Sheppard East towards Rouge Hill GO Station,85A
+86,86-Scarborough,East,86_0_CDSL,East - 86c Scarborough towards Sheppard,86C
+86,86-Scarborough,East,86_0_86Aam*,East - 86a Scarborough towards Toronto Zoo,86A
+86,86-Scarborough,East,86_0_86Dam,East - 86d Scarborough towards Beechgrove via Lawrence,86D
+86,86-Scarborough,West,86_1_86D,West - 86 Scarborough towards Kennedy Station,86
+86,86-Scarborough,West,86_1_86A,West - 86 Scarborough towards Kennedy Station,86
+87,87-Cosburn,East,87_0_87A,East - 87a Cosburn towards Main Street Station via East York Acres,87A
+87,87-Cosburn,West,87_1_87A,West - 87a Cosburn towards Broadview Station via East York Acres,87A
+88,88-South Leaside,East,88_0_88A,East - 88a South Leaside towards Thorncliffe via Overlea,88A
+88,88-South Leaside,West,88_1_88B,West - 88b South Leaside towards St Clair Station,88B
+88,88-South Leaside,West,88_1_88A,West - 88a South Leaside towards St Clair Station,88A
+88,88-South Leaside,East,88_0_88B,East - 88b South Leaside towards Thorncliffe via Wicksteed,88B
+89,89-Weston,North,89_1_89le,North - 89 Weston towards Albion Rd,89
+89,89-Weston,South,89_0_89sch,South - 89 Weston towards Keele Station,89
+9,9-Bellamy,North,9_1_9,North - 9 Bellamy towards Scarborough Centre,9
+9,9-Bellamy,South,9_0_9,South - 9 Bellamy towards Warden Station,9
+90,90-Vaughan,South,90_0_90CCon,South - 90c Vaughan towards Bathurst Station,90C
+90,90-Vaughan,North,90_1_90CCon,North - 90c Vaughan towards Oakwood,90C
+900,900-Airport Express,South,900_0_900AM,South - 900 Airport Express towards Kipling Station,900
+900,900-Airport Express,North,900_1_900,North - 900 Airport Express towards Pearson Airport,900
+902,902-Markham Rd Express,North,902_1_902,North - 902 Markham Rd Express towards Steeles Ave East via Centennial College,902
+902,902-Markham Rd Express,South,902_0_902,South - 902 Markham Rd Express towards Warden Station via Centennial College,902
+903,903-Kennedy-Scarborough Centre Express,South,903_0_903A,South - 903a Kennedy Stn-Scarborough Express towards Kennedy Stn via Scarborough Centre Stn,903A
+903,903-Kennedy-Scarborough Centre Express,North,903_1_903A,North - 903a Kennedy Stn-Scarborough Express towards Centennial College via Scarborough Centre Stn,903A
+905,905-Eglinton East Express,West,905_1_905Apm,West - 905a Eglinton East Express towards Kennedy Station via U of T Scarborough,905A
+905,905-Eglinton East Express,West,905_1_905Aam,West - 905a Eglinton East Express towards Kennedy Station,905A
+905,905-Eglinton East Express,East,905_0_905Aam,East - 905a Eglinton East Express towards Conlins via U of T Scarborough,905A
+91,91-Woodbine,North,91_1_91Cam,North - 91c Woodbine towards York Mills,91C
+91,91-Woodbine,South,91_0_91Dpm,South - 91d Woodbine towards Woodbine Station via Railside,91D
+91,91-Woodbine,South,91_0_CAWO,South - 91d Woodbine towards Woodbine Station via Railside,91D
+91,91-Woodbine,South,91_0_91C,South - 91 Woodbine towards Woodbine Station,91
+91,91-Woodbine,North,91_1_91Dam,North - 91d Woodbine towards York Mills via Railside,91D
+91,91-Woodbine,South,91_0_91Cam,South - 91 Woodbine towards Woodbine Station,91
+91,91-Woodbine,North,91_1_91C,North - 91c Woodbine towards York Mills,91C
+92,92-Woodbine South,North,92_1_92,North - 92 Woodbine South towards Woodbine Station,92
+92,92-Woodbine South,South,92_0_92,South - 92 Woodbine South towards Lakeshore,92
+924,924-Victoria Park Express,North,924_1_924,North - 924 Victoria Park Express towards Steeles,924
+924,924-Victoria Park Express,South,924_0_924,South - 924 Victoria Park Express towards Victoria Park Station,924
+925,925-Don Mills Express,South,925_0_925,South - 925 Don Mills Express towards Pape Station via Don Mills Station,925
+925,925-Don Mills Express,North,925_1_925,North - 925 Don Mills Express towards Steeles via Don Mills Station,925
+927,927-Highway 27 Express,North,927_1_927C,North - 927c Highway 27 Express towards Humber College via Attwell,927C
+927,927-Highway 27 Express,North,927_1_927Da,North - 927d Highway 27 Express towards Steeles via Humber College,927D
+927,927-Highway 27 Express,North,927_1_927Dp,North - 927d Highway 27 Express towards Steeles via Humber College,927D
+927,927-Highway 27 Express,South,927_0_927Da,South - 927d Highway 27 Express towards Kipling Station via Humber College,927D
+927,927-Highway 27 Express,South,927_0_927C,South - 927c Highway 27 Express towards Kipling Station via Attwell,927C
+927,927-Highway 27 Express,South,927_0_927Dp,South - 927d Highway 27 Express towards Kipling Station via Humber College,927D
+929,929-Dufferin Express,North,929_1_929,North - 929 Dufferin Express towards Wilson Station,929
+929,929-Dufferin Express,South,929_0_929,South - 929 Dufferin Express towards Exhibition (Dufferin Gate),929
+93,93-Parkview Hills,North,93_1_93,North - 93 Parkview Hills towards Parkview Hills,93
+93,93-Parkview Hills,South,93_0_93,South - 93 Parkview Hills towards Woodbine Station,93
+935,935-Jane Express,North,935_1_935pv,North - 935 Jane Express towards Pioneer Village Station,935
+935,935-Jane Express,South,935_0_935pv,South - 935 Jane Express towards Jane Station,935
+937,937-Islington Express,South,937_0_937,South - 937 Islington Express towards Islington Station,937
+937,937-Islington Express,North,937_1_937,North - 937 Islington Express towards Steeles,937
+939,939-Finch Express,East,939_0_939C,East - 939c Finch Express towards Morningside Heights,939C
+939,939-Finch Express,East,939_0_939B,East - 939b Finch Express towards Kennedy Stn via Finch Station and Scarborough Ctr Stn,939B
+939,939-Finch Express,West,939_1_939C,West - 939c Finch Express towards Finch Station,939C
+939,939-Finch Express,West,939_1_939B,West - 939b Finch Express towards Finch West Station via Scarborough Ctr Stn and Finch Station,939B
+94,94-Wellesley,East,94_0_94Ale,East - 94 Wellesley towards Castle Frank Station,94
+94,94-Wellesley,West,94_1_94A,West - 94a Wellesley towards Ossington Station,94A
+941,941-Keele Express,South,941_0_941,South - 941 Keele Express towards Keele Station,941
+941,941-Keele Express,North,941_1_941,North - 941 Keele Express towards Finch West Station,941
+944,944-Kipling South Express,North,944_1_944am,North - 944 Kipling South Express towards Kipling Station,944
+944,944-Kipling South Express,South,944_0_944pm,South - 944 Kipling South Express towards Lake Shore,944
+945,945-Kipling Express,North,945_1_945,North - 945 Kipling Express towards Steeles,945
+945,945-Kipling Express,South,945_0_945,South - 945 Kipling Express towards Kipling Station,945
+95,95-York Mills,West,95_1_95B,West - 95 York Mills towards York Mills Station,95
+95,95-York Mills,East,95_0_95B,East - 95b York Mills towards U of T Scarborough,95B
+95,95-York Mills,West,95_1_95A,West - 95 York Mills towards York Mills Station,95
+95,95-York Mills,East,95_0_95A,East - 95a York Mills towards Port Union,95A
+952,952-Lawrence West Express,East,952_0_952con,East - 952 Lawrence West Express towards Eglinton Station via Avenue Rd,952
+952,952-Lawrence West Express,West,952_1_oosT1T3,West - Terminal 3 Only,
+952,952-Lawrence West Express,West,952_1_952con,West - 952 Lawrence West Express towards Pearson Airport,952
+953,953-Steeles East Express,East,953_0_953A,East - 953a Steeles East Express towards Staines Rd,953A
+953,953-Steeles East Express,West,953_1_953A,West - 953 Steeles East Express towards Finch Station,953
+954,954-Lawrence East Express,West,954_1_954,West - 954 Lawrence East Express towards Kennedy Station,954
+954,954-Lawrence East Express,East,954_0_954,East - 954 Lawrence East Express towards Starspray,954
+96,96-Wilson,East,96_0_HUYK*,East - 96b Wilson towards York Mills Station via Martin Grove and Westhumber,96B
+96,96-Wilson,West,96_1_96D,West - 96d Wilson towards Carrier Dr via John Garland and Westmore Dr,96D
+96,96-Wilson,West,96_1_96B,West - 96b Wilson towards Humberline & Albion via Westhumber and Martin Grove,96B
+96,96-Wilson,East,96_0_96Ap,East - 96a Wilson towards York Mills Station via John Garland and Kipling,96A
+96,96-Wilson,East,96_0_96Bp,East - 96b Wilson towards York Mills Station via Martin Grove and Westhumber,96B
+96,96-Wilson,West,96_1_YKCA*wi,West - 96a Wilson towards Carrier Dr via Kipling and John Garland,96A
+96,96-Wilson,West,96_1_wi96D,West - 96d Wilson towards Carrier Dr via John Garland and Westmore Dr,96D
+96,96-Wilson,East,96_0_CAYK*,East - 96a Wilson towards York Mills Station via John Garland and Kipling,96A
+96,96-Wilson,West,96_1_YKCA*,West - 96a Wilson towards Carrier Dr via Kipling and John Garland,96A
+96,96-Wilson,East,96_0_JAYKwi,East - 96a Wilson towards York Mills Station via John Garland and Kipling,96A
+96,96-Wilson,West,96_1_YKHL*,West - 96b Wilson towards Humberline & Albion via Westhumber and Martin Grove,96B
+96,96-Wilson,East,96_0_96Dp,East - 96d Wilson towards York Mills Station via John Garland and Kipling,96D
+960,960-Steeles West Express,East,960_0_960D,East - 960 Steeles West Express towards Finch Station via Pioneer Village Station,960
+960,960-Steeles West Express,West,960_1_960D,West - 960d Steeles West Express towards Highway 27 via Pioneer Village Station,960D
+968,968-Warden Express,North,968_1_968,North - 968 Warden Express towards Steeles,968
+968,968-Warden Express,South,968_0_968,South - 968 Warden Express towards Warden Station,968
+97,97-Yonge,South,97_0_97C,South - 97c Yonge towards Front Street,97C
+97,97-Yonge,South,97_0_97B,South - 97b Yonge towards St Clair Station via Yonge Blvd,97B
+97,97-Yonge,South,97_0_97A,South - 97a Yonge towards St Clair Station,97A
+97,97-Yonge,North,97_1_97C,North - 97c Yonge towards Eglinton Station,97C
+97,97-Yonge,North,97_1_97B,North - 97b Yonge towards Steeles via Yonge Blvd,97B
+97,97-Yonge,North,97_1_97A,North - 97a Yonge towards Steeles,97A
+98,98-Willowdale-Senlac,West,98_1_98C,West - 98 Willowdale-Senlac towards Peckham via Sheppard-Yonge Station,98
+98,98-Willowdale-Senlac,East,98_0_98C,East - 98 Willowdale-Senlac towards Steeles via Sheppard-Yonge Station,98
+984,984-Sheppard West Express,West,984_1_984A,West - 984a Sheppard West Express towards Weston Rd,984A
+984,984-Sheppard West Express,East,984_0_984A,East - 984 Sheppard West Express towards Sheppard-Yonge Station via Sheppard West Station,984
+985,985-Sheppard East Express,West,985_1_985B,West - 985 Sheppard East Express towards Don Mills Station,985
+985,985-Sheppard East Express,West,985_1_985A,West - 985 Sheppard East Express towards Don Mills Station,985
+985,985-Sheppard East Express,East,985_0_985B,East - 985b Sheppard East Express towards Meadowvale,985B
+985,985-Sheppard East Express,East,985_0_985A,East - 985a Sheppard East Express towards Kennedy Stn via Scarborough Ctr Stn,985A
+986,986-Scarborough Express,West,986_1_986,West - 986 Scarborough Express towards Kennedy Station,986
+986,986-Scarborough Express,East,986_0_986,East - 986 Scarborough Express towards Sheppard,986
+989,989-Weston Express,North,989_1_989,North - 989 Weston Express towards Steeles,989
+989,989-Weston Express,South,989_0_989,South - 989 Weston Express towards Keele Station,989
+99,99-Arrow Road,South,99_0_99,South - 99 Arrow Rd towards Arrow Rd,99
+99,99-Arrow Road,North,99_1_99,North - 99 Arrow Rd towards Jane,99
+995,995-York Mills Express,East,995_0_995,East - 995 York Mills Express towards U of T Scarborough,995
+995,995-York Mills Express,West,995_1_995,West - 995 York Mills Express towards York Mills Station,995
+996,996-Wilson Express,West,996_1_996,West - 996 Wilson Express towards Humber College,996
+996,996-Wilson Express,East,996_0_TRST*,East - 996 Wilson Express towards Scarborough Centre Station,996
+996,996-Wilson Express,East,996_0_996,East - 996 Wilson Express towards Scarborough Centre Station,996
