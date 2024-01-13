@@ -748,11 +748,6 @@ app.get("/:agency/nextbus", async (req, res) => {
 async function nextPrediction(stopid,res){
     // Get all necessary resources
     const stops=fileArray('TTC','stops');
-    /* If no route filter selected, add all route ids to the routeids filter
-    const routes=fileArray('routes');
-    for(let i=0;i<routes.length;i++){
-        routeids.push(routes[i][routes[0].indexOf('route_id')]);
-    }*/
     // Find and display the stop
     let currentStop=findRow(stops,'stop_id',stopid);
     const title = 'Current stop is #'+currentStop[stops[0].indexOf('stop_code')]+' '+currentStop[stops[0].indexOf('stop_name')];
@@ -772,8 +767,8 @@ async function nextPrediction(stopid,res){
         }
         for(const prediction of predictions){
             if(prediction.dirTitleBecauseNoPredictions!=undefined){
-                directionNames.push(prediction.dirTitleBecauseNoPredictions+':');
-                directionArrivals.push([]);
+                //directionNames.push(prediction.dirTitleBecauseNoPredictions+':');
+                //directionArrivals.push([]);
                 continue;
             }
             let directions=prediction.direction;

@@ -30,6 +30,12 @@
                 <% for(let j=0;j<directionArrivals[i].length;j++){ %>
                     <tr><td style="font-size: 20px; border-top: 1px solid black; border-left: 1px solid black;"><%= directionArrivals[i][j]%></td></tr>
                 <% } %>
+                <% if(directionArrivals[i].length==0){ %>
+                    <tr><td style="font-size: 25px;">There is no more service on this branch today.</td></tr>
+                <% } %>
+            <% } %>
+            <% if(directionNames.length==0){ %>
+                <tr><td style="font-size: 25px;">There is no more service at this stop today.</td></tr>
             <% } %>
         </table>
         <br>
