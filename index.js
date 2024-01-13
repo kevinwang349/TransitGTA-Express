@@ -581,8 +581,8 @@ app.get("/:agency/nextbus", async (req, res) => {
         secs='0'+secs;
     }
     const currentTime=date.getHours()+':'+mins+':'+secs;
-    //console.log(date);
-    //console.log(currentTime);
+    console.log(date);
+    console.log(currentTime);
     // Sort arrival times and trips using selection sort
     let arrivalTimes=[""];
     let stoptrips=[trips[0]];
@@ -1229,7 +1229,8 @@ app.get("/:agency/fare", async (req, res) => {
 
 // Find service ids for an agency on a given date
 function findService(agency, date=new Date()){
-    date.setUTCHours('6');
+    date.setUTCHours(date.getUTCHours()-5);
+    console.log(date);
     const dateStr = date.toISOString().substring(0, 10).split('-').join('');
     if(agency=='GO'||agency=='UPX') return dateStr;
     const cal1=fileArray(agency, 'calendar');
