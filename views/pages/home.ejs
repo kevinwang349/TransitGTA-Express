@@ -18,16 +18,16 @@
     <p id="welcomeMsg" style="text-align: center; font-size: 25px; color: rgb(255, 80, 0); width: fit-content; margin: auto; padding: 5px;">
         Welcome to TransitGTA!<br>Click on the logo of a transit agency to continue.</p>
 
-    <img id="TTC" src="/logos/TTC.png" style="position: absolute; width: 10%; top: 33%; left: 58.5%;">
-    <img id="GO" class="agency" src="/logos/GO.png" style="width: 10%; top: 43%; left: 58.5%;">
-    <img id="YRT" class="agency" src="/logos/YRT.png" style="width: 10%; top: 12%; left: 55%;">
-    <img id="DRT" class="agency" src="/logos/DRT.png" style="width: 10%; top: 19%; left: 75%;">
-    <img id="MiWay" class="agency" src="/logos/MiWay.png" style="width: 10%; top: 44%; left: 46%;">
-    <img id="Brampton" class="agency" src="/logos/Brampton.png" style="width: 12%; top: 36%; left: 40%;">
-    <img id="HSR" class="agency" src="/logos/HSR.png" style="width: 7%; top: 81%; left: 36.5%;">
-    <img id="GRT" class="agency" src="/logos/GRT.png" style="width: 10%; top: 62%; left: 5%;">
+    <button id="TTC" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 33%; left: 58.5%;"><img src="/logos/TTC.png" style="width: 100%;"></button>
+    <button id="GO" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 43%; left: 58.5%;"><img src="/logos/GO.png" style="width: 100%;"></button>
+    <button id="YRT" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 12%; left: 55%;"><img src="/logos/YRT.png" style="width: 100%;"></button>
+    <button id="DRT" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 19%; left: 75%;"><img src="/logos/DRT.png" style="width: 100%;"></button>
+    <button id="MiWay" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 44%; left: 46%;"><img src="/logos/MiWay.png" style="width: 100%;"></button>
+    <button id="Brampton" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 36%; left: 40%;"><img src="/logos/Brampton.png" style="width: 100%;"></button>
+    <button id="HSR" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 81%; left: 35%;"><img src="/logos/HSR.png" style="width: 100%;"></button>
+    <button id="GRT" class="agency" style="position: absolute; border: 0px; background-color: rgba(0, 0, 0, 0); width: 10%; top: 62%; left: 5%;"><img src="/logos/GRT.png" style="width: 100%;"></button>
     <script>
-        document.getElementById('TTC').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com/TTC/map'; });  ***NOT READY YET
+        document.getElementById('TTC').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com/TTC/map'; });
         document.getElementById('GO').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com/GO/map'; });
         document.getElementById('YRT').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com/YRT/map'; });
         document.getElementById('DRT').addEventListener('click',() => { window.location.href='https://transitGTA.onrender.com/DRT/map'; });
