@@ -196,6 +196,7 @@ function zoomIn(position){
 function zoomOut(error){
     map.fitBounds(L.latLngBounds(bounds));
     map.setZoom(11);
+    alert('Sorry, TransitGTA was unable to access your location. Please allow TransitGTA to see your location to use this feature.');
 }
 
 async function request(url) {
