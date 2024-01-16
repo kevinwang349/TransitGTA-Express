@@ -49,27 +49,6 @@
         "url":"https://www.grt.ca/en/schedules-maps/resources/2023-09-26-2023-system-map_09262023-web.pdf"
     },
     {
-        "agency":"TTC",
-        "name":"System_Map",
-        "url":"https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_SystemMap_2021-11.pdf?rev=5ce3bd68a9064bddbbe8120c6bf1ab98"
-    },{
-        "agency":"TTC",
-        "name":"Subway_Streetcar_Map",
-        "url":"https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_SubwayStreetcarMap_2021-11.pdf?rev=930c96fe9efe474089c70bec03e07651"
-    },{
-        "agency":"TTC",
-        "name":"Express_Map",
-        "url":"https://ttc-cdn.azureedge.net/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_ExpressNetworkMap_2021-11.pdf?rev=1a76fc668d5746fabdcd2720750cee43"
-    },{
-        "agency":"TTC",
-        "name":"Blue_Night_Map",
-        "url":"https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_BlueNightNetworkMap_2021-11.pdf?rev=88163529c2b64897b6202e4bbac9692b"
-    },{
-        "agency":"TTC",
-        "name":"Downtown_Map",
-        "url":"https://ttc-cdn.azureedge.net/-/media/Project/TTC/DevProto/Images/Home/Routes-and-Schedules/Landing-page-pdfs/TTC_DowntownMap_2021-11.pdf?rev=f1c61eeb46ff412f8d1d7a97685e70b2"
-    },
-    {
         "agency":"Brampton",
         "name":"System_Map",
         "url":"https://www.brampton.ca/EN/residents/transit/plan-your-trip/Documents/Brampton_System_M-F_Oct2023_WEB.jpg"

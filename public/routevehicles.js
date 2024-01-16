@@ -146,12 +146,15 @@ async function routevehs(routename){
     map.addLayer(vehiclesLayer); // add stops to the map by default
 
     // Display the map
-    if(shape.length==0){
-        display('Route '+routename+' not found');
+    if(shape.length<=1){
+        console.log(shape);
+        alert('Sorry, the requested route could not be found');
     }else{
         map.fitBounds(L.latLngBounds(shape));
+        if(json.length==0){
+            alert('There are currently no vehicles on route '+route[routeLegend.indexOf('route_id')]);
+        }
     }
-    loading=0;
 }
 
 function display(output='') {

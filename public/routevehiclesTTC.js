@@ -22,6 +22,10 @@ async function routevehsTTC(routeid){
     // Add the route's path to the map
     request('https://retro.umoiq.com/service/publicJSONFeed?command=routeConfig&a=ttc&r=' + routeid).then((response) => {
         const json = JSON.parse(response);
+        if(json.Error != undefined){
+            alert('Sorry, could not find route '+routeid);
+            return;
+        }
         const route=json.route;
         directions = route.direction;
         let path = route.path;
