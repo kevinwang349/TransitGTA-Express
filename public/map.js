@@ -129,7 +129,8 @@ async function generateMap(){
         //L.polyline(shape,{color: `#${route[routes[0].indexOf('route_color')]}`}).addTo(map)
         L.polyline(currentShape,{color: `#${routecolor}`}).addTo(map);
     }
-    zoomOut();
+    map.fitBounds(L.latLngBounds(bounds));
+    map.setZoom(11);
     //console.log(shapes);
     console.log('routes loaded');
     //map.fitBounds(L.latLngBounds(bounds));
