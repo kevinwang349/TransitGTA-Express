@@ -786,6 +786,7 @@ async function nextPrediction(stopid,res){
                 for(const time of times){
                     // Display the arrival time
                     let date=new Date(parseInt(time.epochTime));
+                    date.setUTCHours(date.getUTCHours()-5);
                     //console.log(date);
                     let seconds=time.seconds;
                     let minsRemaining=time.minutes;
@@ -1225,7 +1226,6 @@ app.get("/:agency/fare", async (req, res) => {
 // Find service ids for an agency on a given date
 function findService(agency, date=new Date()){
     date.setUTCHours(date.getUTCHours()-5);
-    console.log(date);
     const dateStr = date.toISOString().substring(0, 10).split('-').join('');
     if(agency=='GO'||agency=='UPX') return dateStr;
     const cal1=fileArray(agency, 'calendar');
