@@ -71,3 +71,13 @@ Future:
 Create new Trips for TTC to use real-time data
 Add route filter for Nextbus
 Create a full functionality pathfinder by creating a list of routes and then finding trips
+
+Additional agencies:
+Burlington Transit
+GTFS: https://opendata.burlington.ca/gtfs-rt/GTFS_Data.zip
+Trip Updates: https://opendata.burlington.ca/gtfs-rt/GTFS_TripUpdates.pb
+Vehicle Positions: https://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb
+Guelph Transit
+GTFS: http://data.open.guelph.ca/datafiles/guelph-transit/guelph_transit_gtfs.zip
+Trip Updates: https://glphprdtmgtfs.glphtrpcloud.com/tmgtfsrealtimewebservice/tripupdate/tripupdates.pb
+Vehicle Positions: https://glphprdtmgtfs.glphtrpcloud.com/tmgtfsrealtimewebservice/vehicle/vehiclepositions.pb

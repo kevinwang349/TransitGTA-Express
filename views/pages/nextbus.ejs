@@ -34,7 +34,7 @@
                     <%= stoproutes[i][stoproutes[0].indexOf('route_short_name')]%> <%= stoproutes[i][stoproutes[0].indexOf('route_long_name')]%>
                          towards <a href="./trip?t=<%= stoptrips[i][stoptrips[0].indexOf('trip_id')]%>"><%= stoptrips[i][stoptrips[0].indexOf('trip_headsign')]%></a>
                     <br>Scheduled arrival time: <%= arrivalTimes[i]%>
-                    <% if(actualTimes[i]!=''){%><br>Predicted arrival time: <%= actualTimes[i]%><%}%>
+                    <% if(actualTimes[i]!=''){%><br><b>Predicted arrival time: <%= actualTimes[i]%><%}%></b>
                 </td></tr>
             <% } %>
         </table>
@@ -80,6 +80,7 @@
                 });
             }
 
+            const agency=`<%= agency%>`;
             const currentStopStr=`<%= currentStop%>`;
             const currentStop = currentStopStr.split(',');
             const arrivalTimesStr=`<%= arrivalTimes%>`;

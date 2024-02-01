@@ -72,10 +72,13 @@
             }
             // Decodes strings passed from Express server
             function parseHtmlEntities(str) {
-                return str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
+                str=str.replace(/&#([0-9]{1,3});/gi, function(match, numStr) {
                     var num = parseInt(numStr, 10); // read num as normal number
                     return String.fromCharCode(num);
                 });
+                str=str.replace(/&gt;/g,'>');
+                str=str.replace(/&lt;/g,'<');
+                return str;
             }
 
             const agency=`<%= agency%>`;
@@ -83,7 +86,7 @@
             const tripstops = strArray(tripstopsStr);
             const color = `<%= routecolor%>`;
             const vehicleFound = `<%= vehicleFound%>`;
-            const popup = `<%= popup%>`;
+            const popup = parseHtmlEntities(`<%= popup%>`);
             const shapeStr=`<%= shape%>`;
             const shape = strArray(shapeStr);
             const vehicle = JSON.parse(parseHtmlEntities(`<%= vehicle%>`));

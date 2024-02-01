@@ -581,8 +581,8 @@ app.get("/:agency/nextbus", async (req, res) => {
         secs='0'+secs;
     }
     const currentTime=date.getHours()+':'+mins+':'+secs;
-    console.log(date);
-    console.log(currentTime);
+    //console.log(date);
+    //console.log(currentTime);
     // Sort arrival times and trips using selection sort
     let arrivalTimes=[""];
     let stoptrips=[trips[0]];
@@ -645,7 +645,11 @@ app.get("/:agency/nextbus", async (req, res) => {
         for(const v of allVehicles){
             if(v.vehicle.trip.trip_id == stoptrips[i][trips[0].indexOf('trip_id')]){
                 vehicles.push(v.vehicle);
-                vehids.push(v.vehicle.vehicle.id);
+                if(agency=='MiWay'){
+                    vehids.push(v.vehicle.vehicle.label);
+                }else{
+                    vehids.push(v.vehicle.vehicle.id);
+                }
                 break;
             }
         }
@@ -1002,7 +1006,9 @@ app.get("/:agency/trip", async (req, res) => {
             const v=entity.vehicle;
             if(v.trip.trip_id==tripid){
                 vehicleFound=true;
-                popup=`Vehicle ${v.vehicle.id} on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]}`;
+                const vehid=(agency=='MiWay')?v.vehicle.label:v.vehicle.id;
+                popup=`<div style="font-size: 20px;">Vehicle ${vehid} on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]}
+                <br><a href="./routevehicles?r=${currentRoute[routes[0].indexOf('route_short_name')]}">See route vehicles on this route</a></div>`;
                 vehicle=v;
                 break;
             }
@@ -1046,7 +1052,12 @@ app.get("/:agency/trip", async (req, res) => {
                     let stopfound=false;
                     for(const stoptime of update.stop_time_update){
                         if(tripstops[i][tripstops[0].indexOf('stop_id')] == stoptime.stop_id){
-                            const newtime=stoptime.departure.time;
+                            let newtime=0;
+                            try{
+                                newtime=stoptime.departure.time;
+                            }catch(e){
+                                newtime=stoptime.arrival.time;
+                            }
                             const date=new Date(newtime*1000);
                             date.setUTCHours(date.getUTCHours()-5);
                             let sender=date.getHours()+":";

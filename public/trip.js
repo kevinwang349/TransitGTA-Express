@@ -15,11 +15,11 @@ function tripSchedule(){
         context.font = '8px sans-serif';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        if(agency!='VIA') context.fillText(vehicle.vehicle.id,15,15);
+        if(agency=='MiWay'){
+            context.fillText(vehicle.vehicle.label,15,15);
+        }else if(agency!='VIA') context.fillText(vehicle.vehicle.id,15,15);
         const src = canvas.toDataURL();
-        let position=[];
-        if(agency=='VIA') position=[vehicle.lat,vehicle.lng];
-        else position=[vehicle.position.latitude,vehicle.position.longitude];
+        const position=(agency=='VIA')?[vehicle.lat,vehicle.lng]:[vehicle.position.latitude,vehicle.position.longitude];
         const icon = L.icon({iconUrl: src,iconSize: [300,150],iconAnchor: [15,15],popupAnchor: [0,-14]});
         L.marker(position, { icon: icon }).addTo(map).bindPopup(popup);
     }
@@ -36,7 +36,9 @@ function tripSchedule(){
         ctx.stroke();
         const srcUrl = cvs.toDataURL();
         const circle = L.icon({ iconUrl: srcUrl, iconSize: [200, 100], iconAnchor: [10, 10], popupAnchor: [0, -9] });
-        let pop=`#${tripstops[i][tripstops[0].indexOf('stop_code')]}: ${tripstops[i][tripstops[0].indexOf('stop_name')]}`;
+        let pop=`<div style="font-size: 20px;">#${tripstops[i][tripstops[0].indexOf('stop_code')]}: ${tripstops[i][tripstops[0].indexOf('stop_name')]}
+            <br><a href="./stopschedule?s=${tripstops[i][tripstops[0].indexOf('stop_id')]}">Stop schedule for this stop</a>
+            <br><a href="./nextbus?s=${tripstops[i][tripstops[0].indexOf('stop_id')]}">Next vehicle arrival at this stop</a></div>`;
         L.marker([tripstops[i][tripstops[0].indexOf('stop_lat')],tripstops[i][tripstops[0].indexOf('stop_lon')]],{icon:circle}).addTo(map).bindPopup(pop);
         //shape.push([tripstops[tripstops[0].indexOf('stop_lat')],tripstops[tripstops[0].indexOf('stop_lon')]]);
         //const sender=`#${tripstops[stops[0].indexOf('stop_code')]} ${tripstops[stops[0].indexOf('stop_name')]} at ${arrivalTimes[i]}`;

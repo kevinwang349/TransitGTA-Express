@@ -37,9 +37,9 @@ async function routevehs(routename){
         ctx.stroke();
         const srcUrl = cvs.toDataURL();
         const circle = L.icon({ iconUrl: srcUrl, iconSize: [200, 100], iconAnchor: [10, 10], popupAnchor: [0, -9] });
-        let pop=`#${currentStop[routestops[0].indexOf('stop_code')]}: ${currentStop[routestops[0].indexOf('stop_name')]}<br>
+        let pop=`<div style="font-size: 20px;">#${currentStop[routestops[0].indexOf('stop_code')]}: ${currentStop[routestops[0].indexOf('stop_name')]}<br>
             <a href='./stopschedule?a=${agency}&s=${currentStop[routestops[0].indexOf('stop_id')]}'>Stop schedule for this stop</a><br>
-            <a href='./nextbus?a=${agency}&s=${currentStop[routestops[0].indexOf('stop_id')]}'>Next vehicle arrival at this stop</a>`;
+            <a href='./nextbus?a=${agency}&s=${currentStop[routestops[0].indexOf('stop_id')]}'>Next vehicle arrival at this stop</a></div>`;
         stopmarkers.push(L.marker([currentStop[routestops[0].indexOf('stop_lat')],currentStop[routestops[0].indexOf('stop_lon')]],{icon:circle}).bindPopup(pop));
         //shape.push([currentStop[routestops[0].indexOf('stop_lat')],currentStop[routestops[0].indexOf('stop_lon')]]); // ***
     }

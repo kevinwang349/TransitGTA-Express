@@ -32,7 +32,8 @@ async function nextArrival(){
     for(let i=1;i<vehicles.length;i++){
         if(JSON.stringify(vehicles[i])=='{}') continue;
         const vehicle=vehicles[i];
-        let popup = `Vehicle ${vehicle.vehicle.id} on route ${stoproutes[i][stoproutes[0].indexOf('route_short_name')]} ${stoproutes[i][stoproutes[0].indexOf('route_long_name')]}`;
+        const vehid=(agency=='MiWay')?vehicle.vehicle.label:vehicle.vehicle.id;
+        let popup = `<div style="font-size:20px;">Vehicle ${vehid} on route ${stoproutes[i][stoproutes[0].indexOf('route_short_name')]} ${stoproutes[i][stoproutes[0].indexOf('route_long_name')]}`;
         if(actualTimes[i].length>0){
             const timeRemaining=subtract(currentTime, actualTimes[i]);
             popup += '<br> Arrives in ';
@@ -49,7 +50,7 @@ async function nextArrival(){
             if(timeRemaining.minDiff==1) popup+='1 minute ';
             else if(timeRemaining.minDiff>1) popup+=timeRemaining.minDiff+' minutes '
             popup+=`at ${arrivalTimes[i]}`;
-        }
+        }popup+='</div>';
         const canvas = document.createElement('canvas');
         canvas.setAttribute('style', 'height: 30px, width: 30px');
         const context = canvas.getContext('2d');
@@ -63,7 +64,7 @@ async function nextArrival(){
         context.font = '8px sans-serif';
         context.textAlign = 'center';
         context.textBaseline = 'middle';
-        context.fillText(vehicle.vehicle.id, 15, 15);
+        context.fillText(vehid, 15, 15);
         const src = canvas.toDataURL();
         const icon = L.icon({ iconUrl: src, iconSize: [300, 150], iconAnchor: [15, 15], popupAnchor: [0, -14] });
         shape.push([vehicle.position.latitude, vehicle.position.longitude]);
