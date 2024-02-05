@@ -184,7 +184,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
     // Create schedule table using stop times
     let scheduleTable=[[]];
     let stoptripids=[''];
-    const times = fileArray(agency, 'stop_times');
+    const times = fileArrayStopTimes(agency, date);
     for (let i = 1; i < times.length; i++) {
         const stop = times[i];
         if (tripids.includes(stop[times[0].indexOf('trip_id')])){
@@ -334,7 +334,6 @@ app.get("/:agency/stopschedule", async (req, res) => {
     const routes = fileArray(agency, 'routes');
     const trips = fileArray(agency, 'trips');
     const stops = fileArray(agency, 'stops');
-    const times = fileArray(agency, 'stop_times');
 
     // Get parameters
     const stopid = req.query.s;
@@ -402,6 +401,7 @@ app.get("/:agency/stopschedule", async (req, res) => {
     let platforms=[stops[0]];
     let isArrival=[false];
     let stoproutes=[routes[0]];
+    const times = fileArrayStopTimes(agency, date);
     for (let i = 1; i < times.length; i++) {
         const stop = times[i];
         if (stopids.includes(stop[times[0].indexOf('stop_id')]) && tripids.includes(stop[times[0].indexOf('trip_id')])){
@@ -468,6 +468,7 @@ app.get("/:agency/stopschedule", async (req, res) => {
         "stopname": stopname,
         "stopid": stopid,
         "isParent": isParent,
+        "dateStr": dateStr,
         "stoptrips": arrayStr(stoptrips),
         "arrivalTimes": arrivalTimes.join(','),
         "stoproutes": arrayStr(stoproutes),
@@ -511,7 +512,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     }
 
     // Get all necessary resources
-    const times = fileArray(agency, 'stop_times');
+    const times = fileArrayStopTimes(agency);
     const trips = fileArray(agency, 'trips');
     const stops = fileArray(agency, 'stops');
     const routes = fileArray(agency, 'routes');
@@ -856,7 +857,7 @@ app.get("/:agency/trip", async (req, res) => {
     const agency = req.params.agency;
     const tripid = req.query.t;
     // Load necessary files
-    const times = fileArray(agency, 'stop_times');
+    const times = fileArrayStopTimes(agency);
     const shapes = fileArray(agency, 'shapes');
     const trips = fileArray(agency, 'trips');
     const stops = fileArray(agency, 'stops');
@@ -1268,9 +1269,6 @@ app.get("/:agency/findService/:date/", async (req, res) => {
 
 // Read a CSV data file and return its contents in the form of a 2D array
 function fileArray(agency, filename, flag=false) {
-    if(agency=='TTC'&&filename=='stop_times'){
-        return fileArrayStopTimes();
-    }
     const filestr = readFileSync(`./gtfs/${agency}/${filename}.txt`).toString();
     let array1 = filestr.split('\r\n');
     if(flag) array1 = filestr.split('\n');
@@ -1283,8 +1281,11 @@ function fileArray(agency, filename, flag=false) {
 app.get("/:agency/fileArray/:file/", async (req, res) => {
     res.send({'file': fileArray(req.params.agency, req.params.file)});
 });
-function fileArrayStopTimes() { // for TTC's stop_times file only
-    const serviceids=findService('TTC');
+function fileArrayStopTimes(agency, date=new Date()) { // for stop_times files only
+    if(agency!='TTC'){
+        return fileArray(agency, 'stop_times');
+    }
+    const serviceids=findService('TTC',date);
     let stoptimes=[['trip_id','arrival_time','departure_time','stop_id','stop_sequence','stop_headsign','pickup_type','drop_off_type','shape_dist_traveled']];
     for(const id of serviceids){
         const filestr = readFileSync(`./gtfs/TTC/${id}.txt`).toString();

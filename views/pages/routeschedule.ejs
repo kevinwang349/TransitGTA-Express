@@ -24,18 +24,18 @@
                 <tr style="position: relative; background: white; z-index: 2; top: 0px;" id="stopsRow">
                     <td></td>
                     <% for(let i=0;i<stopnames.length;i++){ %>
-                        <td style="border-bottom: 1px black solid; border-right: 1px black solid; font-size: 14px" class="link">
+                        <td style="border-bottom: 1px black solid; border-right: 1px black solid; font-size: 17px" class="link">
                             <a href="./stopschedule?s=<%= schedule[0][i]%>&t=<%= dateStr%>"><%= stopnames[i]%></a>
                         </td>
                     <%}%>
                 </tr>
                 <% for(let i=1;i<schedule.length;i++){ %>
                     <tr>
-                        <td style="white-space: nowrap; border-bottom: 1px black solid; border-right: 1px black solid; font-size: 14px; position: relative; z-index: 1; background-color: #<%= routecolor %>" class="link trip">
+                        <td style="border-bottom: 1px black solid; border-right: 1px black solid; font-size: 18px; position: relative; z-index: 1; background-color: #<%= routecolor %>" class="link trip">
                             <a href="./trip?t=<%= tripids[i]%>"><%= headsigns[i]%></a>
                         </td>
                         <% for(let j=0;j<schedule[i].length;j++){ %>
-                            <td style="border-top: 1px black solid; border-left: 1px black solid; position: relative; z-index: 0; background-color: #<%= colors[i][j]%>"><%= schedule[i][j]%></td>
+                            <td style="border-top: 1px black solid; border-left: 1px black solid; font-size: 16px; position: relative; z-index: 0; background-color: #<%= colors[i][j]%>"><%= schedule[i][j]%></td>
                         <%}%>
                     </tr>
                 <%}%>
@@ -59,7 +59,7 @@
                     <%}%>
                 <%}%>
             </select> <br>
-            <label for="date">Choose a date: </label><input style="font-size: 20px;" id="date" type="date" value="2023-12-25"><br>
+            <label for="date">Choose a date: </label><input style="font-size: 20px;" id="date" type="date" value="<%= dateStr%>"><br>
             <button style="font-size: 20px;" onclick="newScheduleRedirect()">See new schedule</button>
         </div>
 

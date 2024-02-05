@@ -19,13 +19,18 @@
         <img id="home" src="/logos/home.png" width="50px">
         
         <p style="font-size: 20px;"><%= title%></p>
+        <button onclick="nextBusRedirect()" style="font-size: 20px;">Next vehicle arrival at this stop</button><br><br>
         <select id="update" style="font-size: 25px;" onchange="generateTable()">
             <option id="neither" value="0">Default stop schedule</option>
             <option id="headway" value="1">Show headways between vehicle arrivals</option>
             <option id="arrival" value="2">Separate arrivals and departures</option>
         </select><br><br>
         <table id="table"></table>
-        <button onclick="nextBusRedirect()" style="font-size: 20px;">Next vehicle arrival at this stop</button>
+
+        <div style="font-size: 25px;" id="update"><br>
+            <label for="date">Find a schedule for a different date: </label><input style="font-size: 20px;" id="date" type="date" value="<%= dateStr%>"><br>
+            <button style="font-size: 20px;" onclick="newScheduleRedirect()">See new schedule</button>
+        </div>
 
         <script>
             // Redirects
@@ -34,6 +39,10 @@
             });
             function nextBusRedirect(){
                 window.location.href='https://transitGTA.onrender.com/<%= agency %>/nextbus?s=<%= stopid%>';
+            }
+            function newScheduleRedirect(){
+                const datestr=document.getElementById('date').value;
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/stopschedule?s=<%= stopid%>&t='+datestr;
             }
             // Splits a CSV string into a 2D array
             function strArray(string) {
