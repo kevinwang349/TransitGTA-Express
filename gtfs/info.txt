@@ -4,7 +4,7 @@ Metrolinx
 GO Transit GTFS: https://assets.metrolinx.com/raw/upload/Documents/Metrolinx/Open%20Data/GO-GTFS.zip
 UP Express GTFS: https://assets.metrolinx.com/raw/upload/Documents/Metrolinx/Open%20Data/UP-GTFS.zip
 GTFS last fetched Jan 8, 2024
-GOT GTFS valid until Apr 26, 2024
+GOT GTFS valid until Feb 29, 2024
 UPX GTFS valid until June 17, 2024
 Trips.txt valid from 2023-01-08 to 2023-09-01
 
@@ -37,8 +37,8 @@ Vehicle Positions: https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb
 
 Durham Region Transit (DRT)
 GTFS: https://maps.durham.ca/OpenDataGTFS/GTFS_Durham_TXT.zip
-GTFS last fetched Jan 8, 2024
-GTFS valid until Feb 18, 2024
+GTFS last fetched Feb 18, 2024
+GTFS valid until Apr 7, 2024
 Trip Updates: https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates
 Vehicle Positions: https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions
 Service Alerts: https://maps.durham.ca/OpenDataGTFS/alerts.pb
@@ -62,8 +62,8 @@ Service Alerts: https://opendata.hamilton.ca/gtfs-rt/GTFS_ServiceAlerts.pb
 
 Toronto Transit Commission
 GTFS: http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-schedules/OpenData_TTC_Schedules.zip
-GTFS last fetched Jan 11, 2024
-GTFS valid until Feb 17, 2024
+GTFS last fetched Feb 18, 2024
+GTFS valid until Mar 30, 2024
 ** TTC uses Nextbus(Umo) API for real-time data
 
 
