@@ -58,9 +58,13 @@
                     <%}%>
                 </tr>
             <%}%>
-        </table>
+        </table><br>
+        <button style="font-size: 25px;" onclick="routeScheduleRedirect()">See schedule for <%= rsn%> <%= rln%></button>
 
         <script>
+            function routeScheduleRedirect(){
+                window.location.href='https://transitGTA.onrender.com/<%= agency %>/routeschedule?r=<%= rsn%>&d=<%= dirid%>';
+            }
             // Splits a CSV string into a 2D array
             function strArray(string) {
                 const array1 = string.split('\n');

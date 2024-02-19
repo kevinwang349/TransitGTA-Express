@@ -57,7 +57,7 @@ async function generateTable(){
         routeCell.setAttribute('style','border-top: 1px solid black; border-left: 1px solid black; background-color: #'+newcolor);
         
         if(agency=='VIA') headsignCell.innerHTML='Train #'+stoptrips[i][stoptrips[0].indexOf('trip_short_name')]+' to '+stoptrips[i][stoptrips[0].indexOf('trip_headsign')];
-        else headsignCell.innerHTML=`<a href="./trip/?a=${agency}&t=${stoptrips[i][stoptrips[0].indexOf('trip_id')]}">${stoptrips[i][stoptrips[0].indexOf('trip_headsign')]}</a>`;
+        else headsignCell.innerHTML=`<a href="./trip/?t=${stoptrips[i][stoptrips[0].indexOf('trip_id')]}">${stoptrips[i][stoptrips[0].indexOf('trip_headsign')]}</a>`;
         headsignCell.setAttribute('style','border-bottom: 1px solid black; border-right: 1px solid black; background-color: #'+newcolor);
         
         timeCell.innerHTML=arrivalTimes[i];
@@ -83,7 +83,7 @@ async function generateTable(){
             const platformCell=document.createElement('td');
             let platformFullName=platforms[i][platforms[0].indexOf('stop_name')];
             let platformName=platformFullName.substring(stopname.length);
-            platformCell.innerHTML=`<a href="./stopschedule/?a=${agency}&s=${platforms[i][platforms[0].indexOf('stop_id')]}">#${platforms[i][platforms[0].indexOf('stop_id')]} ${platformName}</a>`;
+            platformCell.innerHTML=`<a href="./stopschedule/?s=${platforms[i][platforms[0].indexOf('stop_id')]}">#${platforms[i][platforms[0].indexOf('stop_id')]} ${platformName}</a>`;
             platformCell.setAttribute('style','border-bottom: 1px solid black; border-right: 1px solid black; background-color: #eeeeee');
             row.appendChild(platformCell);
         }

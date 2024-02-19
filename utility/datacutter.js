@@ -6,7 +6,7 @@ for(let i=1;i<calendar.length;i++){
     serviceids.push(calendar[i][calendar[0].indexOf('date')]);
 }
 
-/*const trips = fileArray('GOtrips');
+const trips = fileArray('trips');
 const tripids = [];
 let trips2 = [trips[0]];
 for (let i = 1; i < trips.length; i++) {
@@ -15,7 +15,7 @@ for (let i = 1; i < trips.length; i++) {
         tripids.push(trips[i][trips[0].indexOf('trip_id')]);
     }
 }
-arrayFile(trips2, 'GOtrips');*/
+arrayFile(trips2, 'trips');
 
 const stops = fileArray('stop_times');
 let stops2 = [stops[0]];

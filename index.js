@@ -863,11 +863,10 @@ app.get("/:agency/trip", async (req, res) => {
     const stops = fileArray(agency, 'stops');
     const routes = fileArray(agency, 'routes');
     const currentTrip=findRow(trips,'trip_id',tripid);
-    /*if(currentTrip.length==0){
-        display('Cannot find trip with id '+tripid);
-        loading=0;
+    if(currentTrip.length==0){
+        res.send("Error: Cannot find trip with id "+tripid);
         return;
-    }*/
+    }
     const currentRoute=findRow(routes,'route_id',currentTrip[trips[0].indexOf('route_id')])
     let tripstops=[stops[0]];
     let arrivalTimes=[""];
@@ -921,7 +920,10 @@ app.get("/:agency/trip", async (req, res) => {
             "vehicleFound": false,
             "popup": "",
             "shape": arrayStr(shape),
-            "vehicle": "{}"
+            "vehicle": "{}",
+            "rsn": currentRoute[routes[0].indexOf('route_short_name')],
+            "rln": currentRoute[routes[0].indexOf('route_long_name')],
+            "dirid": currentTrip[trips[0].indexOf('direction_id')]
         };
         res.render("pages/trip", json);
         return;
@@ -1114,7 +1116,10 @@ app.get("/:agency/trip", async (req, res) => {
         "vehicleFound": vehicleFound,
         "popup": popup,
         "shape": arrayStr(shape),
-        "vehicle": JSON.stringify(vehicle)
+        "vehicle": JSON.stringify(vehicle),
+        "rsn": currentRoute[routes[0].indexOf('route_short_name')],
+        "rln": currentRoute[routes[0].indexOf('route_long_name')],
+        "dirid": currentTrip[trips[0].indexOf('direction_id')]
     };
 
     res.render('pages/trip', json);
