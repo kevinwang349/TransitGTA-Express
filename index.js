@@ -1,5 +1,5 @@
 import express, { static as _static } from "express";
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import fetch from 'node-fetch';
 const app = express();
 
@@ -905,22 +905,92 @@ app.get("/:agency/trip", async (req, res) => {
         color='dedede';
     }
 
-    if(agency=='TTC'){ // cannot find real-time trip or vehicle data for TTC (for now)
+    if(agency=='TTC'){
+        let actualTimes=[""];
+        let colors=[""];
+        let tripFound=false;
+        let vehicleFound=false;
+        let vehid='';
+        let url='https://retro.umoiq.com/service/publicJSONFeed?command=predictionsForMultiStops&a=ttc';
+        for(let i=1;i<tripstops.length;i++){
+            url+='&stops='+currentRoute[routes[0].indexOf('route_short_name')]+'|'+tripstops[i][stops[0].indexOf('stop_id')];
+        }
+        await fetch(url).then(async (response) => {
+            const stopsjson=await response.json();
+            const predictions=stopsjson.predictions;
+            //writeFileSync('t.json',JSON.stringify(stopsjson));
+            for(let i=1;i<tripstops.length;i++){
+                let stopFound=false;
+                a:for(let j=0;j<predictions.length;j++){
+                    if(predictions[j].stopTag==tripstops[i][stops[0].indexOf('stop_id')]){
+                        //console.log(predictions[j].direction.prediction)
+                        for(const trip of predictions[j].direction.prediction){
+                            if(trip.tripTag==tripid){
+                                const newtime=parseInt(trip.epochTime);
+                                const date=new Date(newtime);
+                                date.setUTCHours(date.getUTCHours()-5);
+                                let sender=date.getHours()+":";
+                                sender+=(date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes();
+                                sender+=":";
+                                sender+=(date.getSeconds()<10)?('0'+date.getSeconds()):date.getSeconds();
+                                actualTimes.push(sender);
+                                const roundedTime=arrivalTimes[i];
+                                const diff = subtract(roundedTime,sender);
+                                if(diff > 300){
+                                    colors.push('ffaaaa');
+                                }else if(diff < -300){
+                                    colors.push('aaffaa');
+                                }else{
+                                    colors.push('eeeeee');
+                                }
+                                stopFound=true;
+                                tripFound=true;
+                                if(!vehicleFound){
+                                    vehicleFound=true;
+                                    vehid=trip.vehicle;
+                                }
+                                break a;
+                            }
+                        }
+                    }
+                }
+                if(!stopFound){
+                    actualTimes.push("-");
+                    colors.push('ffffff');
+                }
+            }
+        });
+        let vehicle={};
+        let pop='';
+        if(vehicleFound){
+            await fetch('https://retro.umoiq.com/service/publicJSONFeed?command=vehicleLocation&a=ttc&v='+vehid).then(async (response) => {
+                const vehjson=await response.json();
+                vehicle=vehjson.vehicle;
+                vehicle.tripid=tripid;
+                //vehicle.route=direction.title;
+            });
+            if(parseInt(vehid)<5000 && parseInt(vehid)>4000){
+                pop='Streetcar #'+vehid;
+            }else{
+                pop='Bus #'+vehid;
+            }
+            pop+=` on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]}`;
+        }
         const title = `Current trip is on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
         const json={
             "agency": agency,
             "title": title,
-            "colors": [],
+            "colors": colors,
             "arrivalTimes": arrivalTimes,
-            "tripFound": false,
-            "actualTimes": [],
+            "tripFound": tripFound,
+            "actualTimes": actualTimes,
             "tripstops": tripstops,
             "tripStopsStr": arrayStr(tripstops),
             "routecolor": color,
-            "vehicleFound": false,
-            "popup": "",
+            "vehicleFound": vehicleFound,
+            "popup": pop,
             "shape": arrayStr(shape),
-            "vehicle": "{}",
+            "vehicle": JSON.stringify(vehicle),
             "rsn": currentRoute[routes[0].indexOf('route_short_name')],
             "rln": currentRoute[routes[0].indexOf('route_long_name')],
             "dirid": currentTrip[trips[0].indexOf('direction_id')]
