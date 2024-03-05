@@ -31,6 +31,10 @@
         "vehiclePositions": "https://nextride.brampton.ca:81/API/VehiclePositions?format=gtfs.proto"
     },
     "HSR":{
+        "tripUpdates": "",
+        "vehiclePositions": ""
+    },
+    "HSR(broken)":{
         "tripUpdates": "https://opendata.hamilton.ca/gtfs-rt/GTFS_TripUpdates.pb",
         "vehiclePositions": "https://opendata.hamilton.ca/gtfs-rt/GTFS_VehiclePositions.pb"
     },

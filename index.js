@@ -100,7 +100,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
         await fetch(VPurl).then(async (response) => {
             const trips=await response.json();
             serviceataGlance = trips.Trips.Trip;
-        });
+        }).catch(() => {});
     }
 
     // Get shapes for the route
@@ -117,7 +117,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
     let routestops=[stops[0]];
     const allroutestops = fileArray(agency, 'routestops');
     for(let i=1;i<allroutestops.length;i++){
-        if(allroutestops[i][allroutestops[0].indexOf('route_id')]==route[routes[0].indexOf('route_id')]){
+        if(allroutestops[i][allroutestops[0].indexOf('route_short_name')]==route[routes[0].indexOf('route_short_name')]){
             routestops.push(allroutestops[i].slice(2));
         }
     }
@@ -617,7 +617,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     // Get vehicles for each arrival from vehiclePositions
     const urls = JSON.parse(readFileSync('./URL.json'));
     const VPurl = urls[agency].vehiclePositions;
-    let allVehicles = [{}];
+    let allVehicles = [];
     await fetch(VPurl).then(async (response) => {
         if(agency == 'GO'){
             const gtfs=await response.json();
@@ -659,7 +659,7 @@ app.get("/:agency/nextbus", async (req, res) => {
 
     // Get real-time predicted arrival times from tripUpdates
     const TUurl = urls[agency].tripUpdates;
-    let allTripUpdates = [{}];
+    let allTripUpdates = [];
     await fetch(TUurl).then(async (response) => {
         if(agency == 'GO'){
             const gtfs=await response.json();
@@ -825,7 +825,7 @@ async function nextPrediction(stopid,res){
                         vehicle.route=direction.title;
                         vehicle.arrival=sender;
                         vehicles[i].push(vehicle);
-                    });
+                    }).catch(() => {});
                     if(parseInt(time.vehicle)<5000 && parseInt(time.vehicle)>4000){
                         directionArrivals[i].push('Streetcar #'+time.vehicle+' '+sender);
                     }else{
@@ -835,7 +835,7 @@ async function nextPrediction(stopid,res){
                 i++;
             }
         }
-    });
+    }).catch(() => {});
     setTimeout(() => {
         // Send data
         const json={
@@ -959,7 +959,7 @@ app.get("/:agency/trip", async (req, res) => {
                     colors.push('ffffff');
                 }
             }
-        });
+        }).catch(() => {});
         let vehicle={};
         let pop='';
         if(vehicleFound){
@@ -968,7 +968,7 @@ app.get("/:agency/trip", async (req, res) => {
                 vehicle=vehjson.vehicle;
                 vehicle.tripid=tripid;
                 //vehicle.route=direction.title;
-            });
+            }).catch(() => {});
             if(parseInt(vehid)<5000 && parseInt(vehid)>4000){
                 pop='Streetcar #'+vehid;
             }else{
@@ -1002,7 +1002,7 @@ app.get("/:agency/trip", async (req, res) => {
     const urls = JSON.parse(readFileSync('./URL.json'));
     // Look for the trip's vehicle in vehiclePositions
     const VPurl = urls[agency].vehiclePositions;
-    let allVehicles = [{}];
+    let allVehicles = [];
     await fetch(VPurl).then(async (response) => {
         if(agency == 'VIA'){
             allVehicles=await response.json();
@@ -1090,7 +1090,7 @@ app.get("/:agency/trip", async (req, res) => {
 
     // Get real-time predicted arrival times from tripUpdates
     const TUurl = urls[agency].tripUpdates;
-    let allTripUpdates = [{}];
+    let allTripUpdates = [];
     await fetch(TUurl).then(async (response) => {
         if(agency == 'GO'){
             const gtfs=await response.json();
@@ -1215,7 +1215,7 @@ app.get("/:agency/map", async (req, res) => {
     // Get all vehicles
     const urls = JSON.parse(readFileSync('./URL.json'));
     const VPurl = urls[agency].vehiclePositions;
-    let allVehicles = [{}];
+    let allVehicles = [];
     await fetch(VPurl).then(async (response) => {
         if(agency == 'VIA'){
             allVehicles=await response.json();
