@@ -29,8 +29,8 @@ Vehicle Positions: https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehicl
 
 MiWay
 GTFS: https://www.miapp.ca/GTFS/google_transit.zip
-GTFS last fetched Jan 8, 2024
-GTFS valid until Feb 25, 2024
+GTFS last fetched Mar 4, 2024
+GTFS valid until Apr 28, 2024
 Trip Updates: https://www.miapp.ca/GTFS_RT/TripUpdate/TripUpdates.pb
 Vehicle Positions: https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb
 ** No service alerts feed
@@ -45,8 +45,8 @@ Service Alerts: https://maps.durham.ca/OpenDataGTFS/alerts.pb
 
 Brampton Transit
 GTFS: https://www.arcgis.com/sharing/rest/content/items/a355aabd5a8c490186bdce559c9c75fb/data
-GTFS last fetched Jan 8, 2024
-GTFS valid until Mar 3, 2024
+GTFS last fetched Mar 4, 2024
+GTFS valid until Apr 28, 2024
 Trip Updates: https://nextride.brampton.ca:81/API/TripUpdates?format=json
 Vehicle Positions: https://nextride.brampton.ca:81/API/VehiclePositions?format=json
 Service Alerts: https://nextride.brampton.ca:81/API/ServiceAlerts?format=json
@@ -59,6 +59,7 @@ GTFS valid until Apr 27, 2024
 Trip Updates: https://opendata.hamilton.ca/gtfs-rt/GTFS_TripUpdates.pb
 Vehicle Positions: https://opendata.hamilton.ca/gtfs-rt/GTFS_VehiclePositions.pb
 Service Alerts: https://opendata.hamilton.ca/gtfs-rt/GTFS_ServiceAlerts.pb
+***ONGOING CYBERSECURITY INCIDENT -- NO REAL TIME SERVICES
 
 Toronto Transit Commission
 GTFS: http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-schedules/OpenData_TTC_Schedules.zip
@@ -68,7 +69,6 @@ GTFS valid until Mar 30, 2024
 
 
 Future:
-Create new Trips for TTC to use real-time data
 Add route filter for Nextbus
 Create a full functionality pathfinder by creating a list of routes and then finding trips
 

@@ -317,7 +317,7 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 0398,0398,"Trelawny Circle At Mount Carmel Secondary School",,,  43.573885, -79.773227,,,0,,America/Toronto,1,,
 0399,0399,"Britannia Rd At Long Valley Rd",,,  43.566128, -79.747022,,,0,,America/Toronto,1,,
 0400,0400,"North Service Rd At Annapolis Ave",,,  43.585314, -79.581967,,,0,,America/Toronto,2,,
-0401,0401,"Britannia Rd At Arch Rd",,,  43.588628, -79.721780,,,0,,America/Toronto,1,,
+0401,0401,"Britannia Rd East Of Queen St",,,  43.588628, -79.721780,,,0,,America/Toronto,1,,
 0402,0402,"North Service Rd At Insley Rd",,,  43.589910, -79.576455,,,0,,America/Toronto,2,,
 0403,0403,"North Service Rd At Stanfield Rd",,,  43.592809, -79.573242,,,0,,America/Toronto,2,,
 0404,0404,"Britannia Rd At River Grove Ave",,,  43.594782, -79.714885,,,0,,America/Toronto,1,,
@@ -482,7 +482,6 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 0586,0586,"Burnhamthorpe Rd At Duke Of York Blvd",,,  43.588499, -79.641462,,,0,,America/Toronto,1,,
 0587,0587,"Burnhamthorpe Rd At Kariya Drive",,,  43.591139, -79.637811,,,0,,America/Toronto,1,,
 0588,0588,"Burnhamthorpe Rd At Kariya Gate",,,  43.591749, -79.637718,,,0,,America/Toronto,1,,
-0589,0589,"Confederation Pky South Of Burnhamthorpe Rd",,,  43.584930, -79.644614,,,0,,America/Toronto,1,,
 0590,0590,"Bristol Rd At Trailwood Dr",,,  43.615928, -79.658929,,,0,,America/Toronto,1,,
 0591,0591,"Bristol Rd At Frank Mckechnie Cc",,,  43.616933, -79.653917,,,0,,America/Toronto,1,,
 0592,0592,"Bristol Rd At Nahani Way",,,  43.619529, -79.650513,,,0,,America/Toronto,1,,
@@ -687,7 +686,7 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 0842,0842,"Trelawny Circle At Doug Leavens Blvd",,,  43.571231, -79.770940,,,0,,America/Toronto,1,,
 0843,0843,"Lakeshore Rd West Of Lorne Park Rd",,,  43.529846, -79.609602,,,0,,America/Toronto,1,,
 0844,0844,"Mclaughlin Rd At Champlain Tr",,,  43.605317, -79.674738,,,0,,America/Toronto,1,,
-0849,0849,"Rathburn Rd West Of Confederation Pky",,,  43.588849, -79.652443,,,0,,America/Toronto,1,,
+0849,0849,"Rathburn Rd At East Elora Dr",,,  43.588849, -79.652443,,,0,,America/Toronto,1,,
 0850,0850,"Keaton Cres At 5730 Keaton Cres",,,  43.612787, -79.681464,,,0,,America/Toronto,2,,
 0851,0851,"Rathburn Rd At Confederation Pky",,,  43.589577, -79.651547,,,0,,America/Toronto,1,,
 0853,0853,"Terry Fox Way At Bristol Rd",,,  43.595385, -79.684768,,,0,,America/Toronto,1,,
@@ -1071,7 +1070,6 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 1302,1302,"Dundas St West Of Constitution Blvd",,,  43.601819, -79.592272,,,0,,America/Toronto,1,,
 1304,1304,"Aukland Rd North Of Dundas St W",,,  43.638863, -79.538568,,,0,,America/Toronto,1,,
 1305,1305,"Bloor St At Markland Dr",,,  43.629133, -79.580280,,,0,,America/Toronto,1,,
-1307,1307,"Burnhamthorpe Rd At Stoneham Rd",,,  43.640623, -79.582489,,,0,,America/Toronto,1,,
 1308,1308,"Tomken Rd North Of Runningbrook Dr",,,  43.613332, -79.611137,,,0,,America/Toronto,1,,
 1309,1309,"Burnhamthorpe Rd At Mill Rd",,,  43.639518, -79.584201,,,0,,America/Toronto,1,,
 1311,1311,"Tomken Rd At Dundas St",,,  43.600715, -79.593982,,,0,,America/Toronto,1,,
@@ -1154,8 +1152,8 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 1401,1401,"Fairview Rd At Chimo Crt",,,  43.580630, -79.632090,,,0,,America/Toronto,1,,
 1402,1402,"City Centre Transit Terminal Platform D",,,  43.593938, -79.646469,,,0,,America/Toronto,1,,D
 1403,1403,"City Centre Transit Terminal Platform G",,,  43.593565, -79.646131,,,0,,America/Toronto,1,,G
-1404,1404,"Rathburn Rd West Of Elora Dr",,,  43.586443, -79.652979,,,0,,America/Toronto,1,,
-1405,1405,"Rathburn Rd At Elora Dr",,,  43.584849, -79.653721,,,0,,America/Toronto,1,,
+1404,1404,"Rathburn Rd At Schneider Ct Walkway",,,  43.586443, -79.652979,,,0,,America/Toronto,1,,
+1405,1405,"Rathburn Rd At West Elora Dr",,,  43.584849, -79.653721,,,0,,America/Toronto,1,,
 1406,1406,"City Centre Transit Terminal Platform A",,,  43.594748, -79.646556,,,0,,America/Toronto,1,,A
 1407,1407,"Goreway Dr At Nashua Dr",,,  43.710682, -79.622162,,,0,,America/Toronto,1,,
 1408,1408,"City Centre Transit Terminal Platform O",,,  43.594234, -79.647358,,,0,,America/Toronto,1,,O
@@ -1165,7 +1163,7 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 1413,1413,"Creditview Rd At Cuthbert Ave",,,  43.578982, -79.686525,,,0,,America/Toronto,1,,
 1414,1414,"Creditview Rd At Sherwood Mills Blvd",,,  43.580683, -79.688816,,,0,,America/Toronto,1,,
 1415,1415,"Rathburn Rd At Mavis Rd",,,  43.583262, -79.655119,,,0,,America/Toronto,1,,
-1416,1416,"Rathburn Rd At Elora Dr",,,  43.584343, -79.653571,,,0,,America/Toronto,1,,
+1416,1416,"Rathburn Rd At West Elora Dr",,,  43.584343, -79.653571,,,0,,America/Toronto,1,,
 1417,1417,"Creditview Rd At Carolyn Rd",,,  43.585475, -79.695327,,,0,,America/Toronto,1,,
 1419,1419,"City Centre Transit Terminal Platform F",,,  43.593625, -79.645919,,,0,,America/Toronto,1,,F
 1421,1421,"Burnhamthorpe Rd W At Living Arts Dr",,,  43.587101, -79.643204,,,0,,America/Toronto,1,,
@@ -1311,8 +1309,6 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 1581,1581,"Tomken Rd At Burnhamthorpe Rd",,,  43.614144, -79.612754,,,0,,America/Toronto,1,,
 1582,1582,"Hurontario St At Elia Ave",,,  43.603857, -79.648428,,,0,,America/Toronto,1,,
 1583,1583,"Rathburn Rd At Meadows Blvd",,,  43.608280, -79.629207,,,0,,America/Toronto,1,,
-1585,1585,"Rathburn Rd At Lovingston Cres",,,  43.619811, -79.613045,,,0,,America/Toronto,1,,
-1586,1586,"Rathburn Rd At Lovingston Cres",,,  43.619662, -79.613359,,,0,,America/Toronto,1,,
 1588,1588,"Elia Ave At Hurontario St",,,  43.605065, -79.647781,,,0,,America/Toronto,1,,
 1589,1589,"Rathburn Rd At Shipp Dr",,,  43.599644, -79.639391,,,0,,America/Toronto,1,,
 1590,1590,"Ponytrail Dr At Maple Ridge Dr",,,  43.634238, -79.592618,,,0,,America/Toronto,1,,
@@ -2576,7 +2572,6 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 3147,3147,"Bristol Rd W East Of Creditview Rd",,,  43.587288, -79.696353,,,0,,America/Toronto,1,,
 3148,3148,"Eglinton Ave At Tahoe Blvd",,,  43.644999, -79.610545,,,0,,America/Toronto,1,,
 3149,3149,"Eglinton Ave At Tahoe Blvd",,,  43.644403, -79.610720,,,0,,America/Toronto,1,,
-3160,3160,"Central Pky West Of Mavis Rd",,,  43.573923, -79.647277,,,0,,America/Toronto,1,,
 3163,3163,"Courtneypark Dr West Of Kennedy Rd",,,  43.647065, -79.685352,,,0,,America/Toronto,1,,
 3169,3169,"Dundas St W West Of Mavis Rd",,,  43.565560, -79.633794,,,0,,America/Toronto,1,,
 3175,3175,"Tours Rd At Winston Churchill Blvd",,,  43.573546, -79.751846,,,0,,America/Toronto,1,,
@@ -3073,7 +3068,6 @@ stop_id,stop_code,stop_name,tts_stop_name,stop_desc,stop_lat,stop_lon,zone_id,st
 6622,6622,"Mclaughlin Rd At Navigator Dr",,,  43.628420, -79.706025,,,0,,America/Toronto,1,,
 6623,6623,"Mclaughlin Rd At Courtneypark Dr",,,  43.626418, -79.703415,,,0,place_cormlg,,1,,
 6624,6624,"Sheridan College Brampton Campus",,,  43.656933, -79.741386,,,0,,America/Toronto,1,,
-6625,6625,"Sheridan College Brampton Campus",,,  43.656317, -79.740340,,,0,,America/Toronto,1,,
 6626,6626,"Mclaughlin Rd At Sheridan College Dr",,,  43.654227, -79.740480,,,0,,America/Toronto,1,,
 6627,6627,"Mclaughlin Rd At 6150 Mclaughlin Rd",,,  43.618964, -79.693214,,,0,,America/Toronto,1,,
 6628,6628,"Mclaughlin Rd At Steeles Ave",,,  43.656199, -79.743060,,,0,,America/Toronto,1,,
@@ -3361,9 +3355,9 @@ place_brswil,,"Bristol/Wildwood",,,  43.615979, -79.658641,,,1,,America/Toronto,
 place_brtcaw,,"Cawthra Stn",,,  43.616346, -79.628905,,,1,,America/Toronto,1,,A
 place_brtccd,,"City Centre Dr",,,  43.594851, -79.640651,,,1,,America/Toronto,1,,
 place_brtcen,,"Central Parkway Stn",,,  43.607866, -79.636541,,,1,,America/Toronto,1,,A
-place_brtcte,,"City Centre East",,,  43.594618, -79.646745,,,1,,America/Toronto,1,,
+place_brtcte,,"City Centre East",,,  43.594618, -79.646745,,,1,,America/Toronto,1,,A
 place_brtctt,,"City Centre",,,  43.594319, -79.647129,,,1,,America/Toronto,1,,
-place_brtctw,,"City Centre West",,,  43.594235, -79.647358,,,1,,America/Toronto,1,,
+place_brtctw,,"City Centre West",,,  43.594235, -79.647358,,,1,,America/Toronto,1,,O
 place_brtdxe,,"Dixie Stn East",,,  43.629876, -79.614760,,,1,,America/Toronto,1,,A
 place_brtdxw,,"Dixie Stn West",,,  43.629882, -79.614933,,,1,,America/Toronto,1,,B
 place_brtece,,"Etobicoke Creek Stn East",,,  43.645515, -79.610210,,,1,,America/Toronto,1,,A
@@ -3944,7 +3938,7 @@ place_ratham,,"Rathburn/Hammerson",,,  43.595696, -79.645621,,,1,,America/Toront
 place_rathur,,"Rathburn/Hurontario",,,  43.598105, -79.641011,,,1,,America/Toronto,1,,
 place_ratknr,,"Rathburn Kiss n' Ride/CCTT",,,  43.595246, -79.646097,,,1,,America/Toronto,1,,
 place_ratlar,,"Rathburn/Living Arts",,,  43.591291, -79.650257,,,1,,America/Toronto,1,,
-place_ratlbe,,"Rathburn Layby East/CCTT",,,  43.593949, -79.647477,,,1,,America/Toronto,1,,
+place_ratlbe,,"Rathburn Layby East/CCTT",,,  43.593949, -79.647477,,,1,,America/Toronto,1,,L
 place_ratlbw,,"Rathburn Layby West/CCTT",,,  43.594531, -79.647038,,,1,,America/Toronto,1,,N
 place_ratlyb,,"Rathburn Layby/CCTT",,,  43.593550, -79.647940,,,1,,America/Toronto,1,,
 place_ratmav,,"Rathburn/Mavis",,,  43.582493, -79.655545,,,1,,America/Toronto,1,,

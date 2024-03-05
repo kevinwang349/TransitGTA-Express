@@ -1729,7 +1729,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00026060,3121,"Williams Pky E at Southlake Blvd",,  43.714091, -79.758113,,,0,,,1
 00026070,3122,"Williams Pky E w/of Hwy 410",,  43.714062, -79.755189,,,0,,,0
 00026075,3123,"Williams Pky E e/of Hwy 410",,  43.717075, -79.749893,,,0,,,1
-00026080,3124,"Williams Pky E at Howden St",,  43.719957, -79.746845,,,0,,,0
+00026080,3124,"Williams Pkwy w/of Howden Blvd",,  43.719957, -79.746845,,,0,,,0
 00026090,3125,"Williams Pky E at Dixie Rd",,  43.724957, -79.742608,,,0,,,1
 00026100,3126,"Williams Pky E at Mansfield St (W)",,  43.726838, -79.739977,,,0,,,1
 00026110,3127,"Williams Pky E at Mansfield St (E)",,  43.728486, -79.737571,,,0,,,1
@@ -1790,8 +1790,8 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 00028007,6156,"Edwards Blvd n/of Superior Blvd",,  43.643874, -79.697572,,,0,,,1
 00028010,6136,"Edwards Blvd n/of Admiral Blvd",,  43.645576, -79.700112,,,0,,,1
 00028012,6163,"Longside Dr e/of Maritz Dr",,  43.641398, -79.704934,,,0,,,1
-00028014,6164,"Maritz Dr n/of Skyway Dr",,  43.639297, -79.703074,,,0,,,1
-00028016,6165,"Skyway Dr w/of Hurontario St",,  43.640629, -79.699880,,,0,,,1
+00028014,6164,"Maritz Dr n/of Skyway Dr",,  43.639676, -79.703574,,,0,,,1
+00028016,6165,"Skyway Dr w/of Hurontario St",,  43.640108, -79.700431,,,0,,,1
 00028020,6137,"Edwards Blvd at Capital Crt",,  43.646968, -79.701368,,,0,,,1
 00028030,6138,"Edwards Blvd at Derry Rd",,  43.648550, -79.702865,,,0,,,1
 00028040,6139,"Edwards Blvd btwn Export Blvd & Statesman Dr",,  43.650127, -79.706723,,,0,,,0
@@ -2674,7 +2674,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,locatio
 17090507,3399,"Russell Creek Dr n/of Inspire Blvd",,  43.762222, -79.781820,,,0,,,0
 17090508,3400,"Russell Creek Dr s/of Dolbyhill Dr",,  43.759660, -79.779062,,,0,,,1
 17090509,3401,"Russell Creek Dr n/of Countryside Dr",,  43.758653, -79.777500,,,0,,,1
-17090511,5002,"12203 Airport Rd (Legacy warehouse)",,  43.800533, -79.760607,,,0,,,0
+17090511,5002,"12203 Airport Rd (Prologis Caledon)",,  43.800533, -79.760607,,,0,,,0
 17103008,3960,"Gordon Randle Dr n/of Layton St",,  43.804008, -79.740559,,,0,,,1
 17103009,3961,"Gordon Randle Dr n/of Erintown Cir (N)",,  43.802639, -79.736524,,,0,,,1
 17103010,3962,"Gordon Randle Dr n/of Snaresbrook Cir (N)",,  43.800804, -79.733093,,,0,,,1
