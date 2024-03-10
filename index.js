@@ -158,7 +158,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
     let dateStr=req.query.t;
     if(dateStr!=undefined){
         date=new Date(dateStr);
-        date.setUTCHours('5');
+        date.setUTCHours('4');
         if(date.toString()=='Invalid Date'){
             date=new Date();
         }
@@ -341,7 +341,7 @@ app.get("/:agency/stopschedule", async (req, res) => {
     let dateStr=req.query.t;
     if(dateStr!=undefined){
         date=new Date(dateStr);
-        date.setUTCHours('5');
+        date.setUTCHours('4');
         if(date.toString()=='Invalid Date'){
             date=new Date();
         }
@@ -573,7 +573,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     //console.log(allArrivalTimes);
     // Get the current time
     const date=new Date();
-    date.setUTCHours(date.getUTCHours()-5);
+    date.setUTCHours(date.getUTCHours()-4);
     let mins=date.getMinutes();
     let secs=date.getSeconds();
     if(mins<10){
@@ -693,7 +693,7 @@ app.get("/:agency/nextbus", async (req, res) => {
                             if (stoptime.departure != undefined && stoptime.departure.time != undefined) {
                                 const newtime = stoptime.departure.time;
                                 const date = new Date(newtime * 1000);
-                                date.setUTCHours(date.getUTCHours()-5);
+                                date.setUTCHours(date.getUTCHours()-4);
                                 sender = date.getHours() + ":";
                                 let mins = date.getMinutes();
                                 if (mins < 10) {
@@ -791,7 +791,7 @@ async function nextPrediction(stopid,res){
                 for(const time of times){
                     // Display the arrival time
                     let date=new Date(parseInt(time.epochTime));
-                    date.setUTCHours(date.getUTCHours()-5);
+                    date.setUTCHours(date.getUTCHours()-4);
                     //console.log(date);
                     let seconds=time.seconds;
                     let minsRemaining=time.minutes;
@@ -928,7 +928,7 @@ app.get("/:agency/trip", async (req, res) => {
                             if(trip.tripTag==tripid){
                                 const newtime=parseInt(trip.epochTime);
                                 const date=new Date(newtime);
-                                date.setUTCHours(date.getUTCHours()-5);
+                                date.setUTCHours(date.getUTCHours()-4);
                                 let sender=date.getHours()+":";
                                 sender+=(date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes();
                                 sender+=":";
@@ -1040,7 +1040,7 @@ app.get("/:agency/trip", async (req, res) => {
             tripFound=true;
             for(const stop of vehicle.times){
                 const estimated = new Date(stop.estimated);
-                estimated.setUTCHours(estimated.getUTCHours()-5);
+                estimated.setUTCHours(estimated.getUTCHours()-4);
                 const hrs = (estimated.getHours()<10) ? "0"+estimated.getHours() : ""+estimated.getHours()
                 const mins = (estimated.getMinutes()<10) ? "0"+estimated.getMinutes() : ""+estimated.getMinutes()
                 const secs = (estimated.getSeconds()<10) ? "0"+estimated.getSeconds() : ""+estimated.getSeconds()
@@ -1132,7 +1132,7 @@ app.get("/:agency/trip", async (req, res) => {
                                 newtime=stoptime.arrival.time;
                             }
                             const date=new Date(newtime*1000);
-                            date.setUTCHours(date.getUTCHours()-5);
+                            date.setUTCHours(date.getUTCHours()-4);
                             let sender=date.getHours()+":";
                             let mins=date.getMinutes();
                             if(mins<10){
@@ -1312,7 +1312,7 @@ app.get("/:agency/fare", async (req, res) => {
 
 // Find service ids for an agency on a given date
 function findService(agency, date=new Date()){
-    date.setUTCHours(date.getUTCHours()-5);
+    date.setUTCHours(date.getUTCHours()-4);
     const dateStr = date.toISOString().substring(0, 10).split('-').join('');
     if(agency=='GO'||agency=='UPX') return dateStr;
     const cal1=fileArray(agency, 'calendar');
@@ -1338,7 +1338,7 @@ function findService(agency, date=new Date()){
 }
 app.get("/:agency/findService/:date/", async (req, res) => {
     const date=new Date(req.params.date);
-    date.setUTCHours('6');
+    date.setUTCHours('4');
     res.send({'service': findService(req.params.agency, date)});
 });
 
