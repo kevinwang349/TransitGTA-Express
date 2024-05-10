@@ -1,6 +1,7 @@
 service_id,start_date,end_date,monday,tuesday,wednesday,thursday,friday,saturday,sunday
-All Days_merged_999974,20240219,20240407,1,1,1,1,1,1,1
-WeekdayReg_merged_999975,20240219,20240407,1,1,1,1,1,0,0
-Weekday_merged_999976,20240219,20240407,1,1,1,1,1,0,0
-SaturdayReg_merged_999977,20240219,20240407,0,0,0,0,0,1,1
-Saturday_merged_999978,20240219,20240407,0,0,0,0,0,1,1
+WeekdayReg_merged_999962,20240408,20240623,1,1,1,1,1,0,0
+Stat HolidayReg,20240408,20240623,0,0,0,0,0,0,0
+Weekday_merged_999963,20240408,20240623,1,1,1,1,1,0,0
+SatSun,20240408,20240623,0,0,0,0,0,1,1
+SatSunReg,20240408,20240623,0,0,0,0,0,1,1
+All Days_merged_999964,20240408,20240623,1,1,1,1,1,1,1
