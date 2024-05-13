@@ -1,12 +1,12 @@
 {
     "GO":{
-        "tripUpdates": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/TripUpdates/?key=30021837",
-        "vehiclePositions": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/VehiclePosition/?key=30021837",
-        "serviceataGlance": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/ServiceataGlance/Trains/All/?key=30021837"
+        "tripUpdates": "https://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/TripUpdates/?key=30021837",
+        "vehiclePositions": "https://api.openmetrolinx.com/OpenDataAPI/api/V1/Gtfs/Feed/VehiclePosition/?key=30021837",
+        "serviceataGlance": "https://api.openmetrolinx.com/OpenDataAPI/api/V1/ServiceataGlance/Trains/All/?key=30021837"
     },
     "UPX":{
-        "tripUpdates": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/TripUpdates/?key=30021837",
-        "vehiclePositions": "http://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/VehiclePosition/?key=30021837"
+        "tripUpdates": "https://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/TripUpdates/?key=30021837",
+        "vehiclePositions": "https://api.openmetrolinx.com/OpenDataAPI/api/V1/UP/Gtfs/Feed/VehiclePosition/?key=30021837"
     },
     "TTC":{
         "vehiclePositions": "https://retro.umoiq.com/service/publicJSONFeed?command=vehicleLocations&a=ttc"
