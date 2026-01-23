@@ -21,7 +21,7 @@ app.get("/:agency/routelist", (req, res) => {
     const agency = req.params.agency;
     const routes = fileArray(agency, 'routes');
     const json = {
-        title: `List of routes for agency ${agency}`,
+        title: `All routes for ${agency}`,
         agency: agency,
         routes: []
     }
@@ -47,7 +47,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
     // TTC only -- use client-side JS
     if(agency == 'TTC'){
         const json = {
-            title: `Vehicles on route ${route[routes[0].indexOf('route_long_name')]}`,
+            title: `Vehicles on ${route[routes[0].indexOf('route_long_name')]}`,
             agency: 'TTC',
             routeid: routeShortId
         }
@@ -128,7 +128,7 @@ app.get("/:agency/routevehicles", async (req, res) => {
     }
     
     const json = {
-        title: `Vehicles on route ${route[routes[0].indexOf('route_long_name')]}`,
+        title: `Vehicles on ${route[routes[0].indexOf('route_short_name')]} ${route[routes[0].indexOf('route_long_name')]}`,
         agency: agency,
         routeLegend: routes[0].join(','),
         route: route.join(','),
@@ -275,7 +275,7 @@ app.get("/:agency/routeschedule", async (req, res) => {
     const reverseDir = (dirid==0)?1:0;
     const rsn = (agency!='VIA')?route[routes[0].indexOf('route_short_name')]:route[routes[0].indexOf('route_id')];
     const json={
-        title: `Schedule for route ${route[routes[0].indexOf('route_short_name')]} ${route[routes[0].indexOf('route_long_name')]} on ${date.toDateString()}:`,
+        title: `Schedule for ${route[routes[0].indexOf('route_short_name')]} ${route[routes[0].indexOf('route_long_name')]} on ${date.toDateString()}:`,
         agency: agency,
         routeshortname: rsn,
         routes: routes,
@@ -374,9 +374,9 @@ app.get("/:agency/stopschedule", async (req, res) => {
     if(currentStop.length>0){
         stopname=currentStop[stops[0].indexOf('stop_name')];
         if(agency=='GO' && currentStop[stops[0].indexOf('stop_code')]==''){
-            title=`Current station is ${stopname}`
+            title=`Stop schedule at ${stopname}`
         }else{
-            title=`Current stop is #${currentStop[stops[0].indexOf('stop_code')]}: ${stopname}`
+            title=`Stop schedule at #${currentStop[stops[0].indexOf('stop_code')]}: ${stopname}`
         }
     }
     // else{
@@ -483,6 +483,9 @@ function subtract(time1str, time2str){
     let hrDiff=parseInt(time2[0])-parseInt(time1[0]);
     let minDiff=parseInt(time2[1])-parseInt(time1[1]);
     let secDiff=parseInt(time2[2])-parseInt(time1[2]);
+    // if(hrDiff<0){
+    //     hrDiff+=24;
+    // }
     if(secDiff<0){
         secDiff+=60;
         minDiff--;
@@ -528,9 +531,9 @@ app.get("/:agency/nextbus", async (req, res) => {
     if(currentStop.length>0){
         const stopname=currentStop[stops[0].indexOf('stop_name')];
         if(agency=='GO' && currentStop[stops[0].indexOf('stop_code')]==''){
-            title=`Current station is ${stopname}`
+            title=`Next vehicle arrival at ${stopname}`
         }else{
-            title=`Current stop is #${currentStop[stops[0].indexOf('stop_code')]}: ${stopname}`
+            title=`Next bus arrival at #${currentStop[stops[0].indexOf('stop_code')]}: ${stopname}`
         }
     }
     // else{
@@ -755,7 +758,7 @@ async function nextPrediction(stopid,res){
     const stops=fileArray('TTC','stops');
     // Find and display the stop
     let currentStop=findRow(stops,'stop_id',stopid);
-    const title = 'Current stop is #'+currentStop[stops[0].indexOf('stop_code')]+' '+currentStop[stops[0].indexOf('stop_name')];
+    const title = 'Stop predictions at #'+currentStop[stops[0].indexOf('stop_code')]+' '+currentStop[stops[0].indexOf('stop_name')];
     let directionNames=[];
     let directionArrivals=[];
     let vehicles=[];
@@ -976,7 +979,7 @@ app.get("/:agency/trip", async (req, res) => {
             }
             pop+=` on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]}`;
         }
-        const title = `Current trip is on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
+        const title = `Trip schedule for route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
         const json={
             "agency": agency,
             "title": title,
@@ -1056,7 +1059,7 @@ app.get("/:agency/trip", async (req, res) => {
             }
         }
         popup=`Train #${trainNum} on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]}`;
-        const title = `Current trip is train #${trainNum} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
+        const title = `Trip schedule for train #${trainNum} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
         const json={
             "agency": agency,
             "title": title,
@@ -1132,7 +1135,7 @@ app.get("/:agency/trip", async (req, res) => {
                                 newtime=stoptime.arrival.time;
                             }
                             const date=new Date(newtime*1000);
-                            date.setUTCHours(date.getUTCHours()-4);
+                            //date.setUTCHours(date.getUTCHours()-4);
                             let sender=date.getHours()+":";
                             let mins=date.getMinutes();
                             if(mins<10){
@@ -1172,7 +1175,7 @@ app.get("/:agency/trip", async (req, res) => {
     }
     //console.log(actualTimes);
 
-    const title = `Current trip is on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
+    const title = `Trip schedule for route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]} towards ${currentTrip[trips[0].indexOf('trip_headsign')]} from ${arrivalTimes[1]} to ${arrivalTimes[arrivalTimes.length-1]}`;
     const json={
         "agency": agency,
         "title": title,

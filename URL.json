@@ -27,16 +27,12 @@
         "vehiclePositions": "https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb"
     },
     "Brampton":{
-        "tripUpdates": "https://nextride.brampton.ca:81/API/TripUpdates?format=gtfs.proto",
-        "vehiclePositions": "https://nextride.brampton.ca:81/API/VehiclePositions?format=gtfs.proto"
+        "tripUpdates": "https://gtfs-rt-merge.prod.bt-cadavl.com/BramptonTransit/GTFS/merged_TripUpdate.pb",
+        "vehiclePositions": "https://gtfs-rt-merge.prod.bt-cadavl.com/BramptonTransit/GTFS/merged_VehiclePosition.pb"
     },
     "HSR":{
-        "tripUpdates": "",
-        "vehiclePositions": ""
-    },
-    "HSR(broken)":{
-        "tripUpdates": "https://opendata.hamilton.ca/gtfs-rt/GTFS_TripUpdates.pb",
-        "vehiclePositions": "https://opendata.hamilton.ca/gtfs-rt/GTFS_VehiclePositions.pb"
+        "tripUpdates": "https://opendata.hamilton.ca/GTFS-RT/GTFS_TripUpdates.pb",
+        "vehiclePositions": "https://opendata.hamilton.ca/GTFS-RT/GTFS_VehiclePositions.pb"
     },
     "GRT":{
         "tripUpdates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates",
