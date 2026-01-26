@@ -865,19 +865,52 @@ app.get("/:agency/trip", async (req, res) => {
     const trips = fileArray(agency, 'trips');
     const stops = fileArray(agency, 'stops');
     const routes = fileArray(agency, 'routes');
+    // Get current trip
     const currentTrip=findRow(trips,'trip_id',tripid);
     if(currentTrip.length==0){
         res.send("Error: Cannot find trip with id "+tripid);
         return;
+    }
+    // Get other trips within the same block
+    const serviceids = findService(agency);
+    const blockid = currentTrip[trips[0].indexOf('block_id')];
+    const blockTripids = [];
+    const tripsInBlock = [['trip_id', 'route_id', 'route_short_name', 'route_long_name', 'route_color', 'trip_headsign', 'start_time', 'end_time']];
+    for (let i=1;i<trips.length;i++){
+        const t = trips[i];
+        if (t[trips[0].indexOf('block_id')] == blockid && serviceids.includes(t[trips[0].indexOf('service_id')])) {
+            blockTripids.push(t[trips[0].indexOf('trip_id')]);
+            tripsInBlock.push([t[trips[0].indexOf('trip_id')], t[trips[0].indexOf('route_id')], '', '', '', t[trips[0].indexOf('trip_headsign')], '48:00:00', '00:00:00']);
+        }
+    }
+    //console.log(blockTripids);
+    // Join trips in block to routes to get route names
+    for (let i=1;i<tripsInBlock.length;i++) {
+        const r = findRow(routes, 'route_id', tripsInBlock[i][tripsInBlock[0].indexOf('route_id')]);
+        tripsInBlock[i][tripsInBlock[0].indexOf('route_short_name')] = r[routes[0].indexOf('route_short_name')];
+        tripsInBlock[i][tripsInBlock[0].indexOf('route_long_name')] = r[routes[0].indexOf('route_long_name')];
+        tripsInBlock[i][tripsInBlock[0].indexOf('route_color')] = tint(r[routes[0].indexOf('route_color')]);
     }
     const currentRoute=findRow(routes,'route_id',currentTrip[trips[0].indexOf('route_id')])
     let tripstops=[stops[0]];
     let arrivalTimes=[""];
     for(let i=1;i<times.length;i++){
         const stop = times[i];
+        // Get schedule of current trip
         if (stop[times[0].indexOf('trip_id')] == tripid){
             tripstops.push(findRow(stops,'stop_id',stop[times[0].indexOf('stop_id')]));
             arrivalTimes.push(stop[times[0].indexOf('departure_time')]);
+        }
+        // Get start / end times of all trips in block
+        for (let i=1;i<tripsInBlock.length;i++) {
+            if (stop[times[0].indexOf('trip_id')] == tripsInBlock[i][tripsInBlock[0].indexOf('trip_id')]) {
+                if (compare(tripsInBlock[i][tripsInBlock[0].indexOf('start_time')], stop[times[0].indexOf('departure_time')])) {
+                    tripsInBlock[i][tripsInBlock[0].indexOf('start_time')] = stop[times[0].indexOf('departure_time')];
+                }
+                if (compare(stop[times[0].indexOf('departure_time')], tripsInBlock[i][tripsInBlock[0].indexOf('end_time')])) {
+                    tripsInBlock[i][tripsInBlock[0].indexOf('end_time')] = stop[times[0].indexOf('departure_time')];
+                }
+            }
         }
     }
     // Sort arrival times and stops using insertion sort
@@ -895,6 +928,19 @@ app.get("/:agency/trip", async (req, res) => {
             }
         }
     }
+    // Sort trips in block
+    for(let i=1;i<tripsInBlock.length;i++){
+        for(let j=i;j>0;j--){
+            if(compare(tripsInBlock[j-1][tripsInBlock[0].indexOf('start_time')],tripsInBlock[j][tripsInBlock[0].indexOf('start_time')])){
+                let temp=tripsInBlock[j];
+                tripsInBlock[j]=tripsInBlock[j-1];
+                tripsInBlock[j-1]=temp;
+            }else{
+                break;
+            }
+        }
+    }
+    //console.log(tripsInBlock);
     // Add the trip's shape to the map
     let shape=[];
     const shapeid=currentTrip[trips[0].indexOf('shape_id')];
@@ -985,6 +1031,7 @@ app.get("/:agency/trip", async (req, res) => {
             "title": title,
             "colors": colors,
             "arrivalTimes": arrivalTimes,
+            "tripsInBlock": tripsInBlock,
             "tripFound": tripFound,
             "actualTimes": actualTimes,
             "tripstops": tripstops,
@@ -1065,6 +1112,7 @@ app.get("/:agency/trip", async (req, res) => {
             "title": title,
             "colors": colors,
             "arrivalTimes": arrivalTimes,
+            "tripsInBlock": tripsInBlock,
             "tripFound": tripFound,
             "actualTimes": actualTimes,
             "tripstops": tripstops,
@@ -1084,7 +1132,7 @@ app.get("/:agency/trip", async (req, res) => {
                 vehicleFound=true;
                 const vehid=(agency=='MiWay')?v.vehicle.label:v.vehicle.id;
                 popup=`<div style="font-size: 20px;">Vehicle ${vehid} on route ${currentRoute[routes[0].indexOf('route_short_name')]} ${currentRoute[routes[0].indexOf('route_long_name')]}
-                <br><a href="./routevehicles?r=${currentRoute[routes[0].indexOf('route_short_name')]}">See route vehicles on this route</a></div>`;
+                <br><a href="../routevehicles?r=${currentRoute[routes[0].indexOf('route_short_name')]}">See all vehicles on this route</a></div>`;
                 vehicle=v;
                 break;
             }
@@ -1181,6 +1229,7 @@ app.get("/:agency/trip", async (req, res) => {
         "title": title,
         "colors": colors,
         "arrivalTimes": arrivalTimes,
+        "tripsInBlock": tripsInBlock,
         "tripFound": tripFound,
         "actualTimes": actualTimes,
         "tripstops": tripstops,

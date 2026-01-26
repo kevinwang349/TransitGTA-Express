@@ -59,6 +59,33 @@
                 </tr>
             <%}%>
         </table><br>
+
+        <p style="margin-bottom: 0;">Other trips in block:</p>
+        <table>
+            <tr>
+                <td>Route</td>
+                <td>Trip</td>
+                <td>Start time</td>
+                <td>End time</td>
+            </tr>
+            <% for(let i=1;i<tripsInBlock.length;i++){  %>
+                <tr>
+                    <td style="background-color: #<%= tripsInBlock[i][tripsInBlock[0].indexOf('route_color')] %>;
+                            border-right: 1px solid black; border-bottom: 1px solid black;">
+                        <%= tripsInBlock[i][tripsInBlock[0].indexOf('route_short_name')] %> <%= tripsInBlock[i][tripsInBlock[0].indexOf('route_long_name')] %>
+                    </td>
+                    <td style="background-color: #eeeeee; border-right: 1px solid black; border-bottom: 1px solid black;">
+                        <a href="./trip?t=<%= tripsInBlock[i][tripsInBlock[0].indexOf('trip_id')] %>"><%= tripsInBlock[i][tripsInBlock[0].indexOf('trip_headsign')] %></a>
+                    </td>
+                    <td style="background-color: #eeeeee; border-top: 1px solid black; border-left: 1px solid black;">
+                        <%= tripsInBlock[i][tripsInBlock[0].indexOf('start_time')] %>
+                    </td>
+                    <td style="background-color: #eeeeee; border-top: 1px solid black; border-left: 1px solid black;">
+                        <%= tripsInBlock[i][tripsInBlock[0].indexOf('end_time')] %>
+                    </td>
+                </tr>
+            <%}%>
+        </table><br>
         <button style="font-size: 25px;" onclick="routeScheduleRedirect()">See schedule for <%= rsn%> <%= rln%></button>
 
         <script>
