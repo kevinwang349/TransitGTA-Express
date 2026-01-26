@@ -291,8 +291,12 @@ app.get("/:agency/routeschedule", async (req, res) => {
     res.render("pages/routeschedule",json);
     //res.send(json);
 });
-// Returns true if time1str is after time2str,
-//  and false if time1str is before or the same as time2str
+
+/** Compare two time strings
+ * @param {string} time1str a time string in the form HH:MM:SS
+ * @param {string} time2str a time string in the form HH:MM:SS
+ * @returns {boolean} true if time1str is after time2str, false if time1str is before or the same as time2str
+ */
 function compare(time1str, time2str){
     let time1=[];
     let time2=[];
@@ -576,7 +580,7 @@ app.get("/:agency/nextbus", async (req, res) => {
     //console.log(allArrivalTimes);
     // Get the current time
     const date=new Date();
-    date.setUTCHours(date.getUTCHours()-4);
+    //date.setUTCHours(date.getUTCHours()-4);
     let mins=date.getMinutes();
     let secs=date.getSeconds();
     if(mins<10){
@@ -696,7 +700,7 @@ app.get("/:agency/nextbus", async (req, res) => {
                             if (stoptime.departure != undefined && stoptime.departure.time != undefined) {
                                 const newtime = stoptime.departure.time;
                                 const date = new Date(newtime * 1000);
-                                date.setUTCHours(date.getUTCHours()-4);
+                                //date.setUTCHours(date.getUTCHours()-4);
                                 sender = date.getHours() + ":";
                                 let mins = date.getMinutes();
                                 if (mins < 10) {
@@ -794,7 +798,7 @@ async function nextPrediction(stopid,res){
                 for(const time of times){
                     // Display the arrival time
                     let date=new Date(parseInt(time.epochTime));
-                    date.setUTCHours(date.getUTCHours()-4);
+                    //date.setUTCHours(date.getUTCHours()-4);
                     //console.log(date);
                     let seconds=time.seconds;
                     let minsRemaining=time.minutes;
@@ -977,7 +981,7 @@ app.get("/:agency/trip", async (req, res) => {
                             if(trip.tripTag==tripid){
                                 const newtime=parseInt(trip.epochTime);
                                 const date=new Date(newtime);
-                                date.setUTCHours(date.getUTCHours()-4);
+                                //date.setUTCHours(date.getUTCHours()-4);
                                 let sender=date.getHours()+":";
                                 sender+=(date.getMinutes()<10)?('0'+date.getMinutes()):date.getMinutes();
                                 sender+=":";
@@ -1090,7 +1094,7 @@ app.get("/:agency/trip", async (req, res) => {
             tripFound=true;
             for(const stop of vehicle.times){
                 const estimated = new Date(stop.estimated);
-                estimated.setUTCHours(estimated.getUTCHours()-4);
+                //estimated.setUTCHours(estimated.getUTCHours()-4);
                 const hrs = (estimated.getHours()<10) ? "0"+estimated.getHours() : ""+estimated.getHours()
                 const mins = (estimated.getMinutes()<10) ? "0"+estimated.getMinutes() : ""+estimated.getMinutes()
                 const secs = (estimated.getSeconds()<10) ? "0"+estimated.getSeconds() : ""+estimated.getSeconds()
@@ -1364,7 +1368,7 @@ app.get("/:agency/fare", async (req, res) => {
 
 // Find service ids for an agency on a given date
 function findService(agency, date=new Date()){
-    date.setUTCHours(date.getUTCHours()-4);
+    //date.setUTCHours(date.getUTCHours()-4);
     const dateStr = date.toISOString().substring(0, 10).split('-').join('');
     if(agency=='GO'||agency=='UPX') return dateStr;
     const cal1=fileArray(agency, 'calendar');
@@ -1394,7 +1398,11 @@ app.get("/:agency/findService/:date/", async (req, res) => {
     res.send({'service': findService(req.params.agency, date)});
 });
 
-// Read a CSV data file and return its contents in the form of a 2D array
+/** Read a CSV table stored as a .txt file and return its contents in the form of a 2D array
+ * @param {string} agency Agency identifier
+ * @param {string} filename Name of tile, not including .txt file type
+ * @returns {string[][]} The data table stored as a 2D array
+ */
 function fileArray(agency, filename, flag=false) {
     const filestr = readFileSync(`./gtfs/${agency}/${filename}.txt`).toString();
     let array1 = filestr.split('\r\n');
@@ -1434,7 +1442,10 @@ function arrayStr(array1) {
     return filestr;
 }
 
-// Make a color lighter
+/** Makes a color lighter
+ * @param {string} color as a 6-digit hex string
+ * @returns {string} lightened color as a 6-digit hex string
+ */
 function tint(color) {
     if (color == undefined) color = '7f7f7f';
     let rgb = [parseInt(color.substring(0, 2), 16), parseInt(color.substring(2, 4), 16), parseInt(color.substring(4, 6), 16)];
